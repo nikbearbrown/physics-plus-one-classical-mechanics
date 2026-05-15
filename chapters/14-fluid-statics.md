@@ -1,289 +1,140 @@
 # Chapter 14 — Fluid Statics
 
-**Suggested titles**
-
-1. Fluid Statics
-2. Why a Steel Ship Floats and a Stone Sinks
-3. Pressure as the Fluid's Way of Being a Force
-
-**TL;DR.** A fluid (liquid or gas) doesn't push back along a single direction the way a solid does — it pushes equally in every direction at every point. That equal-in-every-direction quantity is **pressure**, $P = F/A$. This chapter installs pressure, the depth-pressure relation $P = \rho g h$, Pascal's principle (pressure applied to an enclosed fluid is transmitted everywhere), Archimedes' principle (buoyant force equals weight of displaced fluid), and the molecular forces (cohesion, adhesion, surface tension) that govern menisci and capillary action. Together: how fluids at rest behave, why ships float, and how a hydraulic jack lifts a car.
+*At the bottom of the ocean, everything weighs the same per square inch — and that inch has to hold.*
 
 ---
 
-## A submersible at the bottom of the Mariana Trench, 2019
+In 2019, Victor Vescovo descended in a titanium submersible called the *Limiting Factor* to the bottom of the Challenger Deep: 10,928 meters below the surface of the Pacific Ocean, the deepest place on Earth. The descent took four hours. At that depth, the pressure outside the hull is roughly 1,100 times atmospheric — about 110 megapascals, or 16,000 pounds per square inch.
 
-Victor Vescovo, in a custom-built submersible called the *Limiting Factor*, descends $10{,}928 \text{ m}$ to the bottom of the Challenger Deep — the deepest point in the Mariana Trench, the deepest place on Earth. The descent takes about four hours. The crushing depth means the pressure outside the submersible is roughly $1{,}100$ times atmospheric — about $110 \text{ MPa}$, or $16{,}000 \text{ pounds per square inch}$.
+To survive this, the crew sphere is a 9-centimeter-thick titanium shell machined to sub-millimeter precision. Every square inch of its outer surface is being squeezed by the equivalent of ten compact cars stacked on top of it.
 
-To survive that pressure, the *Limiting Factor*'s crew sphere is a $9 \text{ cm}$ thick titanium shell, machined to exquisite precision. Even at full depth, with the entire weight of the Pacific Ocean pressing in, the sphere deforms by only a few millimeters. Every square inch of the sphere's surface is being squeezed by the equivalent of ten compact cars stacked on top of it.
+How do you know the pressure before you go? You don't send a pressure gauge down first. You calculate. The depth is known. The density of seawater is known — about 1,030 kg/m³. Multiply by gravitational acceleration and depth:
 
-How do we know the pressure? We didn't measure it directly with a gauge that can tolerate $110 \text{ MPa}$. We computed it. From the depth, $h$, and the density of seawater, $\rho \approx 1{,}030 \text{ kg/m}^3$, the formula $P = \rho g h$ gives:
+$$P = \rho g h = 1030 \times 9.80 \times 10{,}928 \approx 1.10 \times 10^8 \text{ Pa.}$$
 
-$$P = 1030 \times 9.80 \times 10928 \approx 1.10 \times 10^8 \text{ Pa}.$$
+That is 110 MPa. The engineers who designed the sphere used that number, derived from nothing more than the weight of a column of water divided by area, to calculate how thick the walls had to be. The submersible was built. Vescovo went down. He came back up. The formula was right.
 
-That's $110 \text{ MPa}$, exactly. The depth-pressure relation, derived from nothing more than weighing a column of water above a point and dividing by area, predicts the crushing force the submersible's titanium must resist — and engineering teams used that formula to design the sphere thick enough to survive.
-
-This chapter is about how fluids at rest exert pressure, why that pressure depends on depth, why something floats or sinks (Archimedes had this, in the bath, in 250 BC), and how the molecular forces between fluid molecules give rise to phenomena like menisci, capillary rise, and surface tension. The Mariana Trench example is one extreme; an ice cube floating in a glass of water is the everyday other end. Both are governed by the same machinery.
-
-**Learning objectives.** By the end of this chapter you should be able to:
-
-1. Compute density $\rho = m/V$ for any substance and apply density tables to identify materials.
-2. Compute pressure $P = F/A$ in any context, and convert between Pa, atm, mmHg, and psi.
-3. Apply $P = \rho g h$ to find pressure at depth in a static fluid; combine atmospheric pressure for total absolute pressure.
-4. Apply Pascal's principle to hydraulic systems (compute the force amplification of a hydraulic jack).
-5. Apply Archimedes' principle to predict buoyant force, sinking/floating, and the apparent weight of submerged or partially submerged objects.
-
-**Prerequisites.** Chapter 4 (force, pressure as force-per-area). Chapter 7 (energy, occasionally useful). Chapter 9 (force balance, statics).
-
-**Why this chapter matters.** Fluid statics underlies hydraulic engineering (cranes, brakes, lifts), naval architecture (every ship), ocean and atmospheric science (pressure with depth and altitude), medicine (blood pressure, intraocular pressure, breathing), and meteorology. The same physics that explains why a $10{,}928 \text{ m}$ descent produces $110 \text{ MPa}$ explains why your ears pop in an airplane and why the surface tension of water lets some insects walk on it.
+This chapter is about that formula, why it is right, and what else follows from the same logic. Pressure in a fluid. Why pressure increases with depth. Why an enclosed fluid transmits pressure everywhere (the hydraulic jack). And why things float — which Archimedes figured out in a bath around 250 BCE and which has not required revision since.
 
 ---
 
-## Concept 1 — Density and pressure
+## Density and Pressure
 
-### A ton of feathers, a ton of bricks
-
-The riddle is so old it's a cliche, but it points at a real distinction. A ton of feathers and a ton of bricks weigh the same — but the feathers occupy a much larger volume. The bricks have higher *density*: more mass packed into less space.
+Two quantities underlie everything else.
 
 **Density** is mass per unit volume:
 
 $$\rho = \frac{m}{V}.$$
 
-Units: $\text{kg/m}^3$. Symbol: Greek letter rho. Some standard values to know:
+Some values worth knowing: fresh water at 4°C has density 1,000 kg/m³; seawater, about 1,030 kg/m³; air at sea level, 1.21 kg/m³. The factor-of-a-thousand difference between water and air sets up all of buoyancy. Aluminum is 2,700 kg/m³; steel 7,800; gold 19,300. Gold is nearly twenty times denser than water — which is why Archimedes's trick works: a gold crown and a fake crown of the same mass will displace very different volumes of water.
 
-- Water (fresh, $4°\text{C}$): $1{,}000 \text{ kg/m}^3$.
-- Seawater: $\sim 1{,}030 \text{ kg/m}^3$.
-- Air (sea level, $20°\text{C}$): $1.21 \text{ kg/m}^3$.
-- Aluminum: $2{,}700 \text{ kg/m}^3$.
-- Iron / steel: $\sim 7{,}800 \text{ kg/m}^3$.
-- Lead: $11{,}300 \text{ kg/m}^3$.
-- Mercury: $13{,}600 \text{ kg/m}^3$.
-- Gold: $19{,}300 \text{ kg/m}^3$.
-
-The factor-of-a-thousand difference between water and air, and the further factor of nearly $20$ between water and gold, sets up almost everything in fluid statics: floating, sinking, buoyancy.
-
-### Pressure: force per unit area
-
-When a force is distributed across a surface, pressure measures how concentrated that force is:
+**Pressure** is force per unit area:
 
 $$P = \frac{F}{A}.$$
 
-Units: Pa (pascal) $= 1 \text{ N/m}^2$. Other common units:
-- $1 \text{ atm} = 101{,}325 \text{ Pa} \approx 10^5 \text{ Pa}$ (atmospheric pressure at sea level).
-- $1 \text{ psi} \approx 6{,}895 \text{ Pa}$.
-- $1 \text{ mmHg} \approx 133 \text{ Pa}$ (used for blood pressure).
-- $1 \text{ bar} = 10^5 \text{ Pa}$.
+Units: pascals, where 1 Pa = 1 N/m². Atmospheric pressure at sea level is about 101,325 Pa, or 1 atm. One atmosphere is also about 14.7 psi, or 760 mmHg (used in blood pressure). The pascal is a tiny unit — you need 100,000 of them to get to atmospheric pressure — so pressure in practical settings often gets expressed in kilopascals or megapascals or atmospheres instead.
 
-The same force spread over a larger area gives lower pressure. A person walking on snow with snowshoes distributes their weight over a much larger area than walking in regular boots — same weight, much less pressure per square centimeter, no sinking through the crust.
+The same force distributed over different areas gives different pressures. A 70 kg person wearing regular boots (total contact area about 0.06 m²) presses on snow with about 11,400 Pa. The same person in snowshoes (area 0.40 m²) presses with about 1,700 Pa — a factor of nearly seven less. Snow that would collapse under the boots holds up under the shoes. Same weight. Different pressure. Different outcome.
 
-### The mechanism — what makes pressure special in a fluid
+Now here is the key property of pressure in a fluid, the one that makes fluid statics different from solid mechanics. Inside a static fluid, at any point, the pressure is the same in every direction. Push a tiny imaginary cube of water — the pressure on its top face equals the pressure on its bottom face, its left face, its right face, all faces. Pressure in a fluid is not a vector. It is a scalar. It has magnitude but no direction.
 
-Inside a fluid at rest, pressure has a remarkable property: at any point, it is the same in every direction. Push a tiny imaginary cube of fluid: the force per unit area on the top, bottom, sides, front, and back are all equal in magnitude. (This is why pressure is a *scalar*, not a vector — even though it produces forces in specific directions when it pushes against surfaces.)
+This is what distinguishes a fluid from a solid. A solid beam can be compressed along one axis while being tensed along another. A static fluid cannot sustain different pressures in different directions — any imbalance would set the fluid in motion, and we have stipulated it is static. The directional complexity collapses to a single number per point, $P(x, y, z)$. Once you know that scalar field, you know all the forces the fluid exerts on any surface you care about: multiply by area, and the force is perpendicular to the surface.
 
-This isotropy of pressure is what distinguishes a fluid from a solid. A solid can have different stresses in different directions (you can push down on a beam without pushing sideways). A fluid cannot — any imbalance would set the fluid in motion.
-
-### The trade-off
-
-Treating fluids as having scalar pressure trades **the directionally-rich vector force language** for **a single scalar quantity per point in space.** The cost is some abstraction; the benefit is enormous tractability. Once you know $P(x, y, z)$ in a fluid, you know everything about the forces it exerts on any surface — multiply by area, get force.
-
-### Worked example — pressure under a snowshoe vs. boot
-
-A $70 \text{ kg}$ person stands in winter snow. (a) Wearing standard boots ($A = 0.030 \text{ m}^2$ contact each, two boots), what is the pressure on the snow under each boot? (b) Wearing snowshoes ($A = 0.20 \text{ m}^2$ each), what is the pressure?
-
-**Force.** $W = mg = 70 \times 9.80 = 686 \text{ N}$, distributed over both feet.
-
-**Pressure (boots).** Total area $= 2 \times 0.030 = 0.060 \text{ m}^2$. $P = 686 / 0.060 \approx 11{,}400 \text{ Pa}$.
-
-**Pressure (snowshoes).** Total area $= 2 \times 0.20 = 0.40 \text{ m}^2$. $P = 686 / 0.40 \approx 1{,}720 \text{ Pa}$.
-
-Snowshoes reduce pressure by a factor of $\sim 6.6$ — enough to keep the person on top of the snow rather than sinking through it.
-
-**Sanity check.** Atmospheric pressure is $\sim 10^5 \text{ Pa}$. The person's pressure on the snow is only $\sim 10\%$ (boots) or $\sim 2\%$ (snowshoes) of atmospheric. The snow's compressive strength is what determines whether the person sinks — and dry powder snow can support pressures around $10^4$–$10^5 \text{ Pa}$, while crusty snow holds more.
-
-### Common misconceptions
-
-- *"Pressure and force are the same."* They aren't. Pressure is force per unit area. The same force can produce very different pressures (boots vs. snowshoes). The same pressure can produce very different forces if applied to different areas (a hydraulic jack — Concept 2).
-- *"Pressure has a direction."* In fluid statics, no — pressure at a point is a scalar. It produces forces in specific directions when applied to specific surfaces (always perpendicular to the surface), but the pressure itself is direction-independent.
-
-↳ **Dig Deeper — Why is pressure a scalar in a fluid but stress is a tensor in a solid?**
-
-*Solids can resist shear; fluids cannot. This single physical difference gives rise to the mathematical distinction: the state of stress in a solid requires a $3\times 3$ tensor (six independent components), while in a static fluid it reduces to a single scalar (pressure).*
-
-**Prompt:**
-> Explain why pressure in a static fluid can be described by a single scalar, while stress in a solid requires a tensor. Walk through the physical argument: a fluid by definition cannot sustain a static shear stress (any shear sets it in motion), so all the off-diagonal terms of the stress tensor vanish, and the diagonal terms must be equal (otherwise the fluid would shear under unequal compression). End with one sentence on what changes when the fluid is moving (then viscosity creates shear stresses, and pressure is no longer the only stress component).
-
-**What to do with the output:** Save it. The scalar-pressure-vs-tensor-stress distinction is foundational to continuum mechanics and explains why fluid statics is conceptually simpler than solid mechanics.
+<!-- → DIAGRAM: a small cube of fluid shown with pressure arrows on all six faces — each arrow labeled P and equal in magnitude; compare with a neighboring panel showing a solid block with different-length arrows on different faces (labeled σ_xx ≠ σ_yy); caption: "In a static fluid, pressure is the same in every direction — a scalar. In a solid, normal stress can differ by axis." Student should see the key distinction before any formula appears. -->
 
 ---
 
-## Concept 2 — Pressure with depth: $P = \rho g h$, Pascal's principle, hydraulic systems
+## Pressure with Depth
 
-### Why your ears pop on an airplane (and again at the bottom of a pool)
+The depth-pressure formula has the simplest possible derivation. Imagine a column of fluid with cross-section $A$ extending from the surface down to depth $h$. The fluid in the column has mass $\rho A h$. Its weight is $\rho A h g$. That weight is supported by the pressure at the bottom of the column minus the pressure at the top:
 
-You're at sea level, atmospheric pressure $\sim 10^5 \text{ Pa}$. The plane climbs to $3{,}000 \text{ m}$. Atmospheric pressure drops to about $0.7 \times 10^5 \text{ Pa}$. The cabin is partially pressurized but not all the way to sea-level — typically around $0.8$ atm. Your ears equilibrate as quickly as your eustachian tubes allow, and the pop is the equilibration.
+$$(P_{\text{bottom}} - P_{\text{top}}) \times A = \rho A h g.$$
 
-You're at sea level again, then dive into a swimming pool. Two meters down, your ears feel pressure. At that depth, in addition to the atmospheric pressure pressing on the water surface, you have $2 \text{ m}$ of water column above you adding extra pressure. Each meter of water adds $\rho g \times 1 \text{ m} = 1000 \times 9.80 \times 1 = 9{,}800 \text{ Pa}$ — about $0.1 \text{ atm}$. At $10 \text{ m}$ down, you've added a full atmosphere of pressure on top of the surface atmospheric.
+Dividing through by $A$:
 
-### The mechanism — the depth-pressure relation
+$$P_{\text{bottom}} = P_{\text{top}} + \rho g h.$$
 
-At a depth $h$ below the surface of a fluid of density $\rho$, the pressure is:
+If the surface is exposed to the atmosphere at pressure $P_0$, then the pressure at depth $h$ is:
 
-$$P = P_0 + \rho g h,$$
+$$P = P_0 + \rho g h.$$
 
-where $P_0$ is the pressure at the surface (atmospheric, if the fluid is exposed to air; or the pressure at whatever reference depth you choose).
+<!-- → DIAGRAM: a vertical fluid column of cross-section A extending from the surface to depth h — the top labeled P_top = P_0 with a downward arrow, the bottom labeled P_bottom with an upward arrow, the column itself labeled "mass = ρAh, weight = ρAhg"; a bracket alongside shows the depth h; the derivation steps (P_bottom − P_top) × A = ρAhg are written in a callout; student should see exactly where the formula comes from and why area cancels -->
 
-The derivation is short. Consider a column of fluid of cross-section $A$ extending from the surface down to depth $h$. Its weight is $\rho V g = \rho A h g$. That weight is supported by the pressure difference across its bottom and top: $(P_{\text{bottom}} - P_{\text{top}}) A = \rho A h g$. So $P_{\text{bottom}} - P_{\text{top}} = \rho g h$, which gives the formula.
+Notice what does not appear in this formula: the area of the column, the shape of the container, or the total volume of the fluid. The pressure at depth $h$ depends only on the density of the fluid, the gravitational acceleration, and the depth. A narrow laboratory cylinder and a wide ocean basin have exactly the same pressure at 10 meters below their surfaces if both are filled with water. This seems surprising until you see the derivation: it is simply the weight of the column above, per unit area. The width of the container is irrelevant.
 
-Notice what doesn't appear: the cross-sectional area, the shape of the container. The pressure at depth $h$ depends only on the density of the fluid, gravity, and depth. A narrow standpipe of water has the same pressure at its base as a wide swimming pool of the same depth.
+<!-- → DIAGRAM: three containers side by side — a narrow graduated cylinder, a wide flat aquarium, and an oddly shaped vessel (wider at top, narrow at bottom) — all filled to the same height h of water; at the bottom of each, an identical pressure label P = P_0 + ρgh; student should see that shape and width make no difference, only depth matters -->
 
-### Pascal's principle
+Every meter of fresh water adds $\rho g \times 1\text{ m} = 1000 \times 9.80 \approx 9{,}800$ Pa — about 0.097 atmospheres. Ten meters of water adds almost exactly one atmosphere. This is why scuba divers feel ear pressure at depth and why free divers must equalize frequently. It is also why a swimming pool 2 meters deep, at the bottom, is at 1.2 atmospheres absolute — one atmosphere from the air above, plus 0.2 from the water column.
 
-For an enclosed fluid (a tank with no free surface, or with the free surface at atmospheric pressure), if you increase the pressure at one point by some amount $\Delta P$, that increase is transmitted *undiminished* throughout the fluid. This is **Pascal's principle**.
-
-The application: hydraulic systems. Push down on a small piston ($A_1$) with force $F_1$. The pressure increase $\Delta P = F_1 / A_1$ is transmitted to a larger piston ($A_2$). The force on the larger piston is $F_2 = \Delta P \times A_2 = F_1 \times (A_2 / A_1)$. If $A_2 = 100 A_1$, you get $100\times$ force amplification.
-
-The trade-off (energy conservation, Chapter 7): the larger piston moves $1/100$ as far as the smaller. Total work in equals total work out. Pascal's principle redistributes force at the cost of distance — exactly like a lever.
-
-### The trade-off
-
-The depth-pressure relation $P = \rho g h$ assumes incompressible fluid and constant $g$. For water, both are excellent approximations even at depths of kilometers. For air, density itself varies with altitude (because air is compressible), so the relation needs modification — though over short altitude ranges, the linear formula is fine. This is the classic engineering trade: the simple formula works in most practical regimes; the corrections matter at extremes.
-
-### Worked example — hydraulic jack lifting a car
-
-A hydraulic jack has a small piston of area $A_1 = 5.0 \text{ cm}^2$ and a large piston of area $A_2 = 250 \text{ cm}^2$. (a) If you push down on the small piston with $200 \text{ N}$, what force is exerted by the large piston? (b) If the small piston moves down $10 \text{ cm}$, how far does the large piston rise?
-
-**(a) Force amplification.**
-
-$$F_2 = F_1 \frac{A_2}{A_1} = 200 \times \frac{250}{5.0} = 200 \times 50 = 10{,}000 \text{ N}.$$
-
-A $200 \text{ N}$ push generates $10{,}000 \text{ N}$ of lift — enough to raise a $1{,}000 \text{ kg}$ car (weight $9{,}800 \text{ N}$).
-
-**(b) Distance.** Volume conservation: $A_1 d_1 = A_2 d_2$.
-
-$$d_2 = d_1 \frac{A_1}{A_2} = 10 \times \frac{5.0}{250} = 0.20 \text{ cm} = 2.0 \text{ mm}.$$
-
-The large piston rises $2 \text{ mm}$ for every $10 \text{ cm}$ of small-piston travel. To lift a car $0.5 \text{ m}$, you'd need $250$ pump strokes — which is why hydraulic jacks have ratchets and you pump them many times.
-
-**Sanity check.** Force amplification $\times$ distance ratio $= (250/5) \times (5/250) = 1$. Energy in equals energy out. Pascal's principle gives you force at the cost of distance. Consistent with conservation of energy from Chapter 7.
-
-### Common misconceptions
-
-- *"Pressure depends on the shape of the container."* It doesn't. $P = \rho g h$ depends only on depth (and $\rho$, $g$). A tall narrow column of water at the bottom has the same pressure as a shallow wide pool of the same depth.
-- *"Hydraulic systems multiply energy."* They don't. They multiply *force* at the cost of distance. Total work is conserved. Energy is not free.
-
-↳ **Dig Deeper — Atmospheric pressure as the weight of the air column above you**
-
-*The atmosphere is a fluid (gas) under gravity. The pressure at sea level — about $1.013 \times 10^5 \text{ Pa}$ or $14.7 \text{ psi}$ — is the weight per unit area of all the air directly above you. Computing this from first principles requires integrating because air's density varies with altitude.*
-
-**Prompt:**
-> Use $P = \rho g h$ (or its integral form, since $\rho$ varies with altitude) to estimate atmospheric pressure at sea level. Take an effective scale height of about 8 km for the atmosphere (the height over which density falls by a factor of $e$). Show that the pressure works out to about $10^5 \text{ Pa}$. Then explain (a) why the formula $P = \rho g h$ is exactly right for an incompressible liquid but only approximate for the atmosphere, (b) why Mt. Everest's summit (~9 km) has roughly $1/e \approx 37\%$ of sea-level pressure, (c) what this means for hikers / climbers physiologically.
-
-**What to do with the output:** Save it. The connection between depth-pressure relations and atmospheric structure is foundational to meteorology and high-altitude physiology.
+Now a thought that is easy to miss: this formula assumes the fluid is incompressible and that $g$ is constant. For water, both assumptions are excellent even at thousands of meters of depth — water is nearly incompressible. For air, neither assumption holds well over large altitude ranges. Air is compressible; its density decreases with altitude in a way that must be accounted for by integrating rather than simply multiplying. The linear formula still works over short altitude ranges, but corrects for mountain height, airplane cabins, and atmospheric science need the integral form. The Mariana Trench calculation at the chapter's opening works precisely because seawater is nearly incompressible.
 
 ---
 
-## Concept 3 — Buoyancy and Archimedes' principle
+## Pascal's Principle and Hydraulic Systems
 
-### Eureka, in a bath
+Here is a fact about enclosed fluids that follows from the depth-pressure relation. Suppose you have a sealed container of fluid — no free surface — and you increase the pressure at one point by pushing on a piston. The pressure at every other point in the fluid increases by the same amount. This is Pascal's principle: pressure applied to an enclosed fluid is transmitted undiminished to every part of the fluid and to the walls of the container.
 
-The story is that Archimedes, sometime around 250 BC, was asked by King Hiero II of Syracuse to determine whether a goldsmith had cheated by replacing some of a crown's gold with silver. Archimedes was stuck on the problem until he stepped into a public bath and noticed the water level rise as he submerged. He realized, the legend goes, that the volume of water displaced equals the volume of the submerged object. Since gold and silver have different densities, comparing the crown's mass to its volume (via water displacement) would reveal whether it was pure gold. He shouted "Eureka!" — Greek for "I have found it!" — and ran naked through the streets to tell the king.
+The proof is in the formula. $P = P_0 + \rho g h$. If $P_0$ increases by $\Delta P$, then $P$ at every depth increases by $\Delta P$. The geometry is irrelevant — the increment propagates.
 
-Whether the bath story is literal or apocryphal, the underlying principle is real and bears Archimedes' name:
+The hydraulic jack exploits this. A small piston of area $A_1$ is pushed down with force $F_1$, increasing the pressure in the fluid by $\Delta P = F_1 / A_1$. A large piston of area $A_2$ on the other side of the fluid experiences the same pressure increase, generating a force:
 
-**Archimedes' principle:** the buoyant force on a submerged or partially submerged object equals the weight of the fluid the object displaces.
+$$F_2 = \Delta P \times A_2 = F_1 \times \frac{A_2}{A_1}.$$
 
-### The mechanism — buoyant force from pressure differences
+<!-- → DIAGRAM: cross-section of a hydraulic jack — a small piston on the left (labeled A_1, F_1 ↓) connected via fluid to a large piston on the right (labeled A_2, F_2 ↑, with A_2 ≫ A_1); the same ΔP arrow points into both fluid columns; below the diagram, two annotations: "force amplification = A_2/A_1" and "distance ratio = A_1/A_2 (large piston moves less)"; student should see both the force amplification and the distance trade-off in one image -->
 
-Consider a cube of side $L$ submerged in a fluid, with its top at depth $h_1$ and bottom at depth $h_2 = h_1 + L$. The pressure on the top is $P_1 = P_0 + \rho g h_1$; on the bottom, $P_2 = P_0 + \rho g h_2$. The pressure on the bottom is greater than on the top by $\rho g L$.
+If the large piston has fifty times the area of the small one, you get fifty times the force. A modest push produces a force large enough to lift a car.
 
-Forces: on the top, $P_1 \times L^2$ pushing down. On the bottom, $P_2 \times L^2$ pushing up. Net upward force:
+This is not free energy. Energy is conserved. The large piston moves $A_1/A_2$ times as far as the small one. Work in (small force times large distance) equals work out (large force times small distance). Pascal's principle redistributes force at the cost of distance — exactly the same trade as a mechanical lever, expressed in fluid rather than rigid-body language. A hydraulic jack is a lever with an arbitrarily adjustable ratio, set by the ratio of piston areas.
 
-$$F_{\text{buoy}} = (P_2 - P_1) L^2 = \rho g L \times L^2 = \rho g V_{\text{cube}}.$$
-
-But $\rho V_{\text{cube}}$ is the mass of fluid that would occupy the cube's volume — i.e., the mass of fluid the cube displaced. So:
-
-$$F_{\text{buoy}} = \text{(weight of displaced fluid)}.$$
-
-This is Archimedes' principle. The argument generalizes to any shape (not just a cube), because all shapes can be approximated as collections of small cubes.
-
-**Sinking vs. floating.** An object sinks if its weight exceeds the buoyant force when fully submerged — i.e., if its density exceeds that of the fluid. An object floats if its density is less than the fluid's. A floating object displaces just enough fluid for the buoyant force to equal its weight; the rest sticks up above the surface.
-
-A steel ship floats not because steel is less dense than water (it isn't) but because the ship's *average* density (steel + a lot of enclosed air) is less than water's. A solid block of the same steel would sink; the hull's volume gives it average density below water's.
-
-### The trade-off
-
-Archimedes' principle trades **detailed pressure-on-surface integration** for **a single rule about displaced fluid weight.** The cost: the rule doesn't tell you about pressure distribution (which can matter for designing pressure hulls). The benefit: it tells you the *net* buoyant force in one line, regardless of object shape.
-
-### Worked example — the gold crown problem
-
-A crown weighs $7.84 \text{ N}$ in air. Submerged in water, its apparent weight (buoyant force subtracted) is $6.84 \text{ N}$. Is the crown pure gold? (Density of gold: $19{,}300 \text{ kg/m}^3$; water: $1{,}000 \text{ kg/m}^3$.)
-
-**Buoyant force.** $F_{\text{buoy}} = 7.84 - 6.84 = 1.00 \text{ N}$.
-
-**Volume of crown** (volume of water displaced).
-
-$$F_{\text{buoy}} = \rho_{\text{water}} g V \implies V = \frac{F_{\text{buoy}}}{\rho_{\text{water}} g} = \frac{1.00}{1000 \times 9.80} \approx 1.02 \times 10^{-4} \text{ m}^3.$$
-
-**Mass of crown.**
-
-$$m = W/g = 7.84 / 9.80 = 0.800 \text{ kg}.$$
-
-**Density of crown.**
-
-$$\rho_{\text{crown}} = \frac{m}{V} = \frac{0.800}{1.02 \times 10^{-4}} \approx 7{,}840 \text{ kg/m}^3.$$
-
-This is much less than gold's $19{,}300 \text{ kg/m}^3$. The crown is not pure gold. (It's denser than aluminum, but lighter than gold — consistent with a gold-silver mix or some other diluted alloy.)
-
-**Sanity check.** A pure gold crown of mass $0.800 \text{ kg}$ would have volume $0.800/19300 \approx 4.1 \times 10^{-5} \text{ m}^3$ — about $40 \text{ mL}$ — and would displace only $0.40 \text{ N}$ of buoyant force, giving apparent weight $7.44 \text{ N}$. Our measurement of $6.84 \text{ N}$ is far below that — the crown displaces more water than pure gold would, indicating it's less dense.
-
-### Common misconceptions
-
-- *"Buoyant force depends on depth."* It doesn't (much) for incompressible fluids. The buoyant force on a submerged object is the weight of the displaced fluid — which depends on the volume of the object and the fluid's density, not on how deep the object is.
-- *"Wood floats because it's lighter than water."* Wood floats because it's *less dense* than water. A small block of wood and a large log both float — but the log is much heavier than the small block. Density (mass per volume), not mass, determines flotation.
-
-↳ **Dig Deeper — Surface tension, capillary action, and how mosquitoes walk on water**
-
-*The surface of a fluid behaves as if it has a thin elastic skin under tension. This is surface tension, arising from cohesive forces between fluid molecules. It's what lets some insects walk on water, what shapes water droplets, and what drives capillary action — the rise of fluid in a thin tube.*
-
-**Prompt:**
-> Explain surface tension as a consequence of cohesive forces between liquid molecules at a free surface. Compute (a) the surface tension of water at room temperature ($\gamma \approx 0.073 \text{ N/m}$), (b) the height water rises in a $1 \text{ mm}$ diameter glass capillary tube using Jurin's law $h = 2\gamma \cos\theta / (\rho g r)$ with $\theta \approx 0$ for water-on-glass and $r$ the radius. End with one sentence on why mercury in a glass tube *falls* below the surrounding level (the contact angle exceeds $90°$, so $\cos\theta$ is negative).
-
-**What to do with the output:** Save it. Surface tension is the entry point to soap films, foams, contact angles, and the molecular forces in fluid biology (lung surfactant, plant transpiration).
+The hydraulic brake system in your car works the same way. You push on a small pedal; the master cylinder transmits the pressure to brake cylinders at each wheel that have larger areas; the calipers grip the rotors with forces much larger than your foot could produce directly. The fluid is the mechanical linkage. Unlike a cable, it can route around corners, through complex geometry, to every wheel simultaneously.
 
 ---
 
-## Synthesis — fluids at rest
+## Archimedes' Principle
 
-Step back. Three concepts:
+Around 250 BCE, Archimedes of Syracuse was asked whether King Hiero's crown was pure gold or had been adulterated with silver. The density argument was obvious in retrospect: gold and silver have different densities, so a crown of the same mass would have different volumes if it contained silver. But how to measure the volume of an irregular shape? The legend says a bath gave him the insight — water displaced by a submerged object reveals the object's volume. The principle he arrived at is more powerful than just volume measurement.
 
-**Density and pressure** are the fundamentals. Pressure is force per unit area; in a static fluid, it's the same in every direction at a point.
+The buoyant force on any object submerged in a fluid equals the weight of the fluid the object displaces.
 
-**Pressure with depth** ($P = \rho g h$), Pascal's principle, hydraulic systems. Pressure increases linearly with depth in an incompressible fluid; pressure applied to an enclosed fluid is transmitted everywhere.
+The derivation is clean. Consider a cube submerged in fluid with its top face at depth $h_1$ and bottom face at depth $h_2 = h_1 + L$. Pressure on the top face: $P_0 + \rho g h_1$, pushing down. Pressure on the bottom face: $P_0 + \rho g h_2$, pushing up. Net upward force:
 
-**Buoyancy** (Archimedes' principle): the buoyant force on a submerged object equals the weight of the displaced fluid. Floating/sinking is decided by average density compared to fluid density.
+$$(P_0 + \rho g h_2 - P_0 - \rho g h_1) \times A = \rho g (h_2 - h_1) \times A = \rho g L A = \rho g V.$$
 
-The **scale shift**: from a $9{,}800 \text{ Pa}$ pressure increase at $1 \text{ m}$ depth in a swimming pool, to $110 \text{ MPa}$ at $11 \text{ km}$ depth in the Mariana Trench, to gigapascals at the center of the Earth. The same equation $P = \rho g h$ (or its integral form for non-uniform density) applies. From $1 \text{ atm}$ at sea level to vacuum in space, to $10^5$ atm at the center of Jupiter. Pressure spans tens of orders of magnitude in nature, all governed by the same machinery.
+<!-- → DIAGRAM: a cube submerged in fluid — top face at depth h_1 with a downward pressure arrow labeled P_top = P_0 + ρgh_1; bottom face at depth h_2 = h_1 + L with a larger upward pressure arrow labeled P_bottom = P_0 + ρgh_2; the side faces show equal horizontal arrows (they cancel); a net upward arrow labeled F_buoy = ρgV appears beside the cube; the caption notes: "bottom pressure exceeds top pressure by ρgL — that difference times area gives the buoyant force" -->
 
-### A worked example using all three concepts — a submarine in equilibrium
+Here $V = LA^2$ is the cube's volume and $\rho g V$ is the weight of a volume $V$ of fluid — the weight of the displaced fluid. The argument generalizes to any shape, because any shape can be decomposed into small cubes.
 
-A small submarine of mass $50{,}000 \text{ kg}$ has hull volume $48 \text{ m}^3$. The hull is mostly empty space (the metal walls plus crew quarters). It floats half-submerged at the surface (with half its volume — $24 \text{ m}^3$ — under water). To dive, ballast tanks (each $5 \text{ m}^3$) are flooded with seawater. (a) What buoyant force does it experience while half-submerged? (b) How many ballast tanks must be flooded to make it neutrally buoyant (just barely sinking)?
+Whether an object sinks or floats comes down to a comparison of densities. If the object's density is greater than the fluid's, its weight exceeds the maximum buoyant force (when fully submerged), and it sinks. If less, the buoyant force when fully submerged exceeds the weight, and the object rises until it is only partially submerged — floating at whatever depth brings the buoyant force back into balance with the weight.
 
-**Concept 1 — pressure / density setup.** Density of seawater $\rho = 1{,}030 \text{ kg/m}^3$. Submarine weight $W = mg = 50{,}000 \times 9.80 = 490{,}000 \text{ N}$.
+A floating object displaces a weight of fluid equal to its own weight. This is worth pausing on. An iceberg whose density is 917 kg/m³ in fresh water (density 1,000 kg/m³) submerges $917/1000 = 91.7\%$ of its volume. In seawater (1,030 kg/m³), it submerges $917/1030 = 89\%$. The famous "nine-tenths underwater" is close to correct for seawater. The exact fraction depends only on the ratio of densities.
 
-**Concept 2 — pressure at depth (not directly used here for floating, but relevant for diving):** Surface pressure $\sim 1 \text{ atm}$; at $100 \text{ m}$ depth, additional pressure $\rho g h = 1030 \times 9.80 \times 100 \approx 10^6 \text{ Pa} \approx 10 \text{ atm}$.
+<!-- → DIAGRAM: an iceberg cross-section — the full volume drawn as a vertical rectangle; a waterline cuts across it; above the waterline labeled "~11% visible" with hatching; below labeled "~89% submerged (seawater)"; a second smaller panel shows the same iceberg in fresh water with slightly more submerged (~92%); beneath both: "submerged fraction = ρ_ice / ρ_fluid — only the density ratio matters" -->
 
-**Concept 3 — Archimedes.** While half-submerged, displaced water = $24 \text{ m}^3$. Mass of displaced water = $24 \times 1030 = 24{,}720 \text{ kg}$. Buoyant force = $24{,}720 \times 9.80 \approx 242{,}000 \text{ N}$.
+A steel ship floats not because steel is less dense than water — steel is about 7.8 times denser. It floats because the average density of the ship as a whole (steel hull plus enclosed air) is less than water. The hull's volume gives the ship enough displacement capacity that the buoyant force, spread across all that volume, exceeds the ship's weight. Fill the hull with water — which eliminates the air — and the average density becomes much greater than water's, and the ship sinks. The Titanic sank not because water is heavier than steel but because flooding the compartments eliminated the air volume that gave the ship its buoyancy.
 
-But $W = 490{,}000 \text{ N}$ — twice the buoyant force at half-submerged. This means the submarine *wouldn't* float half-submerged with the given numbers; it would sink. Let me redo: if the sub floats at the surface, its average density (mass / total volume) must equal water's density, so:
+**The gold crown, quantitatively.** A crown weighs 7.84 N in air. Submerged in water, it reads 6.84 N on the scale. The buoyant force is $7.84 - 6.84 = 1.00$ N. By Archimedes' principle, this equals the weight of the displaced water: $F_b = \rho_\text{water} g V$, so $V = 1.00 / (1000 \times 9.80) \approx 1.02 \times 10^{-4}$ m³. The mass of the crown is $7.84/9.80 = 0.800$ kg. Its density is therefore $0.800 / (1.02 \times 10^{-4}) \approx 7{,}840$ kg/m³. Gold's density is 19,300 kg/m³. The crown is not pure gold. Archimedes was right to be suspicious, and now you know exactly how suspicious to be.
 
-$$\rho_{\text{sub, avg}} = m / V_{\text{total}} = 50000 / 48 \approx 1042 \text{ kg/m}^3.$$
+---
 
-This is greater than seawater's $1030$ — so actually the empty submarine (without flooding tanks) sinks. Let me reframe the problem: assume the submarine is designed with $V_{\text{total}} = 50 \text{ m}^3$ such that average density empty is $50000/50 = 1000 < 1030$, so it floats.
+## The Pressure Field From Trench to Teacup
 
-If submarine total volume (empty hull) is $V_{\text{total}} = 50 \text{ m}^3$, fully submerged buoyant force = $50 \times 1030 \times 9.80 = 504{,}700 \text{ N}$. Weight = $490{,}000 \text{ N}$. Net upward force = $14{,}700 \text{ N}$ — submarine wants to float.
+Return to the opening. Why does the depth-pressure formula work across such a vast range — from a 2-meter swimming pool to an 11-kilometer ocean trench? Because it is, at its core, just Newton's second law applied to a column of fluid in equilibrium. The weight of the fluid above pushes down; the pressure from the fluid below pushes up; they balance. The formula $P = P_0 + \rho g h$ is Newton's first law for a fluid column. Nothing more.
 
-To make it neutrally buoyant, flood ballast: each $5 \text{ m}^3$ tank, when filled with $5{,}150 \text{ kg}$ of seawater, adds $50{,}500 \text{ N}$ of weight and reduces effective displaced volume by $5 \text{ m}^3$ (so $51{,}500 \text{ N}$ of buoyancy is replaced by water that adds nothing to net buoyancy). Net change per tank: $-101{,}000 \text{ N}$ approximately. To overcome the $14{,}700 \text{ N}$ excess buoyancy, you need ~$0.15$ tanks worth — i.e., partially filling one tank. The exact value depends on the tank geometry; the algebra gives the answer.
+The same logic that produces 9,800 Pa per meter of water produces 110 MPa at 11,228 meters. The multiplier is the depth. The machinery is identical. This is the kind of universality that is worth pausing to appreciate: a formula derived by balancing the weight of a thin fluid layer works equally well for a teacup and for the deepest trench in the ocean.
 
-This synthesis exercises all three concepts: density (water density and average submarine density), pressure (matters during the dive though not directly in equilibrium), and buoyancy (Archimedes determining the float / sink condition). Real submarine ballast control is a matter of fine-tuning the average density to be just barely above or below seawater's — and most submarines also use trim tanks to adjust pitch.
+The limits of the formula are worth noting. Water is nearly incompressible, so $\rho$ stays constant — the formula is exact to within fractions of a percent even at full ocean depth. Air is not: its density falls off exponentially with altitude, and integrating the formula gives an exponential rather than linear pressure-altitude relation. But for everyday heights — a few hundred meters — the linear approximation holds well. The correction matters for airplane cabins, mountaineering, and atmospheric science, not for hydraulics or diving.
+
+What the formula does not contain: the horizontal extent of the fluid, the shape of the container, the position in the horizontal plane. Pressure in a static fluid is a function only of depth (and the surface conditions). This simplicity is the gift of isotropy. Because the fluid has no preferred direction, the pressure field has no preferred horizontal direction. It varies only with the one remaining variable: vertical position.
+
+---
+
+## What Would Change My Mind
+
+The incompressible-static-fluid framework, with $P = \rho g h$ and Archimedes' principle, has been tested against everything from ship design to submarine engineering to blood pressure physiology, and it has not failed at the scales where its assumptions hold. The argument would require revision if a class of fluids routinely violated the incompressible assumption at pressures where the formula is commonly applied — but water, which is by far the most common fluid in engineering and biology, is compressible by only about 0.05% per atmosphere. At Mariana Trench pressures, the true density of seawater is about 5% higher than surface density — a small but real correction that deeper precision calculations must include.
+
+## Still Puzzling
+
+Why is pressure isotropic in a static fluid? The mechanics argument — fluids cannot sustain static shear, so the stress tensor must be isotropic — is correct, but its molecular basis is in statistical mechanics: the thermal motion of molecules distributes momentum equally in all directions, and at equilibrium the time-averaged pressure from molecular collisions is the same on every face of any small element. We will not reach kinetic theory until Chapter 19. Until then, isotropy is a fact to use; the reason it is true requires a different framework.
 
 ---
 
@@ -291,41 +142,65 @@ This synthesis exercises all three concepts: density (water density and average 
 
 ### Warm-up
 
-**11.1** *(LO 1)* A block of aluminum has dimensions $0.10 \text{ m} \times 0.10 \text{ m} \times 0.20 \text{ m}$. Density of aluminum is $2{,}700 \text{ kg/m}^3$. (a) Volume? (b) Mass? (c) Weight on Earth?
+**1.** A 5.0 kg block of aluminum ($\rho = 2{,}700$ kg/m³) is placed in a tank of water. (a) What is its volume? (b) What is the buoyant force when fully submerged? (c) Does it sink or float? Explain using density, not force.
 
-**11.2** *(LO 2)* A force of $400 \text{ N}$ is applied perpendicular to a $0.020 \text{ m}^2$ surface. What is the pressure?
+*Tests: density calculation; buoyant force from Archimedes; float/sink criterion.*
 
-**11.3** *(LO 3)* What is the gauge pressure (above atmospheric) at $5.0 \text{ m}$ depth in fresh water?
+**2.** A force of 600 N is applied to a surface of area 0.015 m². (a) What is the pressure in Pa? (b) Convert to atm and psi. (c) Is this above or below atmospheric pressure?
 
-**11.4** *(LO 5)* A $2.0 \text{ kg}$ object hung from a spring scale reads $20 \text{ N}$ in air and $15 \text{ N}$ when fully submerged in water. (a) What is the buoyant force? (b) What is the object's volume? (c) What is the object's density?
+*Tests: $P = F/A$; unit conversion.*
 
-### Application
+**3.** What is the gauge pressure (above atmospheric) at a depth of 8.0 m in fresh water? Express in Pa and in atm.
 
-**11.5** *(LO 3)* Compute the absolute pressure at the bottom of a $3.0 \text{ m}$ deep swimming pool, including atmospheric pressure ($1.01 \times 10^5 \text{ Pa}$).
+*Tests: $P = \rho g h$ for gauge pressure; 9,800 Pa/m rule.*
 
-**11.6** *(LO 4)* A hydraulic lift has small piston area $20 \text{ cm}^2$ and large piston area $400 \text{ cm}^2$. (a) What input force lifts a $1{,}500 \text{ kg}$ car? (b) If the small piston moves down $20 \text{ cm}$, how high does the car rise?
+**4.** A 2.0 kg object weighs 18 N in air and 12 N when fully submerged in water. (a) What is the buoyant force? (b) What is the object's volume? (c) What is its density? (d) Does it sink or float in seawater ($\rho = 1{,}030$ kg/m³)?
 
-**11.7** *(LO 5)* A block of wood ($\rho = 700 \text{ kg/m}^3$) is placed in fresh water. What fraction of its volume is submerged? In seawater?
-
-**11.8** *(LO 5)* A helium balloon (volume $0.030 \text{ m}^3$, mass of balloon material $0.010 \text{ kg}$, helium density $0.18 \text{ kg/m}^3$, air density $1.21 \text{ kg/m}^3$) is released. What is the maximum mass it can lift (in addition to itself)?
-
-### Synthesis
-
-**11.9** *(LO 1, 5)* A solid ice cube ($\rho_{\text{ice}} = 917 \text{ kg/m}^3$) of side $4 \text{ cm}$ floats in fresh water. (a) Compute the volume submerged. (b) Compute the height of ice above the water surface.
-
-**11.10** *(LO 3, 5)* A diver descends to $50 \text{ m}$ depth in seawater. (a) What absolute pressure does she experience? In atm? (b) If her lungs (at the surface) hold $4 \text{ L}$ of air at atmospheric pressure, and the air is compressed isothermally during descent, what volume do the lungs hold at $50 \text{ m}$? (Use $PV = $ constant for isothermal compression, from the gas laws — preview of Ch. 13.)
-
-**11.11** *(LO 1, 5)* A boat with mass $5{,}000 \text{ kg}$ floats in fresh water with $0.40 \text{ m}^2$ of waterline (the area at the water surface). When 8 passengers totaling $640 \text{ kg}$ board, by how much does the boat sink (assume the waterline area doesn't change much)?
-
-### Challenge
-
-**11.12** *(beyond chapter)* A cylindrical pressure vessel ($d = 1.0 \text{ m}$, length $5.0 \text{ m}$) holds water at gauge pressure $5.0 \times 10^5 \text{ Pa}$ ($\sim 5 \text{ atm}$). (a) Compute the total force on each circular end-cap. (b) Compute the total force trying to split the cylinder along a longitudinal seam. (c) Comment on why pressure vessels typically have rounded ends.
-
-**11.13** *(beyond chapter)* Estimate the depth at which a glass of water held by a scuba diver would burst due to internal-vs-external pressure mismatch. (Glass yield stress $\sim 50 \text{ MPa}$ in tension; assume the glass is $3 \text{ mm}$ thick and $7 \text{ cm}$ in diameter.)
+*Tests: buoyant force from apparent weight difference; Archimedes applied to density measurement.*
 
 ---
 
-## LLM Exercise — Chapter 11: Fluid Statics in Your Anchor Phenomenon
+### Application
+
+**5.** A hydraulic lift has a small piston of area $15 \text{ cm}^2$ and a large piston of area $600 \text{ cm}^2$. (a) What input force is needed to lift a 1,200 kg car? (b) If the small piston moves down 25 cm, how far does the car rise? (c) How much work is done by the input force? By the output force? Are they equal?
+
+*Tests: Pascal's principle for force amplification; energy conservation check.*
+
+**6.** A scuba diver descends to 30 m depth in seawater ($\rho = 1{,}030$ kg/m³). (a) What is the absolute pressure at that depth? Express in Pa and atm. (b) If the diver's tank delivers air at the same pressure as the surrounding water, what pressure is the air inside at 30 m?
+
+*Tests: absolute vs. gauge pressure; $P = P_0 + \rho g h$ with seawater density.*
+
+**7.** A wooden block ($\rho_{\text{wood}} = 650$ kg/m³, volume $0.0040$ m³) floats in fresh water. (a) What fraction of the block is submerged? (b) What is the mass of water displaced? (c) What is the weight of displaced water, and how does it compare to the block's weight?
+
+*Tests: floating fraction = density ratio; displaced-weight equals object weight.*
+
+**8.** The Mariana Trench calculation from the chapter opening: verify that $P = \rho g h$ at $h = 10{,}928$ m in seawater ($\rho = 1{,}030$ kg/m³) gives approximately 110 MPa. Then express this in atmospheres and in psi. Confirm it is roughly 1,100 times atmospheric pressure.
+
+*Tests: direct application of depth-pressure formula; unit conversions at extreme scales.*
+
+---
+
+### Synthesis
+
+**9.** A hollow steel sphere (outer radius 0.15 m, inner radius 0.12 m, steel density 7,800 kg/m³) is placed in seawater. (a) Calculate the mass of steel in the sphere. (b) Calculate the buoyant force when fully submerged. (c) Does it float or sink? (d) If it floats, what fraction protrudes above the waterline? If it sinks, how much additional air volume (sealed inside) would be needed to make it neutrally buoyant?
+
+*Tests: average density of a composite object; buoyancy applied to a hollow structure; connecting to ship/submarine design.*
+
+**10.** A person's blood pressure is measured as 120/80 mmHg at heart level. The person stands upright. Blood ($\rho_{\text{blood}} \approx 1{,}060$ kg/m³) must travel from the heart to the brain (approximately 30 cm above heart level) and to the feet (approximately 120 cm below heart level). (a) What is the hydrostatic pressure increase in the blood at foot level compared to heart level? Express in mmHg and in Pa. (b) What pressure must the heart supply to push blood upward to the brain against the hydrostatic gradient? (c) Why might standing for long periods cause fluid to pool in the legs?
+
+*Tests: $P = \rho g h$ applied to physiology; reasoning about hydrostatic gradient in a living system; connecting to real medical phenomena.*
+
+---
+
+### Challenge
+
+**11.** Design problem: you want to build a submersible that can descend to 500 m in seawater. The crew sphere must maintain interior pressure at 1 atm. (a) What is the exterior pressure at 500 m? (b) What is the pressure difference the hull must withstand, in MPa? (c) The sphere has inner radius 0.80 m. If the hull material has a compressive yield strength of 500 MPa and the required safety factor is 3, what minimum wall thickness is needed? (Use the thin-shell approximation: wall stress $= \Delta P \times r / (2t)$ where $t$ is wall thickness.) (d) Compare to the 9 cm titanium hull of the *Limiting Factor* at 11 km.
+
+*Tests: $P = \rho g h$ at engineering scale; thin-shell stress analysis; connecting chapter physics to actual design constraints.*
+
+---
+
+## LLM Exercise — Chapter 14: Fluid Statics in Your Anchor Phenomenon
 
 **Project:** Physics Reality Check Logbook
 **What you're building this chapter:** A pressure or buoyancy analysis of one fluid element in your anchor phenomenon.
@@ -334,81 +209,64 @@ This synthesis exercises all three concepts: density (water density and average 
 ### The Prompt
 
 ```
-I'm continuing my Physics Reality Check Logbook for College Physics with LLMs. My anchor phenomenon is [paste 1-sentence description].
+I'm continuing my Physics Reality Check Logbook for College Physics
+with LLMs. My anchor phenomenon is [paste 1-sentence description].
 
-For Chapter 11, I want to apply fluid statics — pressure, depth, buoyancy — to one fluid in my phenomenon. Please:
+For Chapter 14, I want to apply fluid statics — pressure, depth,
+buoyancy — to one fluid in my phenomenon. Please:
 
-1. Identify ONE fluid element in my phenomenon (a static fluid or a fluid at near-equilibrium). Examples:
-   - Bike commute: tire pressure (gauge vs. absolute); pressure under each wheel.
-   - Coffee maker: pressure of the water column above the heating element; pressure at the brewing chamber gasket.
+1. Identify ONE fluid element in my phenomenon (a static fluid or
+   a fluid at near-equilibrium). Examples:
+   - Bike commute: tire pressure (gauge vs. absolute); pressure
+     under each wheel.
+   - Coffee maker: pressure of the water column above the heating
+     element; pressure at the brewing chamber gasket.
    - Basketball: pressure inside the inflated ball.
-   - Marathon: blood pressure in the runner's circulatory system at heart vs. feet (hydrostatic gradient).
-   - Espresso: pressure profile in the puck during 9-bar extraction (this is dynamic but the static piece can be analyzed first).
+   - Marathon: blood pressure in the runner's circulatory system
+     at heart vs. feet (hydrostatic gradient).
+   - Espresso: pressure profile in the puck during 9-bar
+     extraction (the static piece can be analyzed first).
 
-2. Identify the relevant fluid statics quantity: pressure, depth, density, buoyancy.
+2. Identify the relevant fluid statics quantity: pressure, depth,
+   density, buoyancy.
 
-3. Compute it using $P = F/A$, $P = \rho g h$, or Archimedes' principle as appropriate.
+3. Compute it using P = F/A, P = ρgh, or Archimedes' principle
+   as appropriate.
 
-4. Express the result in multiple units (Pa, atm, mmHg, psi as appropriate).
+4. Express the result in multiple units (Pa, atm, mmHg, psi as
+   appropriate).
 
-5. Sanity check: does the magnitude match what you'd expect? (Tire pressures should be a few atm; blood pressure ~100 mmHg systolic; a basketball ~8 psi gauge.)
+5. Sanity check: does the magnitude match what you'd expect?
+   (Tire pressures ~a few atm; blood pressure ~100 mmHg systolic;
+   a basketball ~8 psi gauge.)
 
-6. Identify which assumption (incompressible, static, no temperature gradient) is most likely to bite.
+6. Identify which assumption (incompressible, static, no
+   temperature gradient) is most likely to bite.
 
-7. One sentence on how this connects to Chapter 12 (fluid dynamics) — when fluid moves, pressure becomes part of an energy budget along with kinetic energy and elevation.
+7. One sentence on how this connects to Chapter 15 (fluid
+   dynamics) — when fluid moves, pressure becomes part of an
+   energy budget along with kinetic energy and elevation.
 
-Save the output as logbook/chapter-11-fluid-statics.md.
+Save the output as logbook/chapter-14-fluid-statics.md.
 ```
 
 ### What this produces
 
-An eleventh Logbook entry: a fluid-statics analysis of one element in your phenomenon, often surprising in the magnitudes.
+A Logbook entry: a fluid-statics analysis of one element in your phenomenon, often surprising in the magnitudes.
 
 ### How to adapt this prompt
 
 - *For phenomena with no obvious fluid* (a basketball shot in air): the air around the ball is a fluid; air pressure changes with altitude can be relevant.
 - *For ChatGPT or Gemini:* identical with substitutions.
-- *For Claude Code:* if you have pressure-time data (e.g., from a smart scale or pressure sensor), paste it for analysis.
+- *For Claude Code:* if you have pressure-time data (e.g., from a pressure sensor), paste it for analysis.
 
 ### Connection to previous chapters
 
-Builds on Chapter 4 (force, here as pressure × area), Chapter 7 (energy in hydraulic systems), Chapter 9 (statics — fluid statics is a special case where everything is balanced).
+Builds on Chapter 6 (force, here as pressure × area), Chapter 9 (energy in hydraulic systems), Chapter 12 (statics — fluid statics is a special case of static equilibrium).
 
 ### Preview of next chapter
 
-Chapter 12 takes fluids into motion. Bernoulli's principle relates fluid speed to pressure (faster flow has lower pressure). The continuity equation describes how flow speed changes with pipe cross-section. Fluid dynamics has its own conservation principles — and many medical and engineering applications (blood flow, airplane lift, plumbing).
-
----
-
-## Chapter summary
-
-Three pillars of fluid statics. **Density** $\rho = m/V$ is the basic property of a substance that determines floating, sinking, and how much it weighs per unit volume. **Pressure** $P = F/A$ is force concentration; in a static fluid, it's a scalar (same in every direction at a point). **Pressure with depth** $P = P_0 + \rho g h$ (incompressible fluid) lets you compute pressure at any depth. **Pascal's principle** says pressure changes propagate undiminished throughout an enclosed fluid — the basis of hydraulic systems. **Archimedes' principle** says buoyant force equals weight of displaced fluid — the basis of why things float or sink.
-
-The one idea that matters most: **fluid statics reduces all the geometric complexity of a fluid to a single scalar field, the pressure $P(x, y, z)$.** Once you know $P$ everywhere, you know all the forces the fluid exerts on any surface. The depth-pressure relation gives you $P$ in most everyday static situations.
-
-The common mistake to watch for: **conflating mass and density.** A ton of feathers has the same mass as a ton of bricks, but very different density. Whether something floats depends on density (relative to the fluid), not absolute mass.
-
-What you should now be able to teach someone else: how to compute pressure in a fluid at any depth, why a hydraulic jack amplifies force at the cost of distance, and how Archimedes' principle predicts whether an object floats. Three skills, one organizing principle: pressure, propagating through a fluid, generates all the forces.
-
----
-
-## What would change my mind
-
-The chapter argues that the static-fluid framework — incompressible, scalar pressure, $P = \rho g h$ — is sufficient for most practical engineering and biological applications. The argument would need revision if a class of static-fluid problems systematically required corrections beyond compressibility (e.g., for atmospheric pressure at large altitudes — which the chapter notes) or beyond the scalar approximation (e.g., for fluids with significant elasticity, like complex biological fluids). Both corrections are well-handled by extensions of the framework.
-
-## Still puzzling
-
-The deepest puzzle this chapter raises and does not resolve: **why is pressure isotropic in a static fluid, exactly?** The argument from "fluids can't sustain shear" is correct, but its molecular basis (random thermal motion of molecules, equilibrating collisions in all directions) connects fluid statics to statistical mechanics in a way that classical mechanics alone can't capture. We won't see kinetic theory until Chapter 13.
-
----
-
-## Connections forward
-
-Chapter 12 introduces fluid dynamics — fluids in motion. Bernoulli's equation is essentially energy conservation for fluids and reduces to $P + \rho g h + \tfrac{1}{2}\rho v^2 = $ constant along a streamline (when the fluid is steady, incompressible, and frictionless). Continuity equation describes mass conservation. Together, they predict everything from Venturi meters to airplane lift to blood flow through arteries. Chapter 13 (gas laws) treats compressible fluids — gases — with their own equations of state. Chapter 14 (heat) connects pressure to temperature via the ideal gas law. The static-fluid framework here is the foundation; later chapters add motion, compressibility, and thermal effects on top.
-
----
-
-**Tags:** fluid-statics, pressure, buoyancy, Pascals-principle, Archimedes
+Chapter 15 takes fluids into motion. Bernoulli's principle relates fluid speed to pressure along a streamline: $P + \rho g h + \frac{1}{2}\rho v^2 = \text{constant}$. The continuity equation describes how flow speed changes with pipe cross-section. Together they predict everything from Venturi meters to airplane lift to blood flow through arteries.
 
 ---
 
@@ -419,7 +277,10 @@ Chapter 12 introduces fluid dynamics — fluids in motion. Bernoulli's equation 
 **Run this:**
 
 ```
-Who was Blaise Pascal, and how does Pascal's principle connect to the fluid statics we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about his career or ideas.
+Who was Blaise Pascal, and how does Pascal's principle connect to
+the fluid statics we covered in this chapter? Keep it to three
+paragraphs. End with the single most surprising thing about his
+career or ideas.
 ```
 
 → Search **"Blaise Pascal"** on Wikipedia.
@@ -430,3 +291,7 @@ Who was Blaise Pascal, and how does Pascal's principle connect to the fluid stat
 - Ask it about Pascal's parallel career inventing the first calculating machine and pioneering probability theory.
 
 What changes? What gets better? What gets worse?
+
+---
+
+*Tags: fluid-statics; pressure; buoyancy; Pascals-principle; Archimedes; density; depth*
