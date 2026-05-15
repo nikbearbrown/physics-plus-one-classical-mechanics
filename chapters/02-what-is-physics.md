@@ -1,216 +1,201 @@
 # Chapter 2 — What is Physics?
 
-**Option 1:** The Universe Answers Back
-**Option 2:** How We Learn What the Universe Does
-**Option 3:** The Machinery Beneath Everything
+*The discipline that refuses to guess.*
 
 ---
 
-## TL;DR
+In November 2014, a spacecraft called Rosetta completed a 6.4-billion-kilometer journey to rendezvous with a comet four kilometers wide. The path was not straight. Rosetta had to swing past Mars, let Mars's gravity catch it and fling it forward, then coast for years before it arrived at the right place at the right moment. All of this was calculated in advance. Nobody flew it by hand. The comet was moving. Rosetta was moving. And yet it worked — because the same force that holds you to the floor of the room you are sitting in right now also predicts, to the meter, where a spacecraft will be in a decade.
 
-Physics is the science of discovering how the universe actually works—not through philosophy or guessing, but through building testable models of specific mechanisms and checking them against reality. The discipline teaches that most objects and processes follow rules that are universal: gravity that moves galaxies also holds you to Earth; the mathematics that predicts atomic motion predicts planetary motion; and nearly everything you encounter operates under conditions simple enough that you can understand the machinery.
+<!-- → IMAGE: Rosetta spacecraft photograph against the surface of Comet 67P — ESA public domain image; caption should note the scale (4 km wide comet, 6.4 billion km journey) to make the precision of the prediction viscerally clear -->
 
----
+That is what physics is. Not a collection of facts. Not a list of equations to memorize. It is the discovery that the universe runs on rules, and that those rules are universal — the same ones, everywhere, always. A force that works on Earth works on comets. Mathematics that describes how atoms move also describes how planets move. Once you have the rule, it is yours, and you can use it to predict things you have never seen.
 
-## Chapter Opening
-
-It is November 2014. A spacecraft called Rosetta, having traveled 6.4 billion kilometers since its launch on Earth, is approaching a lump of rock and ice called Comet 67P/Churyumov-Gerasimenko. The comet is only 4 kilometers wide. Rosetta's path was not straight. To reach this specific target—a moving target, traveling at speeds that shift constantly—the spacecraft first had to coast toward Mars, where Mars's gravity would catch it, accelerate it, and fling it in a new direction. This gravity trick, called a slingshot, is not magic. It is mathematics, prediction, and a very old kind of confidence: that the same force holding you to Earth's surface also controls the motion of planets across the solar system.
-
-In that moment, before the rendezvous, physics was doing what it always does: naming the machinery beneath the obvious. You do not see gravity in the everyday sense. You feel it. You do not calculate how fast objects fall. You observe they do. But between the observation and the prediction lies an entire discipline: the attempt to discover which questions the universe will answer, and how to ask them in a way that gets a reliable answer back.
-
-This chapter introduces you to that discipline. It shows you what physics actually is—which is not what you might think. It will reveal how the field discovered that the same laws govern both the very large (galaxies) and the very small (atoms). It will show you why physicists build models instead of measuring everything directly. And it will teach you how physicists use the scientific method to turn observation into knowledge that you can rely on.
-
-### Learning Objectives
-
-After completing this chapter, you will be able to:
-
-- Explain what physics is and distinguish it from other sciences
-- Describe how classical and modern physics differ and when each applies
-- Describe the role of models, approximations, and experimental testing in how physics works
-- Apply the scientific method to everyday problem-solving
-- Distinguish between a hypothesis, a theory, and a law in scientific terms
-
-### Prerequisites
-
-You should have familiarity with:
-
-- Basic algebra and proportional reasoning
-- The concept of an atom and subatomic particles
-- Decimal notation and exponents
-
-### Why This Chapter Matters
-
-Physics is a discipline built on one irreducible fact: the universe does not care what you believe about it. It responds to observation and experiment. Learning physics is learning to ask questions the universe can answer. Nearly everything you encounter—your phone, the GPS finding your location, the medical imaging that diagnoses disease, the engineering that makes buildings stand—relies on knowing the machinery underneath. This chapter teaches you how physicists learned to discover that machinery, and why the discoveries are reliable.
+This chapter is about that discovery and how it happened — and about the method physicists use to make sure they are not fooling themselves.
 
 ---
 
-## Core Concept 1: The Scope of Physics — What It Studies and What It Doesn't
+## What Physics Studies
 
-The word "physics" comes from the Greek *phusis*, meaning nature. From ancient times through the Renaissance, people called the study of nature *natural philosophy*, and it encompassed everything—astronomy, biology, chemistry, mathematics, medicine. Over centuries, knowledge branched and specialized. Physics is what remained at the foundation: the most basic facets of how the physical world operates.
+The word *physics* comes from the Greek *phusis*, which means nature. For centuries, the study of nature was not divided into separate disciplines. Astronomy, biology, chemistry, medicine — all of it was called *natural philosophy*, and everyone who studied it studied all of it. Physics is what settled at the bottom when the fields split: the most fundamental layer, the one concerned with matter, motion, energy, and the forces between things.
 
-Picture yourself standing at Stonehenge in England, built around 3000 BCE. Ancient peoples were watching the sky. They tracked the sun, moon, and stars. They did not have telescopes or instruments of precision. They had their eyes and the geometric shapes they carved into stone. They noticed patterns. They recorded them in stone. This is the beginning of physics: observation of motion, of how objects move and how forces push and pull on them.
+<!-- → INFOGRAPHIC: tree diagram showing natural philosophy branching into physics, chemistry, biology, astronomy, and medicine over roughly 400 years — left side labeled "natural philosophy (pre-17th century)", right side showing the modern disciplines as labeled branches; physics at the root to show it as the foundational layer -->
 
-Fast-forward to 1608. A German spectacle maker named Hans Lippershey invents the telescope. One year later, Galileo Galilei points it at the sky. What he sees contradicts what people have believed for centuries. The moon has mountains. Jupiter has moons. In using an instrument to extend human sight beyond its limits, Galileo did something that would define physics forever: he built a tool that let reality contradict authority. Isaac Newton later used Galileo's observations to construct his three laws of motion. Those laws were so predictive, so reliable, that they remained the standard for understanding kinematics and dynamics—how things move and what makes them move—until the 20th century.
+At Stonehenge, built around 3000 BCE, people carved stones into geometric shapes and aligned them with the sun. They were not doing physics in the modern sense — they had no instruments of precision, no way to test a hypothesis and record the result. But they were observing motion, tracking patterns in how the sky changes, and trying to record what they found. That impulse — look carefully, find the pattern, write it down — is where physics begins.
 
-Physics is the science aimed at describing the fundamental aspects of our universe. What things are in it. What properties those things have. What processes they undergo. In simpler terms: physics attempts to describe the basic mechanisms that make the universe behave as it does.
+The modern form of the discipline takes shape with Galileo in the early 17th century. In 1609, he pointed a telescope at the sky and found things that contradicted what people had believed for a thousand years. The moon had mountains. Jupiter had moons of its own. More importantly, Galileo understood something about what he was doing that his predecessors had not fully grasped: the question was not what the heavens *ought* to look like. The question was what they *actually* looked like. Observation was the authority, not philosophy.
 
-Here is the crucial distinction: **Physics answers "how?" and "what is the mechanism?" It does not answer "should we?"** Physics can tell you that a nuclear chain reaction releases energy. It cannot tell you whether you should build a nuclear power plant or nuclear weapons. Physics can tell you why a metal object in a microwave generates sparks. It does not tell you whether heating food with microwaves is wise. The boundary matters. Some questions fall outside physics because they involve values, not mechanisms. They are not scientifically testable. A good scientist learns to recognize that boundary.
+Isaac Newton took Galileo's observations and built a framework of extraordinary scope. Three laws of motion. One law of gravity. From those four ideas, Newton could calculate the orbit of the moon, the path of a cannonball, the tides, and the period of a pendulum. The same four ideas. Everything from a cannonball to the planets obeyed them. This is the essential character of physics: discovering laws that are genuinely universal, not rules that apply in one place and fail somewhere else.
 
-**The trade-off:** Physics gains its power by narrowing its focus. It commits to observable, testable questions. It sacrifices the ability to answer why human beings ask questions at all, or what meaning anything has, or whether you ought to act on what you discover. This is not a limitation of physics. It is the source of physics's strength. By refusing to answer unanswerable questions, physicists avoid a very long conversation that never reaches ground.
+So what, exactly, does physics study? The basic mechanisms — the machinery underneath — of the physical world. How things move and what makes them move. What matter is made of and how it behaves. How energy flows from one place to another. What forces exist and how they act.
 
-**A worked example:** You use a smartphone. Physics describes how electric current interacts with circuits inside the device. Engineers use that physics knowledge to select materials and design circuit layouts. The phone works because physicists discovered and mathematicians expressed the relationship between charge, current, and voltage. But the decision to build smartphones, to mine the materials, to create the supply chains—those are not physics questions. They are questions about resources, labor, society, and value. A physicist can inform those decisions. Physics alone cannot make them. Here is the mechanism: electric current is the flow of electrons through a conductor. The voltage (electrical pressure) and the resistance (how much the material opposes flow) determine the current by a simple relationship: current = voltage divided by resistance. This relationship, called Ohm's Law, was discovered by Georg Ohm in 1827 and has held up across billions of experiments. Any circuit designer can use it to predict what will happen if she connects specific materials at specific voltages. What she does with that knowledge—whether to design a phone, a power plant, a weapon—is not physics anymore.
+And here is a crucial boundary: physics answers *how* and *what is the mechanism*, but it does not answer *should we*. Physics can tell you that a nuclear chain reaction releases an enormous amount of energy. It cannot tell you whether to build a reactor or a bomb. Physics can tell you why metal generates sparks in a microwave. It says nothing about whether you ought to heat food that way. These are questions about values, not mechanisms, and the universe does not hand out values. They require a different kind of reasoning — ethics, economics, politics, human judgment.
 
-**A common misconception:** Many people confuse "physics" with "physics is all there is." Physics is extraordinarily powerful at describing mechanisms. Some people conclude that mechanisms are all that exist. But physics describes systems; systems exist in contexts; contexts have histories and meanings that mechanism alone does not capture. Physics is foundational. It is not complete.
+<!-- → TABLE: two-column table contrasting "Physics can answer" (left) vs. "Physics cannot answer" (right) — left column: how much energy does uranium-235 release, why does metal spark in a microwave, how fast does a falling object accelerate; right column: should we build a nuclear reactor, should we heat food with microwaves, what should we do with this technology — student should see the mechanism/value distinction made concrete -->
 
----
-
-## Core Concept 2: Classical Physics Versus Modern Physics — When Each Applies
-
-For nearly 400 years, from the Renaissance through the 19th century, physicists operated under a set of assumptions that worked beautifully. Objects have definite locations at definite times. Time flows at the same rate for everyone. Space is flat. If you know a particle's position and velocity right now, you can predict where it will be tomorrow. This body of ideas is called *classical physics*. Newton built it. It was predictive. It was teachable. It was nearly always right—for the kinds of things humans could observe directly.
-
-Then, in 1905, a patent clerk named Albert Einstein published four papers. One of them, on relativity, started asking what happens when objects move at speeds comparable to the speed of light. The answer: nothing like what classical physics predicts. Lengths contract. Time slows down. Mass and energy become interchangeable.
-
-Here is the first shock: time passes at different rates depending on how fast you are moving and how close you are to a massive object. This is not a philosophical claim. It is measured. The clocks on GPS satellites have to be corrected for this effect. They run faster than clocks on Earth's surface because gravity is weaker in orbit. If you do not correct for Einstein's prediction, GPS locations will drift by miles within weeks.
-
-Picture it this way. Imagine a bowling ball placed on a trampoline. The surface curves. A marble rolled across the trampoline follows the curve. It rolls toward the bowling ball not because the ball pulls it directly, but because the surface is deformed. Einstein said gravity works the same way. Massive objects like Earth curve the space around them. Other objects follow the curves in that space. This is not intuitive. But it is right. We know because we tested it.
-
-**The trade-off:** Classical physics is simpler and gives accurate answers for everyday situations. It applies when: (1) objects move at less than about 1 percent of the speed of light, (2) objects are large enough to see with the naked eye, and (3) gravity is weak—like Earth's gravity, not the gravity near a black hole. For nearly every situation you encounter, classical physics is sufficient. Modern physics is necessary only when conditions change. But when they do change, classical physics fails. A relativistic calculation and a classical calculation of how a fast-moving particle behaves will diverge. Reality will match the relativistic calculation. This is not because classical physics is wrong. It is because the conditions classical physics assumes no longer hold.
-
-**A worked example:** A satellite orbits Earth at 7,500 meters per second. Is classical physics good enough to predict its path? Yes. The satellite is moving at 2.5 percent of the speed of light (the speed of light is about 300,000,000 meters per second). It is well below the threshold where relativistic effects become measurable. Classical mechanics—Newton's laws—will predict its position with excellent precision. Using Newton's second law (force = mass times acceleration) and his law of gravity, a mission planner can calculate exactly where the satellite will be days or months from now. The math is reliable because classical physics's assumptions hold: the satellite moves slowly relative to light speed, and Earth's gravity, while significant, is not strong enough to distort space noticeably. But if you designed a space probe to travel to another star at 30 percent the speed of light, classical physics would give you wrong answers about how long the journey takes and how much energy you need. At those speeds, time dilation becomes enormous. A trip that is 4.5 years by Earth's clocks might take only 0.5 years for the astronauts aboard—not because they age more slowly in subjective experience, but because time itself moves differently for them. The faster you travel, the slower time passes for you relative to observers at rest.
-
-**A common misconception:** "Modern physics replaces classical physics." Wrong. Modern physics describes conditions classical physics does not cover. Classical physics still applies when its conditions are met. You do not need Einstein to understand why a baseball falls or how a car engine works. You need Newton. Einstein's theory is not more correct for everyday problems; it is more general. It covers more conditions.
+This is not a limitation of physics. It is the source of its power. By confining itself to testable, observable questions, physics avoids conversations that never reach the ground. You cannot settle a dispute about whether nuclear power is moral by running an experiment. You can settle a dispute about how much energy uranium-235 releases by measuring it. Physics commits to the second kind of question and stays there.
 
 ---
 
-## Core Concept 3: The Scientific Method — How Physics Moves from Observation to Knowledge
+## Classical Physics and Modern Physics
 
-Science is not magic. It is not a collection of facts handed down by experts. It is a method: a way of asking questions and checking whether your answers are right. Every working physicist, and in fact every curious person, uses this method. It works because it forces you to be honest with the universe.
+For three centuries, roughly from Galileo through the end of the 19th century, physics operated under a set of assumptions that worked with breathtaking success. Objects have definite positions at definite moments. Time flows at the same rate for everyone. Space is flat. If you know where something is and how fast it is moving, you can predict its future. This is *classical physics*, and it is built on Newton's foundations.
 
-The method has a rhythm. It begins with observation. You watch something. You notice a pattern. You wonder why. Maybe you observe that clouds of one type often precede storms. Maybe you notice that some materials conduct electricity and others do not. Maybe you track how an object falls and realize the distance it travels keeps growing by the same amount in equal time intervals. Observation is the beginning.
+Classical physics is not a simplification or an approximation in any loose sense. Within its domain, it is exactly right to extraordinary precision. The planets orbit where classical mechanics predicts. Bridges stand because engineers used Newton's laws to calculate the stresses. Satellites follow the paths that classical mechanics computes. For everything that human beings could see and measure directly — and for most things they can see now — classical physics works.
 
-From observation, you form a hypothesis: a testable guess about mechanism. *If* this happens, *then* that should follow. Crucially, the hypothesis must be testable. You must be able to set up an experiment where the hypothesis could be proven wrong. "The universe is conscious" is not a testable hypothesis. "Electrons in copper atoms move more freely than electrons in rubber atoms" is testable.
+Then, in 1905, Albert Einstein published four papers. One of them, on special relativity, began asking what happens when objects move at speeds approaching the speed of light. The answer was shocking. Classical physics, it turned out, had assumed something that is not true: that time and space are fixed and the same for everyone. Einstein showed they are not. The faster you move, the slower time passes for you relative to someone standing still. The closer you are to a massive object, the slower time runs. These are not philosophical claims. They have been measured directly.
 
-Next comes the experiment. You design a controlled test. You measure what happens. You collect data. You analyze it. Then you reach a conclusion: does the data support your hypothesis, or does it contradict it? If the data supports the hypothesis, you often move on to test another hypothesis related to the first. If the data contradicts it, you revise the hypothesis and test again.
+Consider GPS. The satellites that GPS relies on orbit about 20,000 kilometers above Earth's surface. Because they are moving fast relative to you, their clocks run slightly *slower* due to special relativity. Because they are farther from Earth's mass than you are, their clocks run slightly *faster* due to general relativity. The net effect is that uncorrected GPS clocks would drift by roughly 38 microseconds per day. That sounds tiny. But at the speed of light, 38 microseconds corresponds to about 11 kilometers of positional error. Every day, compounding. Without Einstein's corrections — corrections derived from a theory that most people consider abstract physics — your phone's map would be useless within weeks. Einstein's theory is not merely interesting. It is built into a technology in your pocket.
 
-This cycle—observation, hypothesis, experiment, conclusion—is not unique to scientists. You use it all the time without naming it. Your car will not start. You hypothesize: the gas tank is empty. You test: you add gasoline and try to start. The car starts. Your hypothesis is supported. You never get to test a backup hypothesis (the fuel pump is broken) because the first one worked. But if the car still did not start after adding gas, you would revise your hypothesis and test again.
+<!-- → INFOGRAPHIC: GPS satellite diagram showing two competing relativistic effects — satellite at 20,000 km altitude labeled "moving fast → clocks run SLOWER (special relativity, −7 µs/day)" and "weaker gravity → clocks run FASTER (general relativity, +45 µs/day)"; net effect arrow pointing to "+38 µs/day uncorrected = ~11 km positional drift per day"; student should see why both effects must be calculated, not just one -->
 
-The power of the scientific method is that it forces agreement between your prediction and reality. You cannot argue with observation. You cannot assert that the universe works differently than it actually does. The method is a built-in correction mechanism.
+The other great revolution of 20th-century physics is quantum mechanics, which describes the behavior of matter at very small scales — the scale of atoms and subatomic particles. At those scales, classical physics fails completely. An electron does not have a definite position the way a baseball does. It exists as a probability distribution — a cloud of possible locations — until you measure it. The act of measuring collapses the distribution to a specific result. This seems bizarre. But it is what atoms actually do, and quantum mechanics predicts it with precision. The transistors in every computer and phone you have ever used work because engineers understood quantum behavior and built devices that exploit it.
 
-**The trade-off:** The scientific method is slow and humble. It does not produce absolute certainty. It produces probabilities: "All the evidence supports this model; we have not found a contradiction yet." Some people find this unsatisfying. They want truth with a capital T. Science cannot provide that. What it provides instead is reliability: a process that catches errors, refines understanding, and improves predictions over time.
+The relationship between classical and modern physics is not the one people usually assume. Modern physics did not prove classical physics wrong and replace it. Classical physics describes correctly what it always described correctly. Modern physics describes correctly what classical physics could not. Einstein's theory of gravity is more general — it covers cases where Newton's theory fails (very strong gravity, very high speeds), while giving identical predictions to Newton's in the everyday cases where Newton's theory works. Quantum mechanics covers the atomic scale where classical mechanics breaks down. The two modern theories are extensions of the scope of physics, not rejections of what came before.
 
-**A worked example:** Suppose you want to test whether a new drug reduces fever. You gather 100 patients with fever. You give 50 the drug; 50 get a placebo (fake drug). You measure their fevers after one hour. You analyze the data. You find that the drug group's fever dropped by an average of 1.2 degrees Celsius; the placebo group dropped by 0.4 degrees. Is the drug effective? Your hypothesis (the drug reduces fever) is supported by the data. But here is the important part: you do not declare the drug "proven true." You declare it "not contradicted by this experiment." Other researchers will test it again with different patients, in different conditions. If it keeps performing, confidence grows. If one study finds it does not work, you do not panic; you figure out what was different. The method accumulates evidence.
+<!-- → INFOGRAPHIC: nested circles showing scope — outermost circle: "Einstein's general relativity (all speeds, all gravities)"; middle circle: "Special relativity (high speeds, weak gravity)"; innermost circle: "Classical / Newtonian mechanics (everyday speeds and scales, weak gravity)" — separate small circle for "Quantum mechanics (atomic scale)" overlapping the inner Newtonian circle; student should see that modern physics contains classical physics rather than replacing it -->
 
-**A common misconception:** Scientists use the word "theory" to mean "educated guess." In everyday speech, "I have a theory about why you are late" means "I am guessing." In science, a theory is something far stronger: an explanation supported by extensive evidence, tested repeatedly, and not contradicted. Newton's theory of motion. Darwin's theory of evolution. Einstein's theory of relativity. These are not guesses. They are frameworks so well-tested and broadly applicable that we stake enormous confidence on them. Yet they remain open to revision if new evidence contradicts them. That openness is not weakness; it is how science corrects itself.
-
----
-
-## Core Concept 4: Models, Approximation, and Testing — How Physics Actually Works
-
-Scientists do not measure everything directly. They cannot. Some phenomena happen too quickly to observe. Some are too small to see. Some would be too dangerous or expensive to measure. Instead, physicists build models. A model is a representation of something—a simplified version designed to capture the essential machinery while leaving out the complications.
-
-Think about designing a car for efficiency. You want to reduce drag—the air resistance that slows the car down and wastes fuel. You could test thousands of designs by building full-size prototypes and driving them. That is expensive and slow. Instead, engineers build a scaled physical model of the car body and place it in a wind tunnel. Air flows around the model exactly as it would around the real car (scaled appropriately). They can observe where the air flows smoothly and where it creates eddies that waste energy. They adjust the model's shape. They test again. When the flow is smoothest, they know the real design will be efficient. The model is not the car. It is useful *because* it is simpler than the car.
-
-Models can be physical, mathematical, or computational. In chemistry, scientists build three-dimensional models of molecules to visualize how atoms bond. In astronomy, physicists write equations—mathematical models—that describe how planets orbit stars. In climate science, researchers run computer simulations that model how the atmosphere behaves over centuries. Each model makes assumptions. Each model is wrong in some ways and useful in others. The art of physics is knowing which assumptions matter and which you can ignore.
-
-Here is the key: every model is approximate. It simplifies something. The electron cloud model of an atom—the picture you probably see in textbooks, with electrons moving in clouds around a nucleus—is useful for visualizing atomic structure. But it does not tell you exactly where an electron will be at any one moment. That is not a failure of the model. It is a statement about how atoms actually behave. Electrons do not have definite positions the way baseballs do. The model captures that mystery: electrons exist as probability clouds.
-
-**The trade-off:** Models make problems solvable. Without them, you would need to measure and calculate everything from scratch, and most things are too complex to calculate completely. With models, you sacrifice absolute accuracy for the ability to understand and predict. The question is not "Is this model perfect?" The question is "Does this model capture the mechanisms that matter for the question I am asking?" A model that predicts air drag accurately might predict the structural stresses on the car incorrectly. You need different models for different purposes.
-
-**A worked example:** In 1991, physicists wanted to understand the explosion of a comet-like object called supernova 1987A. The explosion was so bright that it outshone entire galaxies. Direct observation was impossible—the temperature reached millions of degrees. Instead, physicists built mathematical models of what happens when a massive star collapses. The model made a prediction: the explosion should emit a burst of invisible particles called neutrinos before it produces visible light. Neutrinos barely interact with ordinary matter, so they escape the star almost instantly. Visible light, produced by the hot gas, takes hours or days to work its way out. They built detectors. Days before the light arrived, the neutrinos were caught. The model was right. The mechanism of stellar collapse that the model represented was confirmed. The model was useful not because it described every detail of the explosion, but because it captured the central mechanism—gravitational collapse heats the core, which produces neutrinos, which leave immediately while light takes time to escape.
-
-**A common misconception:** "Models are just guesses." A model is a guess about mechanism. But unlike a guess, a model must be testable. You must be able to set up an experiment where the model's predictions can be wrong. If the model says neutrinos will arrive at detector X at time T with energy E, and instead neutrinos arrive at detector Y at time T+1 with energy E/2, then the model was wrong and you learn something. A guess is a guess. A testable model is a tool.
+This is a general pattern in the history of science. When you find a theory that works in a new domain, it usually reduces to the old theory in the domain where the old theory worked. If it didn't, the old theory would never have succeeded. A correct theory that made wrong predictions for centuries would not be called correct. So the fact that Einstein's predictions match Newton's in ordinary conditions is not a coincidence — it is a test. Any new theory that fails to match the old successful theory in the old successful domain should be suspected.
 
 ---
 
-## Integration and Synthesis
+## The Scientific Method
 
-You now have four linked ideas:
+Physics is not merely a collection of discoveries. It is a method for making reliable discoveries — and, crucially, for catching errors before they accumulate.
 
-1. Physics asks "how?" and focuses on mechanisms. It does not answer "should we?"
-2. Different physics applies at different scales. Classical physics is sufficient for everyday objects; modern physics is necessary for extreme speeds or energies.
-3. The scientific method—observation, hypothesis, experiment, conclusion—is the built-in correction mechanism that keeps physics honest.
-4. Physicists use models, not exhaustive measurement, because models make complex problems solvable while remaining testable.
+The method begins with observation. You watch something. You notice a pattern. You form a hypothesis: a testable proposal about mechanism. *If* the mechanism is what I think it is, *then* this experiment should produce this result. You run the experiment. You check whether the result matches the prediction. If it does, the hypothesis is supported. If it doesn't, the hypothesis needs revision. You go back and look more carefully at the mechanism.
 
-These four ideas fit together into a philosophy of science. Physics works because it is ambitious about what it tries to describe—the fundamental machinery of the universe—and humble about what it claims to know. It says: "Here is a model of how something works. We have tested it against observation. It has not failed yet. But future observations might prove it wrong, and we are prepared for that." This attitude explains why physics has survived for 400 years and kept getting better.
+<!-- → INFOGRAPHIC: circular flow diagram of the scientific method — four nodes: Observation → Hypothesis → Experiment → Conclusion, with an arrow from Conclusion back to Hypothesis labeled "revise if contradicted" and a separate arrow from Conclusion forward labeled "supports: test again in new context"; student should see it is a loop, not a pipeline -->
 
-Return to Rosetta for a moment. The spacecraft's mission required physicists to model how gravity from the sun influences a probe's path over billions of kilometers, how solar cells generate power in weak sunlight, how materials behave at temperatures near absolute zero. No single experiment tested all of these things. But each model had been tested thousands of times in other contexts. The physicist's confidence was not blind faith. It was accumulated evidence—accumulated by the scientific method, refined through repeated testing, validated in the real world.
+The key word is *testable*. A hypothesis has to be structured so that some possible outcome would prove it wrong. "The universe is conscious" cannot be disproved by any experiment — it predicts nothing specific. "Electrons in copper move more freely than electrons in rubber" predicts that copper conducts electricity and rubber does not. You can measure that. It either happens or it doesn't.
 
-Here is a further precision: classical physics described gravity as a force—an invisible pull between objects. Einstein's model described gravity as curvature in the fabric of space-time. Which is correct? Both. Each model is useful for different situations. Newton's model is sufficient for Rosetta's journey. Einstein's model is necessary if you want to understand why GPS satellites' clocks run fast. A model is not true or false in the way a statement is true or false. A model is useful or not useful for a given purpose.
+The requirement that hypotheses be falsifiable is not bureaucratic. It is what prevents you from fooling yourself. Human beings are excellent at finding patterns — including patterns that are not there. We confirm what we already believe and remember what fits our expectations. The scientific method is designed to fight those tendencies. By requiring a prediction before you run the experiment, and by requiring that the prediction risk being wrong, you build in a check on motivated reasoning.
 
-**A worked example bringing all four concepts together:** You are designing a drug that enters cells. You need to predict whether the drug molecule will pass through the cell membrane. The cell membrane is a thin barrier made of lipids and proteins. Classical physics—specifically, the physics of molecules bouncing around in liquid—is the right scale here. You form a hypothesis: if the drug molecule is smaller than the typical membrane pore and encounters the pore when it is open, the drug will pass through. You build a mathematical model that treats the membrane as having holes and the drug as a bouncing particle. You predict: passage should be possible at certain concentrations and temperatures. You run an experiment. Sometimes the drug passes through; sometimes it does not. Your hypothesis is only partially supported. You revise your model. Maybe the holes are not random. Maybe proteins control them actively. You test that. You now have a new mechanism: drug entry is not random bounce; it is active transport, controlled by specific proteins. This is how physics informs biology. You started with observation, formed a testable hypothesis, built a model, tested it, and refined it based on evidence. You never had perfect information at any step. But your model improved.
+You use this method all the time without calling it that. Your car will not start. You hypothesize the gas tank is empty. You add gas. If the car starts, the hypothesis is supported. If it doesn't, you revise — maybe the battery is dead, or the starter has failed. You did not call this the scientific method. But you formed a falsifiable hypothesis, tested it, and revised based on evidence. That is the structure.
 
----
+A clarification on terminology is worth making, because the misuse of scientific language causes real confusion. In everyday speech, the word *theory* means something like an educated guess — preliminary, tentative, uncertain. In science, the word means something almost opposite. A scientific theory is a framework supported by extensive evidence, tested repeatedly across independent experiments, not contradicted by data, and powerful enough to make accurate predictions about new situations. Newton's theory of motion. Darwin's theory of evolution. Einstein's theory of relativity. These are not guesses. They represent the accumulated, tested, cross-checked understanding of generations of investigators. When someone says "evolution is just a theory," they are using a vocabulary that does not map onto scientific meaning. In scientific language, *theory* is close to what most people mean by *established fact*.
 
-## Exercises
+Similarly, a scientific *law* is a description of a regular pattern — often expressed mathematically — that has been observed consistently and never violated. Ohm's Law relates voltage, current, and resistance. The Law of Conservation of Energy says the total energy in a closed system does not change. These are statements about what happens, not explanations of why it happens. A theory explains; a law describes. Both are built on evidence; neither is a guess.
 
-### Warm-up (apply one concept directly)
+A *hypothesis* is where you start: a testable proposal about mechanism. Hypotheses become theories when they survive enough testing and accumulate enough supporting evidence. The vocabulary forms a hierarchy of confidence, not a spectrum of uncertainty.
 
-1. **Scope of physics.** You observe that a bridge is beautiful. Is that observation a physics question? Why or why not?
-
-2. **Scope of physics.** A researcher discovers that a pesticide reduces insect populations. Is the question "Should we use this pesticide?" answerable by physics and biology alone? What other kinds of expertise might inform the answer?
-
-3. **Classical vs. modern physics.** A baseball pitcher throws a ball at 40 meters per second. Is classical physics sufficient to predict its path? (The speed of light is 300,000,000 m/s.)
-
-4. **Scientific method.** You observe that your phone battery drains faster in cold weather. Propose a hypothesis. How would you test it?
-
-### Application (requires translation)
-
-5. **Scientific method.** You want to know whether a particular brand of phone charger damages battery life. Describe an experiment that would test this hypothesis. What would you measure? How would you control variables?
-
-6. **Models.** A climate scientist models Earth's atmosphere using equations running on a supercomputer. The model predicts that average global temperature will rise 2 degrees Celsius if carbon dioxide levels double. Is this prediction fact? How would you evaluate whether the model is useful?
-
-7. **Scope and application.** GPS satellites orbit Earth every 12 hours. Their clocks run faster than Earth-surface clocks due to weaker gravity in orbit. Classical physics predicts the satellites' positions incorrectly if you do not account for this effect—positions drift by miles within weeks. Why does a physics-based correction matter for a technology question?
-
-### Synthesis (combine concepts)
-
-8. **All four concepts.** You want to predict whether a new material will conduct electricity. You form a hypothesis based on its atomic structure. You build a mathematical model based on how electrons move through crystal structures. You test the model against published data on similar materials. The model predicts the new material's conductivity. What is the scope of your prediction? What assumptions did your model make? How would you test whether the model's prediction is reliable?
-
-9. **Historical comparison.** Newton's laws predict planetary motion with great accuracy. Einstein's relativity makes the same predictions (to the precision Newton could measure) and adds corrections that matter only near massive objects or at extreme speeds. Why was Newton's model not replaced by Einstein's model, but instead Einstein's model became the more general theory that includes Newton's as a special case?
-
-### Challenge (open-ended)
-
-10. **Design thinking.** You are designing an early-warning system to detect asteroid impacts. What physical mechanisms would your model need to capture? What observations or measurements would you use to test whether your model is reliable? What assumptions might your model make that could be wrong?
-
-11. **Critique.** A commercial advertises a product using the phrase "It's just a theory." What does the advertisement likely mean by "theory"? How does that differ from how a physicist uses the word? Why is the difference important for evaluating the ad's claim?
+<!-- → TABLE: three-column table — Term | Scientific meaning | Common misuse — rows: Hypothesis (testable proposal about mechanism, preliminary) / "I have a theory about that"; Theory (framework supported by extensive evidence, predictive, open to revision) / "just a theory = educated guess"; Law (mathematical description of a consistently observed pattern) / often confused with theory — student should see the hierarchy of confidence, not uncertainty -->
 
 ---
 
-## Chapter Summary
+## Models and Approximation
 
-Physics is the discipline of discovering how the universe actually works. It does this by asking questions that reality can answer—questions about mechanisms, not about values. That commitment to testable questions is the source of physics's power and the reason physics cannot answer every question worth asking.
+Scientists do not measure everything directly. They cannot — many phenomena happen too fast to observe, or too small to see, or under conditions that would destroy any instrument. Instead, physicists build models.
 
-The field operates in layers. Classical physics—Newton's laws—describes everyday motion with excellent accuracy because everyday objects move slowly, are large, and experience weak gravity. Modern physics—Einstein's relativity and quantum mechanics—describes conditions outside that range: very fast motion, very small objects, or very strong gravity. Neither replaces the other. The transition between them is not arbitrary. It is determined by the conditions under which the assumptions each makes no longer hold.
+A model is a simplified representation of reality designed to capture the essential mechanisms while leaving out the complications. The simplification is not a concession. It is the point. A model that includes everything would be as complex as the thing itself and equally impossible to reason about. The art of physics is knowing which complications matter for the question you are asking, and which you can leave out without distorting the answer.
 
-Physics works through the scientific method: observation leading to hypothesis, hypothesis tested by experiment, conclusions drawn from data, and models revised when evidence contradicts them. This method is not unique to physics. But physics makes it central and refuses to claim certainty without it. Physics works by building models: simplified representations of complex systems. Models are never complete or perfect. But a model is useful if it captures the mechanisms that matter for the question you are asking and if you can test it against observation. Every model makes assumptions. The art of physics is knowing which assumptions matter and being prepared to revise them when experiments show you were wrong.
+Consider designing a car for fuel efficiency. You want to reduce air resistance. You could build hundreds of full-size prototypes and drive them. That is expensive and slow. Instead, engineers build scaled physical models and place them in wind tunnels. Air flows around the model as it would around a real car. They observe where the flow creates drag, adjust the shape, and test again. The model is not the car. It is useful precisely because it is simpler than the car.
 
-The deepest lesson is this: the universe does not care what you believe. It responds to observation. Learning physics is learning to ask questions the universe will answer reliably. That discipline of asking—of refusing to settle for philosophy when you can do measurement, of refusing to claim certainty when evidence only supports probability—has been the source of everything from antibiotics to airplanes to the ability to see the earliest moments after the Big Bang.
+In physics, models can be physical, mathematical, or computational. The electron cloud model of an atom — the picture of electrons occupying probabilistic regions around a nucleus — does not tell you exactly where any electron is at any moment. That is not a deficiency. Electrons do not have exact positions in the classical sense. The model captures the real behavior: electrons exist as probability distributions, not as tiny balls in orbit. The model is right, but right in a way that requires abandoning an intuition, not in a way that confirms one.
 
-The one constant throughout physics's 400-year history is the willingness to be wrong. That is not a weakness. It is the condition under which improvement is possible.
+In 1987, a massive star in a nearby galaxy exploded — the event called Supernova 1987A. The explosion was so violent and so hot that no instrument could measure it directly. But physicists had mathematical models of what happens when a massive star collapses: the core becomes so dense that electrons are crushed into protons, making neutrons, and in doing so releasing an enormous burst of particles called neutrinos. Neutrinos barely interact with matter. They pass through the exploding star almost immediately. The visible light of the explosion, produced in the hot gas, takes hours or days to work its way out. The model predicted: neutrino burst first, visible light later.
+
+Days before anyone saw the light from Supernova 1987A, neutrino detectors on Earth caught the burst. The timing matched the model's prediction. This was not luck. It was the logical consequence of understanding the mechanism — and of having built a testable model that was specific enough to make a specific prediction.
+
+The crucial feature of any model is that it must be testable. A model that predicts a specific observation can be wrong. If it predicts neutrinos arrive at time T and instead they arrive at T+12 hours, the model is contradicted. You learn something. You revise. A model that cannot be wrong — one that predicts everything and therefore predicts nothing specific — is not a model. It is a story.
+
+Every model has a boundary — a regime where it works and conditions under which it breaks. Classical mechanics works for everyday objects moving at ordinary speeds. It fails for objects moving near the speed of light, or for particles at atomic scales. Newtonian gravity works everywhere you can practically measure on Earth and in the solar system. It fails near black holes, where space-time curves dramatically. The electron cloud model works for visualizing atomic structure and predicting chemical bonding. It does not tell you the exact position of an electron at a given moment, because that question does not have a definite answer. Each model is useful for its domain. Part of doing physics is knowing which model applies to the situation in front of you.
+
+<!-- → TABLE: three-column table — Model | Domain where it works | Where it breaks — rows: Newtonian mechanics (everyday objects, ordinary speeds) / near-lightspeed motion or atomic scales; Einstein's general relativity (strong gravity, high speeds) / quantum scales; Electron cloud model (atomic structure, chemical bonding) / exact electron position at a given moment; Newtonian gravity (Earth, solar system) / near black holes — student should see that "breaks" is not failure but boundary -->
 
 ---
 
-## Connections Forward
+## What Stays the Same
 
-This chapter has introduced you to the scope of physics, how it works, and why the method is reliable. But it has not yet shown you the machinery itself. What does classical physics actually say? What are Newton's laws, and why do they work? The next chapter answers those questions. It begins where Galileo began: with motion itself, and the simple fact that objects in motion tend to stay in motion until something stops them. That observation, combined with three simple laws, explains how planets orbit, how cars accelerate, how bridges stand, and why you feel pushed back in your seat when an airplane takes off. Mechanism made visible.
+Four ideas run through everything in this chapter and will run through everything in this book.
+
+Physics asks testable questions about mechanisms. This is both its commitment and its limitation. It will not tell you what you should do. It will tell you, with precision and reliability, what will happen.
+
+Classical physics describes the world of everyday objects with extraordinary accuracy. Modern physics extends the description to regimes classical physics cannot reach — very fast, very massive, very small. Neither replaces the other.
+
+The scientific method is the built-in error-correction mechanism. Observation leads to hypothesis; hypothesis generates prediction; experiment tests the prediction; evidence revises the model. The method works because it forces agreement with reality rather than with expectation.
+
+Models make complex systems understandable and predictable. Every model simplifies. Every model has a domain where it works and conditions where it breaks. The skill is knowing which simplifications preserve the mechanism and which distort it.
+
+Return to Rosetta for a moment. That trajectory — billions of kilometers, a decade in flight, landing on a four-kilometer target — required models of gravity, solar radiation pressure, thruster performance, and the comet's irregular shape. No single experiment tested all of those things simultaneously. Each model had been tested individually, in other contexts, by other investigators. The mission succeeded because the models were right — not certainly right, not philosophically right, but right in the way that counts: they made specific predictions, those predictions held under test, and when the test was a spacecraft navigating across the solar system, the predictions held there too.
+
+That is the confidence physics provides. Not certainty. Not truth with a capital T. Something more useful: a method that catches errors, refines predictions, and has proven itself reliable across four centuries of the most demanding tests human beings have devised.
 
 ---
 
 ## What Would Change My Mind
 
-If experiments showed that the same physical laws do not apply at different scales—that gravity works one way in galaxies and another way on Earth—this chapter's claim that universal laws govern the universe would require revision. More practically, if a prediction from a well-tested physical model were shown to be systematically wrong across multiple experiments, that model would need modification or replacement. Physics survives on falsifiability.
+If experiments showed that the same physical laws apply differently in different regions of the universe — that gravity works one way here and a different way near a distant galaxy — this chapter's central claim about universal laws would require revision. More practically, if a prediction from a well-tested physical model were shown to be systematically wrong across multiple independent experiments, the model would need modification or replacement. That openness to revision is not weakness. It is the condition under which progress is possible.
 
 ## Still Puzzling
 
-Physics explains how the universe works, but not why physical laws have the specific form they do. Why is gravity proportional to the inverse square of distance, and not some other relationship? Why do we need exactly three spatial dimensions and one temporal dimension to describe reality? These are open questions, genuinely puzzling, and they remain at the edge of current physics research.
+Physics explains the *how* of the universe with remarkable precision. It does not explain why the laws have the specific form they do. Why is gravity an inverse-square law and not an inverse-cube law? Why do we need exactly three spatial dimensions and one dimension of time to describe reality? Why does mathematics — invented for abstract reasons — describe physical reality so well? These questions sit at the edge of current research and have no settled answers. They are worth sitting with.
 
 ---
 
-## Tags
-
-physics; scope; classical-physics; modern-physics; scientific-method; models; hypothesis-theory-law; relativity; quantum-mechanics; testability; mechanisms
 ---
 
-## LLM Exercise — Chapter 1: What Is Physics (Physics Demonstrations Notebook Project)
+## Exercises
+
+### Warm-up
+
+**1.** Physics answers "how?" and "what is the mechanism?" — it does not answer "should we?" Classify each of the following as a physics question or a values question. For each, explain why in one sentence.
+
+- How much energy is released when a kilogram of coal burns?
+- Should we switch from coal to nuclear power?
+- Why does a metal spoon get hot when left in a pot of boiling water?
+- Is it ethical to use nuclear weapons?
+
+*Tests: distinguishing scope of physics from values questions.*
+
+**2.** A student says: "Einstein's theory of relativity proved Newton wrong." Explain in your own words why this statement is imprecise, and write a more accurate version of the same claim.
+
+*Tests: classical vs. modern physics relationship.*
+
+**3.** A friend says "evolution is just a theory, so it might be wrong." They are using the word *theory* in its everyday sense. Write a two-sentence response that explains what *theory* means in scientific language and why the distinction matters.
+
+*Tests: hypothesis/theory/law terminology.*
+
+---
+
+### Application
+
+**4.** Your houseplants seem to grow faster near the south-facing window than near the north-facing one. Walk through the scientific method for this observation: write a specific falsifiable hypothesis, describe an experiment that could prove it wrong, and name one variable you would need to control.
+
+*Tests: applying scientific method — falsifiability and experimental design.*
+
+**5.** GPS satellites orbit at roughly 20,000 km altitude and travel at about 3.9 km/s. Two relativistic effects act on their clocks: special relativity makes them run slower (because the satellites are moving), and general relativity makes them run faster (because they are farther from Earth's mass). The uncorrected net drift is about +38 microseconds per day. Classical physics predicts no such drift at all. Why is this an example of a model (classical mechanics) reaching its boundary — not being "wrong" in its own domain, but failing to apply to conditions outside that domain?
+
+*Tests: model domain and limits; classical vs. modern physics.*
+
+**6.** A physical model in a wind tunnel is 1/10th the size of the real car. An engineer adjusts the model's roof angle and observes the airflow pattern change. She concludes that the same change on the real car will reduce drag. What assumptions does this model require for the conclusion to be valid? Name at least two. What could make the model's prediction fail?
+
+*Tests: what a model is, assumptions, and where models break.*
+
+---
+
+### Synthesis
+
+**7.** In 1846, astronomers noticed that Uranus was not following the orbit classical mechanics predicted. Two scientists — Adams and Le Verrier — independently hypothesized that an undiscovered planet was perturbing Uranus's path. Using Newton's laws, they each calculated where that planet should be. Telescopes pointed there, and Neptune was found within one degree of both predictions.
+
+Describe this episode as an example of the scientific method. Identify the observation, the hypothesis, the prediction, and the test. Then explain: this episode was a vindication of Newton's model — what would have happened to that model if no planet had been found where predicted?
+
+*Tests: scientific method in a real historical case; falsifiability and model revision.*
+
+**8.** The electron cloud model and the Newtonian model of the solar system both show small objects moving around a larger central object. Yet the two models have fundamentally different structures: in the solar system model, each planet has a definite position at any moment; in the electron cloud model, an electron does not. Explain why the electron cloud model is not simply a scaled-down version of planetary orbits, and what this difference reveals about the limits of classical intuition at atomic scales.
+
+*Tests: model structure vs. physical behavior; classical vs. quantum description.*
+
+---
+
+### Challenge
+
+**9.** The chapter argues that physics derives its power from confining itself to testable, observable questions. But some physicists work on string theory and multiverse hypotheses, which currently make no predictions that can be tested with existing technology. Does this work qualify as physics under the chapter's definition? Construct the strongest argument for why it does, and the strongest argument for why it doesn't. You do not need to resolve the debate — just make both cases honestly.
+
+*Tests: applying the chapter's definition of physics to an edge case; intellectual honesty with genuinely open questions.*
+
+---
+
+## LLM Exercise — Chapter 2: What Is Physics? (Physics Demonstrations Notebook Project)
 
 **Project:** Physics Demonstrations Notebook — across the semester, design and execute a real, buildable demo for each chapter using household objects. By Ch 23, you'll have 23+ documented demos with photos, observations, and the physics that explains each one.
 **What you're building this chapter:** the project's foundation — your notebook structure, your "model vs. reality" demo, and a calibration of what counts as a real observation vs. a confirmation bias.
@@ -226,7 +211,7 @@ project where each chapter, I design and execute a real demo with
 household objects, document what I observed, and explain the
 physics. By Ch 23 I'll have 23+ entries.
 
-Help me set up the notebook AND complete Chapter 1's demo.
+Help me set up the notebook AND complete Chapter 2's demo.
 
 Part A — Notebook setup. Ask me ONE question at a time, waiting
 for my answer.
@@ -254,7 +239,7 @@ for my answer.
 After all four answers, write a 300-word **Notebook Charter** I'll
 commit to the project as the first entry.
 
-Part B — Chapter 1 demo. The chapter taught: physics studies
+Part B — Chapter 2 demo. The chapter taught: physics studies
 matter and motion; the scientific method (observation →
 hypothesis → test → revision); models are useful approximations;
 all models break somewhere.
@@ -295,7 +280,7 @@ demo raised that the chapter didn't fully answer.
 
 ---
 
-**What this produces:** A Notebook Charter (project's foundation) + a complete Chapter 1 demo entry. Most students at this point realize that Model A (the simple one) was wrong in interesting ways — that's the chapter's point made tactile.
+**What this produces:** A Notebook Charter (project's foundation) + a complete Chapter 2 demo entry. Most students at this point realize that Model A (the simple one) was wrong in interesting ways — that's the chapter's point made tactile.
 
 **How to adapt this prompt:**
 
@@ -306,8 +291,7 @@ demo raised that the chapter didn't fully answer.
 
 **Connection to previous chapters:** This is the project's opening.
 
-**Preview of next chapter:** Chapter 2 is motion in 1D — you'll roll a ball down a ramp onto a flat surface and graph its position over time. The constant-acceleration ramp segment vs. the (approximately) constant-velocity flat segment makes the difference visible.
-
+**Preview of next chapter:** Chapter 3 is motion in 1D — you'll roll a ball down a ramp onto a flat surface and graph its position over time. The constant-acceleration ramp segment vs. the (approximately) constant-velocity flat segment makes the difference visible.
 
 ---
 
@@ -329,3 +313,7 @@ Who is Maria Goeppert Mayer, and how does their work connect to what is physics 
 - Add a constraint: "Answer including criticisms or limits of Maria Goeppert Mayer's framework."
 
 What changes? What gets better? What gets worse?
+
+---
+
+*Tags: physics; scope; classical-physics; modern-physics; scientific-method; models; hypothesis-theory-law; relativity; quantum-mechanics; testability; mechanisms*
