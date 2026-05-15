@@ -1,340 +1,287 @@
 # Chapter 4 — Motion in One Dimension
 
-# Three title options
-
-**Inside the Train, Nothing Moves**
-
-**Why a Train at 300 mph Feels Still**
-
-**Motion Needs a Witness**
+*Everything moves. The question is: relative to what?*
 
 ---
 
-## TL;DR
+You are sitting on a high-speed train. The rails blur beneath the window. The landscape slides past. And yet the coffee cup on the table in front of you sits perfectly still.
 
-Motion is invisible without a reference frame to compare against. Distance and displacement are different because one counts the path, the other counts the net change; velocity and speed differ in the same way. Graphs encode motion as geometry — slopes reveal velocity, areas reveal displacement.
+A person standing on the platform watches the train go by. To them, that cup is hurtling past at 280 kilometers per hour.
 
----
+Who is right?
 
-## Chapter opening: The paradox of motion
+Both are. Not because physics is vague, or because truth is relative in some philosophical sense, but because motion is not a property of the cup. Motion is a *relationship* — between the cup and whatever you chose to measure it against. Change the measurement point and you change the answer, completely and correctly.
 
-You're sitting in a high-speed train. The rails blur beneath you, yet as you look at a coffee cup on the table in front of you, it sits perfectly still. A person standing outside watching the train pass sees that same cup hurtling at 280 kilometers per hour. Who is right?
+This is the foundation. Before you can say how fast something moves, or in what direction, you have to answer a prior question: moving relative to what? Physicists call the answer to that question a *reference frame*. Everything in this chapter — position, displacement, velocity, the information hidden in a graph — follows from choosing one.
 
-Both are. The motion you see depends entirely on where you choose to stand and measure from.
-
-This sounds like a riddle, but it is the foundation of all physics. For three centuries, physicists have built their understanding of the world on a simple fact: motion is not a property of objects. Motion is a *relationship* between an object and something else — a reference frame. Before you can describe how fast something moves, or in which direction, you must answer the question: *moving relative to what?*
-
-This chapter builds the language for talking about motion clearly. That language has three parts. First, how do we specify position and measure the path versus the net change? Distance and displacement are not the same word by accident; they measure different things. Second, how do we describe rates — how fast something travels, and does direction matter? Speed and velocity wear similar names, but they do opposite work in the physics. Third, how do we extract motion from a graph? A curved line on paper is not motion. But the slope of that line, or the area underneath it, encodes motion information with precision that words cannot match.
-
-By the end of this chapter, you will be able to:
-- Identify and draw the consequences of choosing different reference frames
-- Calculate and distinguish distance from displacement  
-- Calculate and distinguish speed from velocity
-- Extract velocity, displacement, and acceleration from position-time and velocity-time graphs
-- Solve problems using graphical representations of motion
-
-**Prerequisites:** You can convert units (miles to kilometers, hours to seconds). You can calculate an average (add two numbers, divide by two). You know what the Greek letter Δ means: *change in*. You have seen a coordinate grid.
-
-**Why this chapter matters:** Motion is how the world changes. Before you can explain why things move (forces), or why they move the way they do (Newton's laws), you need to describe motion precisely. This chapter builds that vocabulary. It is foundational to everything that follows.
+<!-- → IMAGE: photograph or illustration of a passenger looking at a stationary coffee cup inside a moving train car, with a blurred platform visible through the window — caption should name the two reference frames explicitly (passenger's frame, platform observer's frame) and show that both are correct; the image should make the relativity of motion feel concrete before the formalism begins -->
 
 ---
 
-## Core Concept 1: Position, reference frames, and why motion is relative
+## The Reference Frame
 
-**Scene: The stadium at dusk**
+Stand in a stadium at sunset. The sun sinks toward the horizon. A friend in Brazil, on the opposite side of Earth, watches the same sun rise. The sun is the same object, emitting the same light. But *setting* or *rising* depends entirely on where you stand. This is not a metaphor for subjectivity. It is a precise physical statement: the description of motion depends on the observer's reference frame.
 
-Stand in a stadium at sunset. The sun, from your viewpoint, sinks steadily toward the horizon. A friend stands in Brazil, on the opposite side of Earth. The sun, from their viewpoint, rises. The sun's position is the same object, the same light. But the description — *setting* or *rising* — depends entirely on where you stand. This is not a metaphor. This is what physicists mean by "reference frame."
+A reference frame is a coordinate system anchored to something you decide to treat as stationary. Usually you pick the ground, or the walls of a room, and call that your zero — your origin. Then every other object's position is measured as a distance and direction from that origin. The cup is one meter from the window. The window is 30 meters from the platform entrance. Position is always a comparison.
 
-**The mechanism**
+Here is what reference frames actually give you: they turn the vague word *here* into a number. Once you have a number, you can do arithmetic on it. And once you can do arithmetic on position, you can calculate how position changes — which is motion.
 
-A reference frame is a coordinate system anchored to something. Usually, you pick something stationary (the ground, the walls of your classroom) and put your zero point — your origin — there. Then, you can describe any other object's position relative to that zero. The object is three meters north of the origin. The object is 1.5 meters above the origin. The position is always a comparison: *where is this thing relative to my chosen zero?*
+The most important thing to notice is this: two observers with different origins will assign different position numbers to the same object. You say the cup is at position 1 meter. I say it is at position 11 meters (because I put my origin 10 meters behind yours). We disagree about where it is. But if the cup moves half a meter to the right, we *both* record the same change: plus half a meter. The change in position does not depend on where you put the origin. Only the absolute position does.
 
-The word *position* itself means location measured from a chosen starting point. Mathematically, if your origin is at zero, and an object sits at point $d_0$ at the beginning, and at point $d_f$ at the end, then the object's position has changed.
+<!-- → DIAGRAM: two number lines placed one above the other, both showing the same cup and the same wall; top line has origin at the cup's left (observer A), bottom line has origin 10 m to the right (observer B) — the cup reads position 1 m on the top line and position 11 m on the bottom; an arrow showing the cup moving 0.5 m right is drawn on both lines; both Δd arrows are identical in length and direction; student should see that absolute position differs but displacement is the same -->
 
-Here is where it gets interesting. If you and I choose *different* origins, we will assign *different* position numbers to the same object. But we will agree on one thing: how much the object's position changed. The change in position is the *displacement*, written as $\Delta d = d_f - d_0$. If I put my origin at my feet and you put your origin ten meters away, we disagree about where the object is. But if that object moves three meters toward the wall, we both record $\Delta d = 3$ meters.
-
-Displacement is frame-independent in its *magnitude*. It is not frame-independent in its *sign*. If I set rightward as positive and you set leftward as positive, the same motion gets opposite signs. That is why direction matters. Displacement includes direction; it is a *vector*. Speed (how fast) does not include direction; it is a *scalar*.
-
-The distinction between vector and scalar is not merely a bookkeeping convention. It matters physically. A scalar quantity — say, temperature at a point on Earth — tells you one number. A vector quantity — say, wind velocity — tells you both magnitude and direction. The direction is not extra information; it is essential. Wind traveling at 20 m/s northward is fundamentally different from wind traveling at 20 m/s eastward. The magnitude is the same; the consequences are not.
-
-**Named trade-off: Distance vs. Displacement**
-
-Distance is the length of the actual path traveled. If you walk to school via a winding route, the distance is the sum of all the steps — 1.5 km west, then 0.8 km north, then 0.6 km east. Total distance traveled: 2.9 km.
-
-Displacement is the straight-line net change from start to finish. Home is your origin. School is 1.5 km west of home. Your displacement is 1.5 km west, regardless of how many detours you took. If you then walk home, your displacement is zero — you ended where you began.
-
-The trade-off: Distance tells you how much ground the object covered. Displacement tells you the object's *net* position change. You need both. Distance is always positive or zero. Displacement can be positive, negative, or zero, depending on whether you chose forward or backward as positive.
-
-**Worked example: The cyclist's round trip**
-
-A cyclist rides 3 km west, then turns and rides 2 km east.
-
-*What is her displacement?* Set west as negative, east as positive. She starts at position $d_0 = 0$. After riding west, she is at $d = -3$ km. After riding east 2 km, she is at $d = -3 + 2 = -1$ km. Displacement is $\Delta d = d_f - d_0 = -1 - 0 = -1$ km. The negative sign tells you: net movement westward.
-
-*What is the distance?* The path length is 3 km + 2 km = 5 km. Distance has no direction, so it is always positive.
-
-*The magnitude of displacement?* The magnitude ignores sign. It is 1 km.
-
-Notice what happened: we *set* a positive direction, applied the sign consistently, and let the math do the work. Displacement is displacement by definition; the negative sign falls out from the choice we made at the start.
-
-**Common misconceptions**
-
-*Misconception 1:* "Displacement is the shortest distance between two points." This is close, but incomplete. Displacement is the *net change in position*, which is a straight line with magnitude and direction. The shortest distance is just the magnitude part. Displacement includes direction.
-
-*Misconception 2:* "If an object goes out and comes back to where it started, the displacement is distance." No. If an object returns to its starting point, the displacement is zero. The distance is whatever the path length was. The object went nowhere (displacement = 0) even though it traveled some distance.
+That change in position has a name: *displacement*.
 
 ---
 
-## Core Concept 2: Speed and velocity (averages and instantaneous)
+## Distance and Displacement
 
-**Scene: The car's speedometer**
+Displacement is defined as
 
-You glance at the speedometer. It reads 60 km/h. What does that number mean? It is *not* your average speed since the last traffic light. It is your speed *right now*, at this instant. But what is a "speed at an instant"? You did not travel any distance in zero time. How can speed exist at a single moment?
+$$\Delta d = d_f - d_0$$
 
-This puzzle — the difference between average and instantaneous — runs through all of motion. Velocity adds a second puzzle: direction.
+where $d_0$ is the starting position and $d_f$ is the finishing position. The Greek letter $\Delta$ — delta — means *change in*. It appears throughout physics as a shorthand for "final minus initial."
 
-**The mechanism**
+Displacement is not the same as distance, and the difference is not pedantic.
 
-Speed is how fast an object's position changes, measured over some time interval. The formula is simple:
+Distance is the length of the actual path. If you walk to school via a winding route, distance is the sum of every step: 1.5 km west, then 0.8 km north, then 0.6 km east. Total distance: 2.9 km. Distance is always positive, because path length cannot be negative.
+
+Displacement is the straight-line net change from start to finish. If school is 1.5 km west of your house, your displacement is 1.5 km west — regardless of the detours. If you then walk home, your displacement is zero. You ended where you began.
+
+The trade-off is this: distance tells you how much ground the object covered. Displacement tells you where it actually ended up relative to where it started. You need both, and they answer different questions.
+
+Now, displacement has a sign — positive or negative — because it has a direction. Before you can assign a sign, you have to make a choice: which direction is positive? The choice is arbitrary. You can call rightward positive, or leftward, or upward. What matters is that you pick one and stay consistent. The math will carry the direction for you after that.
+
+**A worked example.** A cyclist rides 3 km west, then turns and rides 2 km east. Set east as positive, west as negative.
+
+She starts at position $d_0 = 0$. After riding 3 km west, she is at $d = -3$ km. After riding 2 km east, she is at $d = -3 + 2 = -1$ km.
+
+Displacement: $\Delta d = -1 - 0 = -1$ km. The negative sign means net movement westward — which is correct.
+
+Distance: 3 + 2 = 5 km. Path length, always positive.
+
+Notice what happened. We did not have to reason about direction separately. We made one choice at the start (east is positive), applied it consistently, and the displacement's sign told us the answer. This is how all vector arithmetic works: encode the direction in the sign, do the algebra, read the direction out at the end.
+
+<!-- → DIAGRAM: overhead map view of a cyclist's round-trip — a dot at origin labeled "start", a curved winding path going left to a point labeled "−3 km", then a straight arrow going right back to "−1 km" labeled "final position"; the full winding path is labeled "distance = 5 km"; a single straight arrow from start to final position is labeled "displacement = −1 km (westward)"; student should see visually that distance follows the path while displacement is the straight net change -->
+
+One misconception to head off. If an object travels out and comes back to exactly where it started, its displacement is zero. The distance is whatever the path length was. Zero displacement does not mean the object did not move. It means the object's net change in position is zero. The distinction will matter enormously when we calculate work, and again when we study momentum.
+
+---
+
+## Speed and Velocity
+
+Speed is how fast an object's position changes. The formula is:
 
 $$v_{\text{avg}} = \frac{\text{distance}}{\text{time}}$$
 
-For a car that travels 150 km in 3.2 hours, the average speed is 150 ÷ 3.2 = 47 km/h.
-
-But a car's speed fluctuates. Instantaneous speed is the speed at a specific moment in time, what the speedometer shows. If you want the instantaneous speed, you must measure the distance traveled in an *infinitesimally small* time interval — so small that the speed does not have time to change during the measurement. This is where calculus enters (we will not need the calculation here, just the concept): instantaneous speed is the limit of average speed as the time interval shrinks to zero.
+A car that covers 150 km in 3.2 hours has an average speed of 150 ÷ 3.2 = 47 km/h.
 
 Velocity is the vector version of speed: it includes direction. Average velocity is:
 
-$$\mathbf{v}_{\text{avg}} = \frac{\text{displacement}}{\text{time}} = \frac{\Delta d}{\Delta t} = \frac{d_f - d_0}{t_f - t_0}$$
+$$\mathbf{v}_{\text{avg}} = \frac{\Delta d}{\Delta t} = \frac{d_f - d_0}{t_f - t_0}$$
 
-Instantaneous velocity is velocity at a specific moment. If velocity is constant, the instantaneous and average are the same. If velocity changes, they differ.
+The formula looks almost identical. The difference is that displacement appears in the numerator instead of distance — and displacement carries a sign.
 
-Why does this distinction matter? Because a car traveling north at 60 km/h is in a different state than a car traveling south at 60 km/h. The speeds are identical. The velocities are opposite. In physics, direction is information, not decoration.
+Here is where the distinction bites. Suppose you drive 150 km to a city, then drive 150 km back home. Total distance: 300 km. Total displacement: 0 km. Average speed: 300 km divided by total time — some positive number. Average velocity: 0 km divided by total time — zero.
 
-**Named trade-off: Speed vs. Velocity**
+Same trip. Two very different numbers. Speed tells you how much ground you covered per unit of time. Velocity tells you your net progress in a direction per unit of time. If your displacement is zero, your average velocity is zero, regardless of how much you drove.
 
-You drive 150 km to a city, then drive 150 km back home. Total distance: 300 km. Total displacement: 0 km (you ended where you started).
+When would you care about each? Speed is the right quantity when you are thinking about fuel consumption, or how long a trip takes, or how far the tires have worn. Velocity is the right quantity when you are asking where the object ended up, or whether it is making progress toward a goal.
 
-Average speed: 300 km ÷ total time.
+<!-- → TABLE: two-column table contrasting the 150 km round trip — rows: total distance (300 km / 300 km), total displacement (300 km / 0 km), average speed (300 km ÷ total time = some positive value / same), average velocity (300 km ÷ total time / 0 km ÷ total time = 0); left column for outbound leg only, right column for full round trip — student should see exactly where the two quantities diverge and why velocity collapses to zero on return -->
 
-Average velocity: 0 km ÷ total time = 0.
+A second distinction, subtler but equally important: the difference between *average* and *instantaneous*.
 
-The trade-off: Speed captures how *much ground* you covered in how much time. Velocity captures your *net progress* in a direction. Speed is always positive. Velocity can be positive, negative, or zero, depending on your chosen positive direction.
+The speedometer in a car does not show your average speed since you left home. It shows your speed *right now*. But what does "right now" mean for speed? Speed requires a time interval — distance over time. What is the distance in zero time? Zero. What is zero divided by zero?
 
-When would you use each? Use speed when you care about fuel consumption or travel time — questions about effort and duration. Use velocity when you care about net displacement — where you end up, and whether you're making progress toward a goal.
+This is not a trick question. It is the question that led Newton and Leibniz to invent calculus. The instantaneous speed is defined as the limit of average speed as the time interval shrinks toward zero — so small that the speed does not have time to change during the measurement. In practice, it means: what would the average speed be over a very, very short interval centered on this moment?
 
-**Worked example: The jogger**
+You do not need the calculus here. You need the concept: average velocity is computed over a finite interval and depends on the start and end points. Instantaneous velocity is the velocity at a single moment, and it is what the slope of a position-time graph gives you.
 
-Layla jogs 304 m north in 180 seconds.
+**A worked example.** Layla jogs 304 m north in 180 seconds.
 
-*What is her average velocity?* Use the formula:
+Average velocity: $304 \text{ m} \div 180 \text{ s} = 1.7 \text{ m/s north}$.
 
-$$\mathbf{v}_{\text{avg}} = \frac{304 \text{ m}}{180 \text{ s}} = 1.7 \text{ m/s north}$$
+If she had jogged the same 304 m north via a zigzag path, her average velocity would still be 1.7 m/s north. Velocity depends on displacement — start point and end point — not on the path between them.
 
-The direction is essential. If someone asks for your velocity, the answer is incomplete without it.
+Now imagine two joggers who cover the same start and end points in the same time: one by a straight path, one by a winding path. Same average velocity. Different average speeds. The one who wound around covered more distance in the same time.
 
-*What if she jogged the same distance but in a zigzag?* Her average velocity would still be 1.7 m/s north. Velocity depends on displacement, not distance. Distance traveled is longer; velocity is the same because her start and end points were the same.
-
-This is the key difference. Imagine two joggers cover the same start and end points in the same time. One takes a straight path; one takes a winding path. They have the *same* average velocity. They have *different* average speeds. This difference becomes crucial when we study motion in two and three dimensions, where a curved path and a straight path have the same displacement but different distances.
-
-**Common misconceptions**
-
-*Misconception 1:* "Average velocity is the average of the initial and final speeds." Wrong. This is tempting because it works for uniform motion. If you drive at 30 km/h for 50 km, then 60 km/h for another 50 km, your average speed is *not* 45 km/h. It is: total distance ÷ total time = 100 km ÷ (50/30 + 50/60) hours = 40 km/h. The reason: you spend more time at the slower speed. Average velocity is always displacement ÷ time.
-
-*Misconception 2:* "Velocity is just speed with a direction label." Close, but incomplete. Velocity *changes* differently than speed when direction changes. If you walk in a circle at constant speed, your speed is constant but your velocity is *constantly changing* (because direction is changing). This will matter when we discuss acceleration in the next chapter.
+This difference becomes crucial in two dimensions — a curved path and a straight path between the same endpoints have the same displacement and the same average velocity, but very different distances and average speeds.
 
 ---
 
-## Core Concept 3: Reading motion from graphs (position-time and velocity-time)
+## Reading Motion from a Graph
 
-**Scene: A line on paper**
+There is something worth pausing on. We have been talking about motion as numbers: position at this time, velocity over that interval. But there is another way to represent motion — geometrically. A graph turns motion into a shape, and the shape contains the same information as the numbers. Usually more efficiently.
 
-You have a straight line on a graph. Time is on the horizontal axis. Position is on the vertical axis. What does that line tell you?
+The position-time graph puts time on the horizontal axis and position on the vertical axis. Each point on the graph is a statement: at this moment, the object was at this position. Connect the points and you get a line or a curve — the *trajectory* of the object as a function of time.
 
-It tells you motion. But how? A line is static. Motion is dynamic. How does a static image capture something that changes?
+The slope of that line is the velocity.
 
-The answer: *the slope of the line is the velocity*. The answer is hidden in the slope.
+Why? Slope is rise over run. On a position-time graph, rise is $\Delta d$ (change in position) and run is $\Delta t$ (change in time). The ratio $\Delta d / \Delta t$ is — by definition — average velocity. So the slope of a position-time graph is the average velocity over that interval.
 
-**The mechanism: Position vs. time**
+If the line is straight, the velocity is constant. Steep slope: fast. Shallow slope: slow. Horizontal line (zero slope): the object is stationary. Negative slope: the object is moving in the negative direction — backward, or downward, or whatever you called negative when you set up the reference frame.
 
-Consider the graph of a car's motion. At $t = 0$ s, the car is at position $d_0 = 0$ km (home). At $t = 10$ minutes, the car is at position $d_f = 5$ km (school). If you plot these two points and draw a line between them, the line has a slope.
+<!-- → CHART: four small position-time graphs arranged in a 2×2 grid — top left: steep positive slope labeled "fast, moving forward"; top right: shallow positive slope labeled "slow, moving forward"; bottom left: horizontal line labeled "stationary"; bottom right: steep negative slope labeled "fast, moving backward"; each graph has the same time axis; student should learn to read velocity magnitude and direction from slope shape alone, before touching numbers -->
 
-Slope is defined as rise divided by run:
+If the line is curved, the velocity is changing. To find the instantaneous velocity at a single point on a curve, you draw a *tangent line* — a straight line that just grazes the curve at exactly that point, neither cutting through it nor pulling away. The slope of the tangent is the instantaneous velocity at that moment.
 
-$$\text{slope} = \frac{\text{rise}}{\text{run}} = \frac{\text{change in position}}{\text{change in time}} = \frac{\Delta d}{\Delta t}$$
+The velocity-time graph tells a different story. Time is still on the horizontal axis, but now velocity is on the vertical axis. The slope of a velocity-time graph is acceleration — the rate at which velocity changes. That is the subject of the next chapter.
 
-But $\Delta d / \Delta t$ is the definition of average velocity. The slope of a position-time graph is the average velocity.
+But the velocity-time graph has a second secret: the *area* under the curve is displacement.
 
-If the line is straight, the motion is uniform (constant velocity). If the line is curved, the velocity is changing. To find the instantaneous velocity at a point on a curved graph, draw a tangent line — a straight line that touches the curve at exactly one point. The slope of that tangent is the instantaneous velocity at that moment.
+<!-- → CHART: two side-by-side velocity-time graphs — left: constant velocity (horizontal line at +0.5 km/min), with a shaded rectangle underneath labeled "area = displacement = +5 km"; right: linearly increasing velocity (a diagonal line from 0 to some value), with a shaded triangle underneath labeled "area = displacement = ½ × base × height"; caption should note that for any shape, area = displacement, and that the sign of velocity determines whether the area counts as positive or negative displacement -->
 
-The advantage of the graphical method is visual clarity. A steep slope means fast motion. A shallow slope means slow motion. A horizontal line (zero slope) means the object is stationary. A negative slope means the object is moving backward (in the negative direction).
+This takes a moment to see. Velocity has units of meters per second. Time has units of seconds. Multiply them: meters per second times seconds gives meters — displacement. If you plot velocity on the vertical axis and time on the horizontal axis, the area of a rectangle with height $v$ and width $t$ is $v \times t$, which is displacement. The area under the curve is the accumulated displacement over that time interval.
 
-**Worked example: The jet car on a flat lakebed**
+For a constant velocity, the shape under the curve is a rectangle. Easy. For a changing velocity, you break the region into rectangles and triangles, approximate, and in the limit you get the exact displacement — which is, again, the calculus, but the geometric intuition requires no calculus at all.
 
-A jet-powered car starts from rest and accelerates across a dry lakebed in Nevada. Here is a position-time graph of its motion. What is the car's average velocity?
+**A worked example.** A car drives toward school at a constant velocity of +0.5 km/min for 10 minutes, then returns at -0.5 km/min for 10 minutes.
 
-Two points from the graph: at $t = 0.5$ s, $d = 525$ m. At $t = 6.4$ s, $d = 2000$ m.
+On the position-time graph: a straight line with positive slope going up for the first 10 minutes, then a straight line with negative slope going back down. At 20 minutes, the car is back where it started.
 
-$$v = \frac{\Delta d}{\Delta t} = \frac{2000 - 525}{6.4 - 0.5} = \frac{1475}{5.9} = 250 \text{ m/s}$$
+On the velocity-time graph: a horizontal line at +0.5 km/min for 10 minutes, then a horizontal line at -0.5 km/min for 10 minutes.
 
-That is 900 km/h — far faster than a highway speed limit, but well short of the land speed record (1,234 km/h, set in 1997). The calculation shows how a graph can encode precise numerical information from just a visual pattern.
+Displacement from the area:
+- Outbound area: $(+0.5)(10) = +5$ km.
+- Return area: $(-0.5)(10) = -5$ km.
+- Total: $+5 + (-5) = 0$ km.
 
-**The mechanism: Velocity vs. time**
+Distance: the sum of absolute areas: $5 + 5 = 10$ km.
 
-A velocity-time graph works differently. Time is still on the horizontal axis, but velocity is on the vertical axis. What information does this graph hold?
-
-The *slope* of a velocity-time graph is acceleration — the rate at which velocity changes. We will discuss acceleration deeply in the next chapter.
-
-The *area* under a velocity-time graph is displacement. This is because $v \times t = d$ (rearranging the velocity equation). If velocity is constant, the area is a rectangle: width times height. If velocity varies, you can approximate the area under the curve by breaking it into rectangles and triangles, or by using calculus.
-
-Why does area represent displacement? Because multiplication of velocity and time gives distance: (meters per second) times (seconds) gives (meters). The product is encoded geometrically as the area under the curve.
-
-**Worked example: The drive to and from school**
-
-A car drives to school at a constant velocity of 0.5 km per minute for 10 minutes. Then, for 10 minutes, it drives back home at a constant velocity of –0.5 km per minute (negative because it is moving in the opposite direction).
-
-On a position-time graph, the outbound trip is a straight line with positive slope (moving forward). The return trip is a straight line with negative slope (moving backward).
-
-On a velocity-time graph, the outbound trip is a horizontal line at +0.5 km/min. The return trip is a horizontal line at –0.5 km/min.
-
-*What is the displacement from the area under the velocity-time curve?*
-
-Outbound: area = (0.5 km/min) × (10 min) = 5 km.
-Return: area = (–0.5 km/min) × (10 min) = –5 km.
-Total displacement: 5 + (–5) = 0 km. The car is back home.
-
-*What is the distance?* Distance is the sum of the absolute values of the areas (because distance is always positive): 5 km + 5 km = 10 km.
-
-**Common misconceptions**
-
-*Misconception 1:* "A curved position-time graph means the object is moving fast." A curve means *velocity is changing*. The steepness of the curve (the slope at that point) tells you the velocity. A shallow curve might represent slow motion with increasing speed, or fast motion with decreasing speed.
-
-*Misconception 2:* "The area under a position-time graph is displacement." No. The slope is velocity (actually, the *change* in position is related to the slope and time interval). The area under a position-time graph has units of (position) × (time), which is not a standard kinematic quantity. Area matters for velocity-time graphs.
+The position-time graph encodes the same information geometrically, in a different form. Both graphs are true; neither is more real than the other. Each reveals something the other obscures: the position graph shows where the car was; the velocity graph shows how its motion was structured.
 
 ---
 
-## Integration: How the concepts fit together
+## How It Fits Together
 
-Position, reference frame, distance, displacement, speed, velocity, and graphs are not separate ideas. They are one idea with different faces.
+Start with the reference frame. You choose an origin and a positive direction. That choice is yours to make; no physics constrains it. Different choices give different numbers, but the same physical truths.
 
-Start with a reference frame: you choose where zero is and what direction is positive.
+Once the frame is set, position becomes a number — a precise location measured from your origin. And once position is a number, you can take differences.
 
-From the reference frame, position becomes meaningful. Position is always relative; it is a location measured from your zero.
+Distance is the total path length. Always positive, because it counts steps, not direction. Displacement is the net change in position: $\Delta d = d_f - d_0$. Can be positive, negative, or zero, depending on which way you ended up relative to where you started.
 
-Distance and displacement both measure change in position. Distance counts the path. Displacement counts the net change. The two are equal only if the path is straight in one direction.
+Speed is distance divided by time. Velocity is displacement divided by time. Same structure; different numerators. Speed is always positive. Velocity carries the sign of the displacement — and therefore carries the direction.
 
-Speed and velocity both measure how fast position changes. Speed ignores direction; velocity includes it. They are equal only if the motion is in one direction.
+Graphs encode all of this as geometry. Slope of a position-time graph is velocity. Area under a velocity-time graph is displacement. These are not separate facts to memorize. They both follow from the definitions: slope is $\Delta d / \Delta t$, which is velocity; area of a velocity-time rectangle is $v \times t$, which is displacement.
 
-Graphs encode this. A position-time graph with slope $m$ tells you the velocity is $m$. A velocity-time graph with area $A$ tells you the displacement is $A$.
+The thread running through all of it: *direction matters*. Distance ignores it. Displacement encodes it. Speed ignores it. Velocity encodes it. Graphs display it in the sign of the slope. This insistence on direction is not bookkeeping. It is physics. A car traveling north at 60 km/h is in a genuinely different physical state from a car traveling south at 60 km/h. They have the same speed; they have opposite velocities; if both decelerate at the same rate, they will stop in different places. Direction is information.
 
-**Integrated worked example**
+**A fuller worked example, putting all of it together.** A student leaves school, which is 1.2 km east of her home. She jogs west — in the negative direction — at a constant 2.4 m/s for 8 minutes, stops for 2 minutes, then jogs west again for 4 minutes at the same speed. Where does she end up?
 
-A student jogs home. She leaves her school at a position 1.2 km east of her home. She jogs west at a constant speed of 2.4 m/s for 8 minutes, then stops for 2 minutes, then jogs west again at 2.4 m/s for 4 more minutes.
+Set home as origin, east as positive. School is at $d_0 = +1200$ m.
 
-*Set up the reference frame.* Home is the origin. East is positive. School is at $d_0 = +1200$ m.
+Phase 1 (jog west, 8 min = 480 s):  
+Velocity: $-2.4$ m/s.  
+Displacement: $(-2.4)(480) = -1152$ m.  
+Position after phase 1: $1200 + (-1152) = +48$ m. She is 48 m east of home.
 
-*Calculate her displacement during each phase.*
+Phase 2 (stop, 2 min):  
+Displacement: 0.  
+Position unchanged: +48 m.
 
-Phase 1 (jog for 8 minutes): 
-- Time: 8 min = 480 s
-- Velocity: –2.4 m/s (westward, so negative)
-- Displacement: $v \times t = (-2.4 \text{ m/s})(480 \text{ s}) = -1152 \text{ m}$
-- Final position: $d = 1200 + (-1152) = 48 \text{ m}$ (east of home)
+Phase 3 (jog west, 4 min = 240 s):  
+Velocity: $-2.4$ m/s.  
+Displacement: $(-2.4)(240) = -576$ m.  
+Position after phase 3: $48 + (-576) = -528$ m. She is 528 m *west* of home.
 
-Phase 2 (stop for 2 minutes):
-- Displacement: 0 m
-- Final position: still 48 m east of home
+Total displacement: $-528 - 1200 = -1728$ m westward.  
+Total distance: $1152 + 576 = 1728$ m. (Equal to the magnitude of displacement here because she never reversed direction — but this coincidence of magnitudes does not hold in general.)  
+Average velocity: $-1728 \text{ m} \div 840 \text{ s} = -2.06$ m/s. Notice this is less than the jogging speed of 2.4 m/s in magnitude — because the two-minute stop contributed time without contributing displacement, pulling the average down.
 
-Phase 3 (jog for 4 minutes):
-- Time: 4 min = 240 s
-- Velocity: –2.4 m/s
-- Displacement: $(-2.4)(240) = -576 \text{ m}$
-- Final position: $48 + (-576) = -528 \text{ m}$ (528 m west of home)
+The position-time graph for this motion: a descending line from (0 s, +1200 m) to (480 s, +48 m), then a horizontal line from (480 s, +48 m) to (600 s, +48 m), then another descending line from (600 s, +48 m) to (840 s, −528 m). Three segments, two slopes, one flat. The slopes are both negative and equal in magnitude, confirming the velocity was the same in both jogging phases.
 
-*What is her total displacement?* $\Delta d = -528 - 1200 = -1728 \text{ m}$ westward.
+<!-- → CHART: annotated position-time graph of the student's full journey — three labeled segments: "jogging (slope = −2.4 m/s)" from 0 to 480 s, "stopped (slope = 0)" from 480 to 600 s, "jogging (slope = −2.4 m/s)" from 600 to 840 s; a horizontal dashed line at d = 0 labeled "home"; the final point at (840 s, −528 m) labeled "528 m west of home"; student should see how the stop appears as a flat segment and how both jogging phases produce identical slopes confirming equal velocities -->
 
-*What is her total distance?* Distance is path length, ignoring stops: 1152 + 576 = 1728 m.
+The velocity-time graph: $-2.4$ m/s from $t = 0$ to $t = 480$ s, then 0 from $t = 480$ to $t = 600$ s, then $-2.4$ m/s from $t = 600$ to $t = 840$ s. The area under this graph: $(-2.4)(480) + (0)(120) + (-2.4)(240) = -1152 + 0 + (-576) = -1728$ m. Matches the total displacement exactly.
 
-*What is her average velocity?* Total time is 8 + 2 + 4 = 14 minutes = 840 s. Average velocity is $\Delta d / \Delta t = -1728 / 840 = -2.06 \text{ m/s}$ westward. Notice: the stop pulled down the average velocity below the jogging speed because average velocity depends on displacement, not on how much she moved.
+---
 
-*What would the position-time graph look like?* A straight line with negative slope (going down as time goes right) from (0 s, 1200 m) to (480 s, 48 m). Then a horizontal line (no change in position) from (480 s, 48 m) to (600 s, 48 m). Then another straight line with negative slope from (600 s, 48 m) to (840 s, –528 m).
+## What the Next Chapter Requires
 
-*What would the velocity-time graph look like?* A horizontal line at –2.4 m/s from t = 0 to t = 480 s. A horizontal line at 0 m/s from t = 480 s to t = 600 s. A horizontal line at –2.4 m/s from t = 600 s to t = 840 s. The area under this graph: (–2.4 m/s)(480 s) + 0 + (–2.4 m/s)(240 s) = –1728 m, which matches the total displacement.
+This chapter has given you the tools to *describe* motion: where something is, how far it traveled, how fast it is going, what direction. That is kinematics — the geometry of motion.
+
+What it has not done is explain why motion changes. Why does the student slow down when she reaches a hill? Why does a ball thrown upward come back down? The answer requires a new concept: force. And the connection between force and change in velocity — not velocity itself, but change in velocity — is acceleration.
+
+Acceleration is what the slope of a velocity-time graph measures. You have already read it off a graph in this chapter. The next chapter asks what causes it, and what happens when we follow that question all the way to Newton's three laws.
+
+One preview worth holding. Notice that everything in this chapter involved *changes* in position and velocity, not the absolute values. Newton's laws will turn out to work the same way: they govern changes in velocity, not velocity itself. An object moving at constant velocity, with no acceleration, requires no force. This is counterintuitive — it feels like you need to keep pushing something to keep it moving. But that feeling comes from friction, which is itself a force opposing the motion. Strip friction away and constant velocity requires nothing. The chapter ahead will make that precise.
+
+---
+
+## What Would Change My Mind
+
+Every experiment ever run confirms that motion is frame-dependent — that there is no absolute rest against which to measure it. If any experiment revealed a genuinely preferred reference frame (some state of absolute rest against which all motion could be defined absolutely), the foundational claim of this chapter would require revision. No such experiment has succeeded. Einstein's special relativity, rather than overturning the frame-dependence of motion, deepened it: not only is there no preferred position, there is no preferred clock either.
+
+## Still Puzzling
+
+We move through space at extraordinary speeds — Earth's surface spins at up to 460 m/s at the equator; Earth orbits the sun at 30 km/s; the solar system moves through the galaxy at roughly 230 km/s. Yet we feel stationary. The brain chooses a reference frame automatically, anchoring perception to the immediate environment. This works well enough for daily life. It becomes actively misleading in physics, where the chosen reference frame must be explicit and the choice must be justified. How the brain settles on its implicit reference frames — and why those frames feel absolute rather than chosen — is a question that sits at the intersection of physics, neuroscience, and the philosophy of perception. Physics can describe the frames. It cannot yet fully explain why one feels more real than another.
 
 ---
 
 ## Exercises
 
-**Warm-up (direct application)**
+### Warm-up
 
-1. A student walks from his house (origin) 100 m north to the store, then 50 m south to a friend's house. Set north as positive. Calculate: (a) total distance traveled, (b) displacement, (c) magnitude of displacement.
+**1.** A dog runs 8 m east, then 3 m west. Set east as positive. Calculate: (a) total distance traveled, (b) displacement, (c) magnitude of displacement. Which of your three answers could be zero even if the dog kept running? Which could be negative?
 
-2. A car travels 200 km in 4 hours. Is this information sufficient to calculate average velocity? Why or why not?
+*Tests: distance vs. displacement, sign convention.*
 
-3. A position-time graph shows a horizontal line. What does this tell you about the object's motion?
+**2.** A car covers 240 km in 4 hours. A second car covers 240 km in 3 hours but drives in the opposite direction. Do the two cars have the same average speed? The same average velocity? Explain without calculating.
 
-4. A velocity-time graph shows a horizontal line at +10 m/s for 5 seconds. What is the displacement during this time?
+*Tests: speed vs. velocity, direction as essential information.*
 
-**Application (requires translation)**
+**3.** A position-time graph shows a straight horizontal line at $d = +5$ m for 10 seconds. What is the object's velocity? What is its displacement over those 10 seconds? What is the distance it travels?
 
-5. A toy train travels around a circular track of circumference 12 m. It takes the train 20 seconds to complete one lap. (a) What is the distance traveled? (b) What is the displacement? (c) What is the average speed? (d) What is the average velocity? (e) Why are (c) and (d) different?
+*Tests: reading zero velocity from a graph; displacement and distance when stationary.*
 
-6. Two runners start at the same location. Runner A jogs 5 km north in 35 minutes. Runner B jogs 6 km south in 42 minutes. Without calculating, explain which runner has the greater average speed and which has the greater magnitude of average velocity.
+**4.** A velocity-time graph shows a constant velocity of $+3$ m/s for 6 seconds, followed immediately by $-3$ m/s for 6 seconds. Without calculating, what is the total displacement? What is the total distance?
 
-7. A velocity-time graph shows a straight line that increases in slope (gets steeper) over time. The line goes from (0 s, 0 m/s) to (10 s, 50 m/s). Estimate the displacement using the area under the curve. (Hint: the shape is a triangle.)
-
-8. A position-time graph shows two segments: a straight line from (0 s, 0 m) to (4 s, 12 m), then another straight line from (4 s, 12 m) to (8 s, 20 m). (a) Calculate the velocity during the first segment. (b) Calculate the velocity during the second segment. (c) Is the overall motion uniform?
-
-**Synthesis (combine concepts)**
-
-9. A cyclist rides from point A to point B (2 km away) at 10 m/s. She rests for 5 minutes. She then rides back from B to A at 15 m/s. (a) Calculate the total displacement. (b) Calculate the total distance. (c) Calculate the total average velocity. (d) Calculate the total average speed. (e) Sketch both the position-time and velocity-time graphs for this motion.
-
-10. Two objects are graphed on the same position-time plot. Object X is a straight line from (0 s, 0 m) to (10 s, 50 m). Object Y is a curve that starts at (0 s, 0 m) and reaches (10 s, 50 m), but the curve is concave down (bends downward). Both objects end at the same position at the same time. What can you infer about their average velocities? Their instantaneous velocities at t = 0? Which one traveled farther?
-
-**Challenge (open-ended)**
-
-11. Imagine a scenario where an object's displacement is zero but its distance is nonzero. Describe the motion. Then sketch what both the position-time and velocity-time graphs would look like.
-
-12. A satellite orbits Earth once every 90 minutes, at a constant speed of 7.8 km/s. (a) What is the satellite's average velocity after one orbit? (b) After half an orbit? (c) Is it possible for an object to have constant speed but changing velocity? Explain using this satellite as an example.
-
-13. On a position-time graph, you see one object moving with constant velocity (straight line) and another accelerating from rest (curved line). Both start at the origin at t = 0 and reach the same final position at the same final time. (a) Which object has the greater average velocity? (b) Which object has the greater instantaneous velocity at the end? (c) Which object traveled faster at the beginning? Explain your reasoning.
+*Tests: area under a velocity-time graph; signed vs. unsigned area.*
 
 ---
 
-## Chapter summary
+### Application
 
-Motion is a relationship, not a property. You cannot say an object is moving without specifying what you are comparing it to — a reference frame. Once you choose a reference frame, position, distance, and displacement become precise. Distance is the path length (always positive). Displacement is the net position change (can be positive, negative, or zero, depending on your chosen positive direction).
+**5.** You jog from your house to a coffee shop 600 m north in 5 minutes, buy coffee, then jog back home in 6 minutes. (a) What is your total distance? (b) What is your total displacement? (c) What is your average speed for the whole trip? (d) What is your average velocity for the whole trip? (e) Why does the answer to (d) feel like a cheat?
 
-Similarly, speed and velocity both measure how fast position changes, but speed ignores direction while velocity includes it. They are the same only if the motion is in one direction.
+*Tests: all four quantities for a round trip; why average velocity collapses on return.*
 
-Graphs encode motion as geometry. The slope of a position-time graph is velocity. The slope of a velocity-time graph is acceleration. The area under a velocity-time graph is displacement.
+**6.** A position-time graph has two straight segments: from (0 s, 0 m) to (5 s, 20 m), then from (5 s, 20 m) to (12 s, 6 m). (a) Calculate the velocity during each segment. (b) Is the object moving in the same direction in both segments? (c) Calculate the average velocity over the full 12 seconds using total displacement and total time.
 
-The central idea to watch for: *Direction matters in physics*. That is why we distinguish distance from displacement, speed from velocity, and carefully label axes on graphs. Without direction, we lose information. This distinction becomes essential in the next chapter, where we study what causes motion to change.
+*Tests: extracting velocity as slope; sign change as direction reversal; average vs. segment velocity.*
 
----
+**7.** A velocity-time graph shows a straight line increasing from 0 m/s at $t = 0$ to 20 m/s at $t = 10$ s. Estimate the displacement during this interval. (Hint: the shape under the line is a triangle. Area of a triangle = ½ × base × height.)
 
-## Connections forward
+*Tests: area under a non-rectangular velocity-time curve; geometric reasoning.*
 
-This chapter gives you the vocabulary for describing motion. The next chapter asks: *why* does motion change? Why does a car accelerate? Why does a ball fall? To answer these questions, you need Newton's laws and the concept of force. Motion itself — the kinematics — is only half the story. The causes of motion — the dynamics — are the other half.
+**8.** Two trains leave the same station at the same time. Train A travels north at a constant 80 km/h. Train B travels south at a constant 80 km/h. After 2 hours: (a) Are their speeds the same? (b) Are their velocities the same? (c) What is each train's displacement? (d) How far apart are they?
 
-One more preview: you will eventually learn that displacement, velocity, and acceleration are all vectors. The skills you are building now — choosing a direction, applying signs consistently, reading graphs — are the foundation for understanding how forces push objects in particular directions, causing their motion to change in precise, calculable ways.
-
----
-
-**What would change my mind:** If evidence showed that reference frames were not necessary to describe motion (i.e., that motion existed in absolute terms), this chapter's entire foundation would shift. Currently, every experiment confirms that motion is relative. Even Einstein's theories of relativity, which revolutionized physics, did not overturn the principle that motion is frame-dependent — they only showed that the frame-dependence is more subtle than Newton believed.
-
-**Still puzzling:** Why does the human perceptual system make motion relative, yet feel like we are at rest on the ground? We are moving through space at thousands of kilometers per hour (Earth's rotation, orbit around the sun, galaxy's motion through space), yet we feel stationary. The brain chooses the reference frame that feels most useful. This raises deeper questions about perception and reality that physics alone cannot answer, but understanding motion deeply makes the puzzle sharper.
+*Tests: same speed, opposite velocity; displacement as a signed quantity.*
 
 ---
 
-**Tags:** kinematics, reference frames, vectors, scalars, displacement, velocity, graphing motion, one-dimensional motion
+### Synthesis
+
+**9.** A ball is thrown straight up. It rises for 2 seconds, reaches its highest point, then falls back to the thrower's hand in another 2 seconds. Take upward as positive. (a) What is the ball's displacement over the full 4 seconds? (b) What is the distance traveled? (c) What is the average velocity over the full trip? (d) At the highest point, the ball's speed is momentarily zero. What does this mean for the slope of the position-time graph at that instant? (e) Sketch what the position-time graph looks like — is it a straight line or a curve? What does the shape tell you about whether velocity is constant?
+
+*Tests: displacement vs. distance on a reversal; instantaneous velocity = zero at turning point; curved graph = changing velocity.*
+
+**10.** Two cyclists start at the same point and both reach a finish line 3 km away in exactly 20 minutes. Cyclist A takes a straight path. Cyclist B takes a winding path through the park that is 4 km long. (a) Do they have the same average velocity? (b) Do they have the same average speed? (c) On a position-time graph (measuring straight-line distance from start to finish), how would their lines compare? (d) If you were tracking their actual paths on a map, how would the graphs differ?
+
+*Tests: velocity depends on displacement; speed depends on distance; same endpoints, different paths.*
 
 ---
 
-*Byline: Nik Bear Brown, 2026*
+### Challenge
+
+**11.** A satellite orbits Earth at a constant speed of 7,800 m/s, completing one full orbit every 90 minutes. (a) What is its average speed over one full orbit? (b) What is its average velocity over one full orbit? (c) Over half an orbit? (d) Is it possible for an object to have a constant speed but a continuously changing velocity? Use the satellite to make the case. This distinction will become the foundation of Chapter 6 (circular motion) — write one sentence predicting what concept Chapter 6 will need to introduce to explain it.
+
+*Tests: speed vs. velocity for circular motion; displacement zero after full orbit; preview of centripetal acceleration.*
+
 ---
 
-## LLM Exercise — Chapter 2: Motion in One Dimension (Physics Demonstrations Notebook Project)
+## LLM Exercise — Chapter 4: Motion in One Dimension (Physics Demonstrations Notebook Project)
 
 **Project:** Physics Demonstrations Notebook.
 **What you're building this chapter:** the ramp-and-flat-surface position-time demo — visual evidence of constant acceleration vs. constant velocity.
@@ -345,8 +292,8 @@ One more preview: you will eventually learn that displacement, velocity, and acc
 **The Prompt:**
 
 ```
-Chapter 2 demo for my Physics Demos Notebook. Notebook Charter is
-in this Claude Project. Chapter 2 taught: position and reference
+Chapter 4 demo for my Physics Demos Notebook. Notebook Charter is
+in this Claude Project. Chapter 4 taught: position and reference
 frames; speed vs. velocity (direction matters for velocity);
 average vs. instantaneous; reading position-time and velocity-time
 graphs (slope of x-t = velocity; slope of v-t = acceleration; area
@@ -421,10 +368,9 @@ questions become the threads for later chapters.
 - *For Claude Code:* If you want to digitize the video frame-by-frame and produce real position-time graphs, Claude Code with OpenCV or video-frame extraction is the right tool. Optional but valuable.
 - *For a Claude Project:* The entry goes in the notebook. Photos commit to the project folder.
 
-**Connection to previous chapters:** Ch 1's "model vs. reality" discipline gets exercised — the constant-velocity model will fail on the ramp; the constant-acceleration model will fail on the flat (because of friction).
+**Connection to previous chapters:** Ch 2's "model vs. reality" discipline gets exercised — the constant-velocity model will fail on the ramp; the constant-acceleration model will fail on the flat (because of friction).
 
-**Preview of next chapter:** Chapter 3 is acceleration in detail. You'll do a free-fall demo — drop two objects of very different mass and time them. The chapter's claim that g is mass-independent gets tested.
-
+**Preview of next chapter:** Chapter 5 is acceleration in detail. You'll do a free-fall demo — drop two objects of very different mass and time them. The chapter's claim that g is mass-independent gets tested.
 
 ---
 
@@ -435,7 +381,10 @@ questions become the threads for later chapters.
 **Run this:**
 
 ```
-Who is Galileo Galilei, and how does their work connect to motion in one dimension we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about their career or ideas.
+Who is Galileo Galilei, and how does their work connect to motion
+in one dimension we covered in this chapter? Keep it to three
+paragraphs. End with the single most surprising thing about their
+career or ideas.
 ```
 
 → Search **"Galileo Galilei"** on Wikipedia.
@@ -446,3 +395,7 @@ Who is Galileo Galilei, and how does their work connect to motion in one dimensi
 - Add a constraint: "Answer including criticisms or limits of Galileo Galilei's framework."
 
 What changes? What gets better? What gets worse?
+
+---
+
+*Tags: kinematics; reference-frames; vectors; scalars; displacement; velocity; graphing-motion; one-dimensional-motion*
