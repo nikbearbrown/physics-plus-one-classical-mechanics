@@ -1,286 +1,150 @@
 # Chapter 15 — Fluid Dynamics and Its Biological and Medical Applications
 
-**Suggested titles**
-
-1. Fluid Dynamics and Its Biological and Medical Applications
-2. Why Faster Flow Has Lower Pressure
-3. From Kitchen Tap to Aorta: How Fluids Get From Here to There
-
-**TL;DR.** Once a fluid moves, two new principles take over. The **continuity equation** ($A_1 v_1 = A_2 v_2$) is mass conservation: a fluid speeds up when it enters a narrower channel. **Bernoulli's equation** ($P + \tfrac{1}{2}\rho v^2 + \rho g h = $ const) is energy conservation along a streamline: faster flow means lower pressure. Real fluids also have **viscosity** (internal friction) and can flow either smoothly (**laminar**) or chaotically (**turbulent**), with the **Reynolds number** deciding which. Together, this machinery describes blood flow through arteries, water through pipes, air over a wing, and almost every flowing-fluid problem in engineering and biology.
+*The blood pressure cuff is a fluid-dynamics experiment you sit through every doctor's visit.*
 
 ---
 
-## A blood pressure cuff inflating, every primary care visit
+The medical assistant wraps the cuff around your upper arm and inflates it. At a certain pressure the cuff squeezes the brachial artery completely shut — no blood passes. She places a stethoscope just below the cuff and slowly releases the pressure. At the moment the cuff pressure drops below the peak pressure your heart generates, blood starts squirting through during each beat. The flow is turbulent. It makes a sound — the Korotkoff sound, named for the Russian surgeon who described it in 1905. She records the pressure at which the first sound appears: that is your systolic reading, the peak heart pressure. As the cuff continues to deflate, the character of the sounds changes and eventually they vanish, because at that point blood is flowing smoothly all the time. She records the pressure at which the sounds disappear: your diastolic reading, the resting pressure between beats. The cuff reads 120/80 mmHg. You are sent home healthy.
 
-You sit down at the doctor's office. The medical assistant wraps a cuff around your upper arm. The cuff inflates — squeezing your brachial artery shut. She places a stethoscope just below the cuff and slowly releases the pressure. At a certain pressure, she hears the first thumping sound — your **systolic** blood pressure, the peak pressure your heart generates with each beat. As the cuff continues to deflate, the sounds change in character; at the moment they disappear entirely, she records the **diastolic** pressure, the resting pressure between beats. The reading: $120/80 \text{ mmHg}$, or in pascals: $16{,}000 / 10{,}700 \text{ Pa}$.
+Every step in this routine is fluid dynamics. The cuff creates a controlled pressure environment that exploits the transition between no flow, turbulent flow, and laminar flow as the cuff pressure crosses two thresholds. The sounds are the acoustic signature of turbulence. The doctor's reading translates to a medical decision — but it works because of the physics.
 
-What's happening physically? Your heart pumps blood through arteries; the arteries narrow and widen; the blood flows in pulses, not continuously. The cuff exploits a fluid-dynamics phenomenon: when the cuff pressure exceeds the artery's interior pressure, the artery is squeezed shut and no blood flows. As cuff pressure drops below the systolic peak, blood starts squirting through during peak heart pressure — and the flow is *turbulent*, producing the audible sound (the "Korotkoff sounds"). When cuff pressure drops below the diastolic minimum, blood flows smoothly all the time, and the turbulent sounds vanish.
-
-Almost every step in this routine is fluid dynamics: the heart's pulsatile pressure, the artery's pressure-volume relationship, the transition from no-flow to turbulent-flow to laminar-flow as cuff pressure changes. The doctor's reading translates to medical decisions about cardiovascular health — but the physics underneath is what makes the measurement work.
-
-This chapter is about fluids in motion: continuity, Bernoulli's equation, viscosity, turbulence, and the way these ideas apply to engineering pipelines and biological circulations alike. By the end, you should be able to compute flow rates, predict pressure drops in pipes and arteries, distinguish laminar from turbulent flow, and recognize where fluid dynamics underlies the medical and biological systems you take for granted.
-
-**Learning objectives.** By the end of this chapter you should be able to:
-
-1. Apply the continuity equation $A_1 v_1 = A_2 v_2$ for incompressible fluid in a tube of varying cross-section.
-2. Apply Bernoulli's equation $P + \tfrac{1}{2}\rho v^2 + \rho g h = $ const along a streamline to relate pressure, speed, and height.
-3. Compute viscous flow in pipes using Poiseuille's law and identify when it applies (laminar regime).
-4. Compute the Reynolds number $\text{Re} = \rho v L / \eta$ and predict whether flow is laminar or turbulent.
-5. Apply fluid dynamics to biomedical situations: blood flow, cardiac output, breathing, fluid loss / replacement.
-
-**Prerequisites.** Chapter 7 (energy conservation — Bernoulli is energy conservation for fluids). Chapter 11 (pressure, density, fluid statics).
-
-**Why this chapter matters.** Every flowing fluid system in nature and engineering uses this physics: the human cardiovascular system, the lungs, plant transpiration, water and gas pipelines, hydraulic turbines, airfoils, ship hulls, weather, ocean currents, glaciers. Many medical interventions (IV drips, catheters, dialysis, nebulizers, blood-pressure measurement) are direct applications. Many medical pathologies (heart attacks, aneurysms, atherosclerosis) are fluid-dynamic events.
+This chapter is the physics. Three things: the continuity equation (mass conservation for a moving fluid), Bernoulli's equation (energy conservation along a streamline), and viscosity with its consequences — laminar and turbulent flow, Poiseuille's law, and the Reynolds number. By the end, you should be able to calculate flow rates in pipes and arteries, predict pressure changes when a tube narrows, and determine whether a given flow is smooth or chaotic.
 
 ---
 
-## Concept 1 — Flow rate and continuity
+## The Continuity Equation
 
-### Pinching the end of a garden hose
+Pinch the end of a garden hose. The water, which was flowing at a leisurely pace, suddenly shoots out at a speed that reaches several meters. The source pressure has not changed. The hose has not been narrowed all the way to the source. What happened?
 
-You're watering the garden. The hose is open and water flows out at a leisurely speed. You pinch the end of the hose, narrowing the opening. The water shoots out faster — fast enough to spray several meters further. Same hose, same source, same total flow rate per second. What changed?
+The exit opening got smaller. And mass has to be conserved: whatever volume of water enters a section of hose per second must exit it per second. If the exit area is smaller, the water must move faster to carry the same volume through. This is the **continuity equation**:
 
-The cross-sectional area where the water exits got smaller. By **mass conservation**, the same amount of water has to come through a smaller opening per second — so it moves faster. This is the **continuity equation**:
+$$Q = A_1 v_1 = A_2 v_2,$$
 
-$$A_1 v_1 = A_2 v_2,$$
+where $Q$ is the volume flow rate (volume per unit time, units m³/s), $A$ is cross-sectional area, and $v$ is flow speed. For an incompressible fluid — a good approximation for water and most liquids — the product $Av$ is constant everywhere along the flow.
 
-where $A$ is the cross-sectional area and $v$ is the speed. The product $Av$ is constant along a flow tube.
+The consequence is immediate and counterintuitive until you see it: narrow section, fast flow; wide section, slow flow. A river runs fastest through a narrow gorge and slowest across a wide flood plain. Blood moves fastest through the aorta and slowest through the capillaries.
 
-### The mechanism — flow rate, continuity, and incompressibility
+This last point is worth pausing on. The aorta has a cross-sectional area of about 4 cm². The total cross-sectional area of all the capillaries in the human body, added together, is roughly 4,500 cm² — more than a thousand times larger. By the continuity equation, blood in the capillaries moves roughly a thousand times more slowly than in the aorta. Aortic blood speed is about 30 cm/s. Capillary blood speed is about 0.03 cm/s. This is not a design flaw. It is a design requirement: oxygen and nutrients need time to diffuse across capillary walls into tissue. The slowdown is the point. Evolution solved the same continuity equation any engineer would use.
 
-**Flow rate** $Q$ is defined as the volume of fluid passing a given cross-section per unit time:
+<!-- → INFOGRAPHIC: the cardiovascular branching hierarchy — a horizontal flow diagram from left to right: Aorta (A = 4 cm², v = 30 cm/s) → Arteries (A = 20 cm², v = 6 cm/s) → Arterioles (A = 400 cm², v = 0.3 cm/s) → Capillaries (A = 4,500 cm², v = 0.03 cm/s) → Venules → Veins → Vena cava; each stage shows approximate total cross-sectional area and velocity; student should see directly that Av is constant across all stages and that the capillary slowdown is the result of area increase, not a pump failure -->
 
-$$Q = \frac{V}{t} = A v.$$
+**A worked example.** A Venturi meter — a pipe that narrows in the middle to measure flow rate from the resulting pressure change — has a wide section of area $A_1 = 4.0 \text{ cm}^2$ and a narrow section of area $A_2 = 1.0 \text{ cm}^2$. Water enters the wide section at 0.50 m/s. What is its speed in the narrow section, and what is the volume flow rate?
 
-Units: $\text{m}^3/\text{s}$.
+Speed in narrow section: $v_2 = v_1 \times A_1/A_2 = 0.50 \times 4.0/1.0 = 2.0$ m/s. Four times faster, because the area is four times smaller.
 
-For an incompressible fluid (good approximation for liquids; sometimes for slow-moving gases) flowing through a tube whose cross-section varies, mass conservation requires:
-
-$$Q = A_1 v_1 = A_2 v_2 = \text{constant}.$$
-
-So if a pipe narrows by a factor of 4 in cross-sectional area, the flow speeds up by a factor of 4. If it widens by a factor of 9, the flow slows by a factor of 9.
-
-This is why a river runs faster through a narrow gorge than over a wide plain. It's why blood flows fastest through narrowed (constricted) arteries and capillaries — the cross-section is smaller, even though arteries are individually narrower. It's why water sprays farther when you pinch the hose.
-
-For the circulatory system: aorta cross-section is $\sim 4 \text{ cm}^2$; total cross-section of all capillaries combined is $\sim 4{,}500 \text{ cm}^2$. So blood flow speed in the aorta is $\sim 1{,}000 \times$ faster than in capillaries — about $30 \text{ cm/s}$ in the aorta, $0.03 \text{ cm/s}$ in capillaries. The slower flow in capillaries is exactly what's needed for gas and nutrient exchange.
-
-### The trade-off
-
-The continuity equation trades **a true 3D flow analysis** for **a 1D area-vs-speed picture along a streamline**. It assumes incompressible fluid, steady flow (not changing in time), and a single flow tube (no branching for the simple form). The cost: it doesn't capture turbulence or compressibility. The benefit: a single equation gives you the speed-area relationship for any pipe-like geometry.
-
-### Worked example — water through a Venturi meter
-
-A Venturi meter (a tube that narrows in the middle for measuring flow) has cross-section $A_1 = 4.0 \text{ cm}^2$ in the wide section and $A_2 = 1.0 \text{ cm}^2$ in the narrow section. Water flows through at $0.50 \text{ m/s}$ in the wide section. (a) What is the speed in the narrow section? (b) What is the volume flow rate?
-
-**(a) Continuity.**
-
-$$A_1 v_1 = A_2 v_2 \implies v_2 = v_1 \frac{A_1}{A_2} = 0.50 \times \frac{4.0}{1.0} = 2.0 \text{ m/s}.$$
-
-The water moves $4\times$ faster in the narrow section.
-
-**(b) Volume flow rate.**
-
-$$Q = A_1 v_1 = (4.0 \times 10^{-4} \text{ m}^2)(0.50 \text{ m/s}) = 2.0 \times 10^{-4} \text{ m}^3/\text{s} = 0.20 \text{ L/s}.$$
-
-About 200 mL per second — comparable to a kitchen faucet.
-
-**Sanity check.** The flow rate should be the same in both sections (mass conservation). Compute also in the narrow section: $Q = A_2 v_2 = (1.0 \times 10^{-4})(2.0) = 2.0 \times 10^{-4} \text{ m}^3/\text{s}$ ✓.
-
-### Common misconceptions
-
-- *"Mass flow rate and volume flow rate are the same."* Only for incompressible fluids. For gases (compressible), mass flow rate $\dot{m} = \rho A v$ is what's conserved, while $Q = Av$ varies.
-- *"Faster flow means more flow."* Not necessarily. If the area shrinks by a factor of 4 while speed quadruples, total flow rate (volume per second) is the same.
-
-↳ **Dig Deeper — The continuity equation in branching networks (cardiovascular system)**
-
-*The simple continuity equation $Av =$ const works for a single tube. The cardiovascular system branches: the aorta splits into many arteries, then arterioles, then capillaries. The total cross-sectional area increases as you go to smaller vessels, but each individual vessel is smaller. The right form of continuity sums over all parallel branches.*
-
-**Prompt:**
-> Walk through how continuity applies to a branching network like the human cardiovascular system. Compute (a) blood velocity in the aorta given a cardiac output of $5 \text{ L/min}$ and aortic cross-section $4 \text{ cm}^2$, (b) average blood velocity in the capillary bed given total capillary cross-section $\sim 4{,}500 \text{ cm}^2$, (c) the ratio. End with one sentence on why the slow capillary velocity is biologically essential (gas and nutrient exchange takes time).
-
-**What to do with the output:** Save it. The branching-continuity insight clarifies why slow capillary flow isn't a design flaw but an essential feature.
+Volume flow rate: $Q = A_1 v_1 = (4.0 \times 10^{-4})(0.50) = 2.0 \times 10^{-4}$ m³/s, or 0.20 L/s. Check in the narrow section: $Q = A_2 v_2 = (1.0 \times 10^{-4})(2.0) = 2.0 \times 10^{-4}$ m³/s. Same. Mass is conserved.
 
 ---
 
-## Concept 2 — Bernoulli's equation: energy conservation for fluids
+## Bernoulli's Equation
 
-### A bath drain creating a vortex
+Drain a bathtub. As the water swirls toward the drain, you see a funnel-shaped depression — the vortex. The water level dips at the center. Why? In the swirling vortex, the water moves fast. Fast-moving fluid has lower pressure. The lower pressure allows the surface to dip inward.
 
-Pull the plug from a bathtub full of water. As the water drains, you see a vortex form above the drain — a swirling depression where the water level dips. The dipping happens because in the vortex, water is moving fast, and Bernoulli's principle says fast-moving fluid has *lower pressure*. The lower pressure in the vortex is what pulls water upward (or, equivalently, lets the surface dip below the surrounding level).
+This is Bernoulli's principle. It is not a separate law — it is energy conservation applied to a fluid parcel. For a steady, incompressible, frictionless flow along a streamline:
 
-This is one of the two big consequences of fluid energy conservation. Fast flow → low pressure. Slow flow → high pressure. And the connection isn't qualitative — it's quantitative.
+$$P + \tfrac{1}{2}\rho v^2 + \rho g h = \text{constant.}$$
 
-### The mechanism — Bernoulli's equation
+Three terms. $P$ is the static pressure (the force per area the fluid exerts sideways). $\frac{1}{2}\rho v^2$ is the kinetic energy per unit volume — the dynamic pressure. $\rho g h$ is the gravitational potential energy per unit volume. Their sum is conserved along any streamline.
 
-For an incompressible, steady, frictionless flow along a streamline:
+Think of it as a ledger. As a fluid parcel moves from a wide slow region to a narrow fast region, its kinetic energy increases. Something must give. If height is constant, pressure must decrease to compensate. Fast flow, low pressure. Slow flow, high pressure. The sum stays the same.
 
-$$P + \tfrac{1}{2}\rho v^2 + \rho g h = \text{constant}.$$
+<!-- → DIAGRAM: a horizontal pipe that narrows in the middle — wide left section labeled (v₁ = slow, P₁ = high); narrow center labeled (v₂ = fast, P₂ = low); wide right labeled (v₃ = slow, P₃ = high again); vertical pressure-gauge tubes ("manometers") rising from each section — tall tube at left (high pressure), short tube at center (low pressure), tall tube at right (high again); the equation P + ½ρv² = const written below; student should see how pressure and speed trade off visually before any numbers are used -->
 
-This is **Bernoulli's equation**. Three terms:
+This is how the Venturi meter actually measures flow rate. Pressure gauges at the wide and narrow sections record a pressure difference. Bernoulli's equation connects that pressure difference to the speed difference, which continuity connects to the area ratio. One pressure measurement, and you know the flow rate. No moving parts, no chemicals. Just the conservation of energy and the conservation of mass.
 
-- $P$: pressure (the static pressure at the point in the flow).
-- $\tfrac{1}{2}\rho v^2$: kinetic energy per unit volume (dynamic pressure).
-- $\rho g h$: gravitational potential energy per unit volume.
+Bernoulli also gives **Torricelli's theorem**: water flowing out of a hole at depth $h$ below an open surface exits at speed $v = \sqrt{2gh}$ — the same speed a ball would have after falling height $h$ from rest. Apply Bernoulli between the surface (pressure = atmospheric, speed ≈ 0) and the hole (pressure = atmospheric, speed = $v$, height = $-h$ below surface): $P_{\text{atm}} + 0 + \rho g(0) = P_{\text{atm}} + \frac{1}{2}\rho v^2 + \rho g(-h)$. Simplify: $\frac{1}{2}\rho v^2 = \rho g h$, so $v = \sqrt{2gh}$. The fluid does not know whether it is falling through air or through a pipe. The energy algebra is the same.
 
-Their sum is constant along a streamline. The equation is essentially energy conservation per unit volume of fluid: the work done by pressure plus the kinetic energy plus the gravitational potential energy equals a constant.
+**A worked example.** Water flows from a fire hose at 20 m/s through a nozzle of area 5.0 cm². Just inside the hose (area 20 cm²), the pressure is $2.0 \times 10^5$ Pa above atmospheric. What is the water speed inside the hose?
 
-Several immediate consequences:
+By continuity: $v_h = v_n \times A_n/A_h = 20 \times (5/20) = 5.0$ m/s inside the hose.
 
-**Bernoulli's principle:** if $h$ is constant, $P$ and $v$ trade off — faster flow has lower pressure. This is the lift on an airplane wing (faster flow over the curved top creates lower pressure, net upward force), the spin of a baseball (Magnus effect — different speeds on opposite sides create pressure differences), the function of a Venturi meter (measuring flow rate from a pressure drop).
+Check with Bernoulli (at the same height): inside hose has $P = P_{\text{atm}} + 2.0 \times 10^5$ Pa and $v = 5$ m/s; at the nozzle outlet, $P = P_{\text{atm}}$ and $v = 20$ m/s.
 
-**Torricelli's theorem:** for water flowing out of a hole at depth $h$ below an open reservoir surface, the speed is $v = \sqrt{2gh}$ — the same as a free-falling object that fell a height $h$. (Apply Bernoulli with $P_{\text{surface}} = P_{\text{outlet}} = $ atmospheric, $v_{\text{surface}} \approx 0$.)
+LHS: $(P_{\text{atm}} + 2.0 \times 10^5) + \frac{1}{2}(1000)(25) = P_{\text{atm}} + 200{,}000 + 12{,}500$.
 
-### The trade-off
+RHS: $P_{\text{atm}} + \frac{1}{2}(1000)(400) = P_{\text{atm}} + 200{,}000$.
 
-Bernoulli's equation trades **a fully detailed velocity field** for **a single along-streamline relationship**. It assumes incompressible, steady, frictionless (no viscosity), and along a single streamline. Real flows often violate these (compressibility for fast gas, unsteadiness for pulsating flow, friction for any real fluid). When the assumptions hold, Bernoulli is exact. When they fail, it's a useful approximation.
-
-### Worked example — water shooting from a fire hose
-
-Water flows from a fire-hose nozzle at $20 \text{ m/s}$ horizontally. The hose's interior pressure (just upstream of the nozzle) is $2.0 \times 10^5 \text{ Pa}$ above atmospheric. (a) If the hose has cross-section $20 \text{ cm}^2$ and the nozzle has cross-section $5.0 \text{ cm}^2$, what is the water speed inside the hose? (b) Verify Bernoulli's equation between the hose and the nozzle outlet (where pressure equals atmospheric).
-
-**(a) Continuity.** $A_h v_h = A_n v_n \implies v_h = (5.0/20)(20) = 5.0 \text{ m/s}$.
-
-**(b) Bernoulli.** Take both points at the same height. Inside hose: $P_h = 2.0 \times 10^5 + P_{\text{atm}}$, $v_h = 5.0 \text{ m/s}$. Nozzle outlet: $P_n = P_{\text{atm}}$, $v_n = 20 \text{ m/s}$.
-
-LHS (hose): $P_h + \tfrac{1}{2}\rho v_h^2 = (P_{\text{atm}} + 2.0 \times 10^5) + \tfrac{1}{2}(1000)(5.0)^2 = (P_{\text{atm}} + 2.0 \times 10^5) + 12{,}500$.
-
-RHS (nozzle): $P_{\text{atm}} + \tfrac{1}{2}(1000)(20)^2 = P_{\text{atm}} + 200{,}000$.
-
-So Bernoulli requires: $P_{\text{atm}} + 2.0 \times 10^5 + 12{,}500 = P_{\text{atm}} + 200{,}000 \implies 212{,}500 = 200{,}000$. Close but not exact — the discrepancy ($12{,}500 \text{ Pa}$, about $6\%$) reflects friction in the hose, which Bernoulli's idealization ignores.
-
-**Sanity check.** A high-pressure water source (the hose interior pressure of $\sim 2 \text{ atm}$ above atmospheric) accelerating water through a nozzle from $5$ to $20 \text{ m/s}$ is exactly the principle of fire hoses, sprinkler systems, and many other high-velocity water applications. Bernoulli explains why narrow nozzles produce fast jets.
-
-### Common misconceptions
-
-- *"Bernoulli applies everywhere in a fluid."* Only along a streamline (a single path of fluid flow). Different streamlines can have different constants.
-- *"Bernoulli proves airplanes fly."* Only partly. Bernoulli explains pressure-speed correlation, but airplane lift involves additional effects (downwash from wing, momentum change of air mass). The full story requires fluid dynamics beyond Bernoulli alone.
-
-↳ **Dig Deeper — Bernoulli, momentum, and how airplane wings actually generate lift**
-
-*The popular textbook explanation of airplane lift via Bernoulli's principle (faster flow over curved upper surface → lower pressure → lift) is technically true but misleading — the equal-transit-time argument it usually relies on is wrong. The complete picture combines Bernoulli with Newton's third law (the wing redirects air downward; air pushes wing upward).*
-
-**Prompt:**
-> Critically examine the textbook "Bernoulli explanation" of airplane lift. (a) State the equal-transit-time argument and explain why it's empirically wrong. (b) Give the more complete picture combining Bernoulli's principle with momentum-flux arguments (Newton's third law: wing pushes air down, air pushes wing up). (c) End with the modern view that lift = pressure difference (true) AND lift = downward momentum imparted to air per second (also true) — they're complementary descriptions of the same physics.
-
-**What to do with the output:** Save it. The lift-explanation question is one of the most-discussed examples of how popular physics oversimplifies; the correct picture is more interesting than the textbook story.
+The two sides differ by 12,500 Pa — about 6%. In a real hose, this discrepancy is real: friction in the hose tube removes energy from the flow. Bernoulli's idealization (frictionless) overpredicts the outlet speed slightly. Real hose-nozzle designs account for the friction loss. The equation is not wrong; the assumption of frictionless flow is approximate.
 
 ---
 
-## Concept 3 — Viscosity, laminar vs. turbulent, Reynolds number
+## Viscosity, Laminar and Turbulent Flow
 
-### Honey vs. water from a pitcher
+Pour water from a pitcher. It flows quickly and smoothly. Pour honey. It falls in thick, slow ribbons, reluctant to leave the container. Both are fluids. Both obey the same conservation equations. The difference is **viscosity** — internal friction between adjacent layers of fluid sliding past one another.
 
-Pour water from a pitcher. The water falls in a smooth column, splashes into the cup, and you're done in a second. Pour honey from a pitcher. The honey falls slowly, in a thick column that may break into elongated globs, takes seconds to even begin filling the cup.
+Viscosity $\eta$ is measured in units of Pa·s. Water at room temperature has $\eta \approx 10^{-3}$ Pa·s. Air has $\eta \approx 1.8 \times 10^{-5}$ Pa·s. Blood has $\eta \approx 3$–$4 \times 10^{-3}$ Pa·s — about three to four times water. Honey has $\eta \approx 10$ Pa·s, about 10,000 times water.
 
-The difference is **viscosity** — internal friction within a fluid. Water has low viscosity; honey has high viscosity. Both are fluids; both flow under gravity. But the rate of flow differs by orders of magnitude because of how easily the molecules slide past one another.
-
-Real fluids have viscosity. The frictionless idealization in Bernoulli's equation is convenient but rarely exactly true. For pipe flow, syrup vs. water, blood vs. air, viscosity matters.
-
-### The mechanism — viscosity, Poiseuille's law, Reynolds number
-
-**Viscosity** $\eta$ has units of $\text{Pa} \cdot \text{s}$. Some values:
-
-- Water at $20°\text{C}$: $\eta \approx 10^{-3} \text{ Pa}\cdot\text{s}$.
-- Air at $20°\text{C}$: $\eta \approx 1.8 \times 10^{-5} \text{ Pa}\cdot\text{s}$.
-- Blood: $\eta \approx 3 \times 10^{-3} \text{ to } 4 \times 10^{-3} \text{ Pa}\cdot\text{s}$ (about 3–4× water).
-- Honey: $\eta \approx 10 \text{ Pa}\cdot\text{s}$ (about $10{,}000$× water).
-
-**Poiseuille's law:** for incompressible, steady, *laminar* flow through a pipe of radius $r$ and length $L$, with pressure drop $\Delta P$ across the length:
+For flow through a pipe where viscosity matters and the flow is smooth (laminar), the relationship between pressure drop and flow rate is given by **Poiseuille's law**:
 
 $$Q = \frac{\pi r^4 \Delta P}{8 \eta L}.$$
 
-Flow rate scales as $r^4$. Doubling pipe radius increases flow rate $16\times$ for the same pressure drop. Halving radius (e.g., partial atherosclerotic blockage of an artery) reduces flow rate $16\times$, requiring much greater pressure to maintain the same volume per second. This explains why even modest atherosclerotic narrowing leads to disproportionate cardiovascular strain.
+$r$ is the pipe radius, $L$ the length, $\Delta P$ the pressure difference between the two ends, $\eta$ the viscosity. The result scales as the fourth power of radius. Not the second power, which is what naive area-scaling would give. The fourth power.
 
-**Laminar vs. turbulent flow.** Laminar flow is smooth, with fluid layers sliding past one another. Turbulent flow is chaotic, with eddies and vortices. The transition between them is governed by the **Reynolds number**:
+Here is why. The cross-sectional area scales as $r^2$ — that is the naive factor. But in laminar flow through a pipe, the fluid does not all move at the same speed. It moves in layers: fastest at the center, zero at the wall (the fluid sticks to the wall, a condition called no-slip). The velocity profile is parabolic. The average speed depends on the shape of the parabola, which itself depends on $r^2$. Multiply the area ($r^2$) by the average speed (another $r^2$) and you get the $r^4$ scaling.
+
+<!-- → DIAGRAM: cross-section of a pipe showing the parabolic velocity profile — pipe drawn as a horizontal cylinder; a series of velocity arrows (longest at center, zero at wall) traced out in the shape of a parabola; one panel shows a narrow pipe (radius r₁) with a shallower parabola; a second panel shows a wider pipe (radius 2r₁) with a taller/wider parabola; annotations: "area ∝ r²" and "average speed ∝ r²" → "Q ∝ r⁴"; student should see where both r² factors come from and why the fourth power is not a coincidence -->
+
+The medical consequence is severe. A 30% reduction in artery radius from atherosclerosis — not a dramatic narrowing, just a moderate one — reduces flow rate by a factor of $(0.7)^4 \approx 0.24$. More than three-quarters of the flow capacity is lost from a narrowing that would look modest on an imaging scan. To restore the same flow rate, the heart must generate a pressure roughly four times as high. This is the mechanism by which mild-to-moderate atherosclerosis produces dramatic cardiovascular strain — not a linear effect, but a steep fourth-power one.
+
+Not all flows are laminar. At high speeds, in wide pipes, or with low-viscosity fluids, flows become chaotic — vortices form, layers mix, the orderly sliding collapses into turbulence. The transition is governed by a dimensionless quantity called the **Reynolds number**:
 
 $$\text{Re} = \frac{\rho v L}{\eta},$$
 
-where $\rho$ is fluid density, $v$ is characteristic flow speed, $L$ is a characteristic length (e.g., pipe diameter), and $\eta$ is viscosity.
+where $\rho$ is fluid density, $v$ is characteristic speed, and $L$ is a characteristic length (typically the pipe diameter). The Reynolds number is the ratio of inertial forces to viscous forces. When viscosity dominates (small Re), the flow is smooth and laminar — viscosity damps out any perturbations. When inertia dominates (large Re), perturbations grow instead of being damped, and the flow goes turbulent.
 
-For pipe flow:
-- Re $< 2{,}000$: laminar (smooth).
-- Re $\sim 2{,}000$–$3{,}000$: transitional (oscillates).
-- Re $> 3{,}000$: turbulent (chaotic).
+For pipe flow, the empirical boundaries are: Re below about 2,000 — laminar; Re above about 3,000 — turbulent; in between — transitional and unpredictable. These numbers are not derived from first principles. They are measured. The question of exactly why the transition occurs and what governs its details is one of the genuinely hard unsolved problems in classical mechanics.
 
-A swimming-pool-sized turbulent flow and a teacup-sized laminar flow can be the same Reynolds number — it's the dimensionless ratio that matters.
+<!-- → DIAGRAM: two side-by-side pipe cross-sections with flow visualization — left panel: "laminar (Re < 2,000)" with smooth parallel streamlines, dye injected at center flowing in a straight line; right panel: "turbulent (Re > 3,000)" with chaotic, swirling streamlines, dye diffused throughout; a third small panel labeled "transitional (Re ~ 2,000–3,000)" with intermittent waviness; Reynolds number scale below with the three zones marked; student should see the physical meaning of the criterion before applying it numerically -->
 
-### The trade-off
+**A worked example.** A healthy artery has radius $r = 2.0$ mm, length $L = 0.10$ m. Blood pressure drop across it is $\Delta P = 100$ Pa. Blood viscosity $\eta = 4 \times 10^{-3}$ Pa·s, density $\rho = 1{,}060$ kg/m³. What is the flow rate, the average speed, and the Reynolds number?
 
-Viscous flow analysis trades **simple Bernoulli** for **more complex equations involving the fluid's viscosity**. Real-flow problems (blood through a stenosed artery, oil in a pipeline, air around a car) typically need viscosity. The cost is added complexity; the benefit is realistic predictions.
+Poiseuille: $Q = \pi r^4 \Delta P / (8\eta L) = \pi (2.0 \times 10^{-3})^4 (100) / (8 \times 4 \times 10^{-3} \times 0.10)$.
 
-### Worked example — blood flow through a healthy artery
+Numerator: $\pi \times 1.6 \times 10^{-11} \times 100 \approx 5.0 \times 10^{-9}$.
 
-A healthy artery has radius $r = 2.0 \text{ mm} = 2.0 \times 10^{-3} \text{ m}$ and length $L = 0.10 \text{ m}$. Blood flows through it with pressure drop $\Delta P = 100 \text{ Pa}$. Blood viscosity $\eta = 4 \times 10^{-3} \text{ Pa}\cdot\text{s}$. (a) What is the flow rate? (b) What is the average flow speed? (c) What is the Reynolds number?
+Denominator: $3.2 \times 10^{-3}$.
 
-**(a) Poiseuille.**
+$Q \approx 1.6 \times 10^{-6}$ m³/s, or about 1.6 mL/s.
 
-$$Q = \frac{\pi (2.0 \times 10^{-3})^4 (100)}{8 (4 \times 10^{-3})(0.10)} = \frac{\pi (1.6 \times 10^{-11})(100)}{3.2 \times 10^{-3}} = \frac{5.03 \times 10^{-9}}{3.2 \times 10^{-3}} \approx 1.57 \times 10^{-6} \text{ m}^3/\text{s}.$$
+Average speed: $v = Q/(\pi r^2) = 1.6 \times 10^{-6}/(\pi \times 4 \times 10^{-6}) \approx 0.13$ m/s, about 13 cm/s.
 
-About $1.6 \text{ mL/s}$, or $94 \text{ mL/min}$. For one segment of one artery — total cardiac output ($\sim 5 \text{ L/min}$) is the sum across many such segments.
+Reynolds number: Re $= \rho v D/\eta = (1060)(0.13)(4 \times 10^{-3})/(4 \times 10^{-3}) \approx 138$.
 
-**(b) Average speed.** $Q = \pi r^2 v_{\text{avg}}$:
-
-$$v_{\text{avg}} = \frac{Q}{\pi r^2} = \frac{1.57 \times 10^{-6}}{\pi (2.0 \times 10^{-3})^2} \approx 0.125 \text{ m/s}.$$
-
-About $13 \text{ cm/s}$ — typical mid-artery flow speed.
-
-**(c) Reynolds number.** Density of blood $\rho \approx 1{,}060 \text{ kg/m}^3$. Diameter $L = 4.0 \times 10^{-3} \text{ m}$.
-
-$$\text{Re} = \frac{\rho v L}{\eta} = \frac{(1060)(0.125)(4.0 \times 10^{-3})}{4 \times 10^{-3}} \approx 132.$$
-
-Re $\sim 130$, well below the laminar/turbulent transition. Flow is laminar — Poiseuille's law applies. (At an arterial constriction, Re can rise into the turbulent regime, producing the bruit sounds that physicians listen for with a stethoscope.)
-
-**Sanity check.** Healthy peripheral artery flow is indeed laminar in most circumstances. At narrowed sites or at junctions, Re increases and turbulence can occur — exactly what produces audible sounds in the blood-pressure measurement (Korotkoff sounds at certain cuff pressures).
-
-### Common misconceptions
-
-- *"Reynolds number tells you the velocity."* No — it's a dimensionless ratio of inertial to viscous forces. Two systems with very different velocities can have the same Re if their other parameters compensate.
-- *"Turbulent always means worse."* Sometimes turbulent flow is desirable (better mixing, heat transfer); sometimes it's a problem (drag, energy loss, cavitation). Whether you want laminar or turbulent depends on the application.
-
-↳ **Dig Deeper — Why Poiseuille's flow scales as $r^4$ (the implications for medicine)**
-
-*The fact that flow scales as the fourth power of pipe radius has dramatic consequences in cardiovascular medicine. A modest narrowing of an artery (say, 30% reduction in radius) reduces flow by a factor of $\sim (0.7)^4 \approx 0.24$ — a 76% reduction in flow for the same pressure drop. Maintaining flow requires either more pressure (work for the heart) or compensatory dilation elsewhere.*
-
-**Prompt:**
-> Explain why Poiseuille's law gives flow rate proportional to $r^4$ rather than $r^2$ (which is what cross-sectional area scaling would suggest). Walk through the physics: (a) cross-section grows as $r^2$; (b) the velocity profile in laminar flow is parabolic, with maximum at the center; (c) integrating the parabolic velocity over the cross-section gives an additional $r^2$. Then explain the medical implication: a 30% radius reduction in a coronary artery (atherosclerosis) reduces flow capacity by what factor? End with one sentence on why this is why even mild atherosclerosis is medically significant.
-
-**What to do with the output:** Save it. The $r^4$ scaling is one of the most consequential results in cardiovascular physiology and explains the asymmetric severity of arterial narrowing.
+Re $\approx 138$. Laminar flow. Poiseuille's law is self-consistent: it applies in the laminar regime, and the result says we are deeply in the laminar regime. Return to the blood pressure measurement: at a healthy artery, Re is in the hundreds. At a narrowed site, the same cardiac output through a smaller radius means higher speed, which drives Re up. If Re exceeds roughly 2,000, turbulence sets in. The turbulent flow creates pressure fluctuations — vibrations in the artery wall — that produce the bruit sounds a physician hears with a stethoscope over a carotid or femoral artery with significant stenosis. Turbulence is the diagnostic signal. Laminar flow is silent.
 
 ---
 
-## Synthesis — fluid dynamics from kitchen tap to bloodstream
+## The Blood Pressure Measurement, Revisited
 
-Step back. Three concepts:
+Return to the opening. The cuff inflates. The brachial artery, squeezed shut, has no flow — Re is zero. As cuff pressure drops below systolic, brief bursts of blood squirt through at high speed during each heartbeat. The narrow gap between the partially compressed artery walls acts as a severe constriction — like a nozzle — accelerating the blood to speeds high enough that Re exceeds the turbulent threshold. Turbulence: Korotkoff sound. The stethoscope picks it up. The doctor records systolic pressure.
 
-**Continuity** ($A_1 v_1 = A_2 v_2$): mass conservation. Smaller cross-section → faster flow.
+As cuff pressure falls further, the artery is less and less compressed. The constriction decreases. Blood flows more continuously, but still through a partially narrowed channel. The character of the Korotkoff sounds changes — different phases of sound correspond to different degrees of turbulence as the constriction changes.
 
-**Bernoulli** ($P + \tfrac{1}{2}\rho v^2 + \rho g h = $ const along a streamline): energy conservation. Faster flow → lower pressure (at constant height).
+When cuff pressure falls below diastolic, the artery is uncompressed throughout the cardiac cycle. Blood flows smoothly all the time. Re drops below the turbulent threshold. Laminar flow: silence. The doctor records diastolic pressure. She is listening for the transition between turbulent and laminar flow, and the two pressures at which those transitions occur are exactly the systolic and diastolic readings.
 
-**Viscosity, Poiseuille, Reynolds** ($Q = \pi r^4 \Delta P / (8\eta L)$, Re $= \rho v L / \eta$): real fluids have internal friction; flow is laminar or turbulent depending on Re.
+The entire measurement is built on fluid dynamics. The cuff forces a controlled constriction. The constriction raises local Re above the turbulent threshold. The threshold is pressure-dependent. The physician's ear detects the acoustic signature of the regime transition. This is not an approximation or a crude clinical trick. It is the physics used directly.
 
-The **scale shift**: from a kitchen faucet ($r \sim 1 \text{ cm}$, $v \sim 1 \text{ m/s}$, Re $\sim 10^4$ — turbulent) to blood through capillaries ($r \sim 5 \text{ μm}$, $v \sim 0.001 \text{ m/s}$, Re $\sim 10^{-3}$ — laminar) to a 747 jet engine intake (Re $\sim 10^7$ — fully turbulent). The same equations apply. Re tells you the regime.
+---
 
-### A worked example using all three concepts — water through a kitchen sink to drain
+## What the Equations Assume (and When They Fail)
 
-Water flows from a kitchen tap at $0.5 \text{ L/s}$ ($5 \times 10^{-4} \text{ m}^3/\text{s}$). The tap outlet has radius $r_t = 1.0 \text{ cm}$. The drain pipe is $r_d = 2.5 \text{ cm}$ and runs $1.5 \text{ m}$ down to the trap. (a) Speed at tap outlet? (b) Speed in drain pipe? (c) Pressure in drain pipe vs. in air, ignoring viscosity? (d) Reynolds number in drain pipe.
+Bernoulli assumes steady, incompressible, frictionless flow along a single streamline. Real flows violate these assumptions to varying degrees. Pulsating flow (like blood during a heartbeat) is not steady. Compressible gases at high speed violate incompressibility. Viscosity is never truly zero — it is only negligible when it is small relative to inertial forces (large Re in a turbulent flow) or when the pipe is short. In long pipes, viscous losses accumulate and Bernoulli significantly overestimates the pressure at the far end.
 
-**(a) Continuity at tap outlet.** $Q = \pi r_t^2 v_t \implies v_t = Q/(\pi r_t^2) = 5 \times 10^{-4}/(\pi \times 10^{-4}) \approx 1.6 \text{ m/s}$.
+Poiseuille's law assumes laminar flow (Re below about 2,000), a long straight pipe, Newtonian fluid (constant viscosity), and no-slip at the walls. Blood is non-Newtonian at very low shear rates — its viscosity is not constant — but the Newtonian approximation holds well in large arteries. In small capillaries, red blood cells (7–8 μm in diameter, roughly the capillary diameter) change the effective viscosity in ways Poiseuille does not capture.
 
-**(b) Continuity in drain.** $v_d = Q/(\pi r_d^2) = 5 \times 10^{-4}/(\pi \times 6.25 \times 10^{-4}) \approx 0.25 \text{ m/s}$.
+The Reynolds number gives a single dimensionless criterion for the laminar-turbulent transition, but the actual transition depends on many factors: initial conditions, pipe roughness, entry geometry, pulsatility. The empirical Re $\approx$ 2,000–3,000 threshold for smooth circular pipes is a guideline, not a law.
 
-**(c) Bernoulli, tap outlet to drain pipe entry, taking both at same height** (~kitchen counter level): $P_t + \tfrac{1}{2}\rho v_t^2 = P_d + \tfrac{1}{2}\rho v_d^2$. Tap outlet at atmospheric: $P_t = P_{\text{atm}}$. So:
+What survives all these caveats is the structure: conservation of mass (continuity) and conservation of energy (Bernoulli) are always true in principle; the question is which form of the energy equation is appropriate for the specific conditions. Viscous dissipation always removes energy from the flow — Bernoulli ignores it; Poiseuille includes it; turbulent flow has additional dissipation that requires empirical models. The progression from Bernoulli to Poiseuille to turbulence models is a progression from ideal to progressively more realistic treatment of energy loss.
 
-$$P_d = P_{\text{atm}} + \tfrac{1}{2}(1000)(1.6^2 - 0.25^2) = P_{\text{atm}} + \tfrac{1}{2}(1000)(2.56 - 0.0625) = P_{\text{atm}} + 1{,}249 \text{ Pa}.$$
+---
 
-The drain pipe (just past the entry) is at slightly higher pressure than atmospheric — about $1.2 \text{ kPa}$ above. This is small (about $1\%$ of atmospheric).
+## What Would Change My Mind
 
-**(d) Reynolds number in drain.** Pipe diameter $L = 5 \text{ cm} = 0.05 \text{ m}$, water $\rho = 10^3 \text{ kg/m}^3$, $\eta = 10^{-3} \text{ Pa}\cdot\text{s}$.
+The chapter's central claims — continuity, Bernoulli, Poiseuille, and the Reynolds-number criterion — are well-tested across an enormous range of applications. The argument would need revision if a class of common biological or engineering flows were found to systematically violate these frameworks in ways not accounted for by known corrections (non-Newtonian effects, compressibility, unsteadiness). Blood is non-Newtonian and pulsating; these corrections are well-characterized and do not overturn the basic framework, they refine it.
 
-$$\text{Re} = \frac{(1000)(0.25)(0.05)}{10^{-3}} = 12{,}500.$$
+## Still Puzzling
 
-Re $\sim 10^4$, well above $3{,}000$. The flow in the drain is **turbulent**. (Pipe drains are typically turbulent; that's why you hear gurgling.)
-
-The synthesis exercises all three concepts: continuity to find speeds in the variable-cross-section system; Bernoulli to relate pressure to speed; Reynolds to identify the flow regime. Everyday plumbing is fluid dynamics in action.
+The transition from laminar to turbulent flow — specifically, why it happens at Re ≈ 2,000–3,000 for pipe flow and not at some other value — is one of the genuinely open problems in classical physics. The Navier–Stokes equations that govern fluid flow are well-established; proving whether their solutions remain smooth for all time (or develop singularities associated with turbulence) is one of the seven Millennium Prize Problems in mathematics, with a $1 million prize unclaimed. We can predict turbulence empirically. We cannot derive it from first principles in a mathematically rigorous way.
 
 ---
 
@@ -288,41 +152,65 @@ The synthesis exercises all three concepts: continuity to find speeds in the var
 
 ### Warm-up
 
-**12.1** *(LO 1)* Water flows through a $5.0 \text{ cm}$ diameter pipe at $2.0 \text{ m/s}$. (a) Cross-sectional area? (b) Volume flow rate in $\text{m}^3/\text{s}$ and L/min?
+**1.** Water flows at 3.0 m/s through a pipe of diameter 4.0 cm. The pipe then narrows to diameter 2.0 cm. (a) What is the cross-sectional area of each section? (b) What is the flow speed in the narrow section? (c) What is the volume flow rate, and is it the same in both sections?
 
-**12.2** *(LO 1)* A river $50 \text{ m}$ wide and $2.0 \text{ m}$ deep on average flows at $0.50 \text{ m/s}$. What is its volume flow rate?
+*Tests: continuity equation; area-speed trade-off; flow rate invariance.*
 
-**12.3** *(LO 2)* Water flows horizontally through a pipe at $3.0 \text{ m/s}$ at gauge pressure $50 \text{ kPa}$. The pipe narrows so that the speed becomes $9.0 \text{ m/s}$. What is the new gauge pressure?
+**2.** Water flows horizontally at 4.0 m/s at gauge pressure 60,000 Pa. The pipe then narrows so speed increases to 10.0 m/s. What is the new gauge pressure? (Assume frictionless flow at constant height.)
 
-**12.4** *(LO 4)* Water at $20°\text{C}$ flows through a $1.0 \text{ cm}$ diameter pipe at $0.50 \text{ m/s}$. Compute Re. Is flow laminar or turbulent?
+*Tests: Bernoulli at constant height; pressure-speed trade-off.*
 
-### Application
+**3.** Water exits a hole at depth 2.5 m below the surface of a large reservoir. (a) Use Torricelli's theorem $v = \sqrt{2gh}$ to find the exit speed. (b) If the hole has area 2.0 cm², what is the volume flow rate?
 
-**12.5** *(LO 1, 2)* Water emerges from a hole at depth $3.0 \text{ m}$ below the surface of a large reservoir. (a) Use Torricelli's theorem ($v = \sqrt{2gh}$) to find the exit speed. (b) If the hole has area $5.0 \text{ cm}^2$, what is the volume flow rate?
+*Tests: Bernoulli applied to tank-with-hole; Torricelli as a special case.*
 
-**12.6** *(LO 3)* Compute the volume flow rate through a horizontal cylindrical pipe with radius $1.0 \text{ cm}$, length $5.0 \text{ m}$, viscosity $\eta = 10^{-3} \text{ Pa}\cdot\text{s}$, with pressure drop $200 \text{ Pa}$ across the length.
+**4.** Blood ($\rho = 1{,}060$ kg/m³, $\eta = 4 \times 10^{-3}$ Pa·s) flows through an artery of diameter 4.0 mm at 0.20 m/s. Compute the Reynolds number. Is the flow laminar or turbulent?
 
-**12.7** *(LO 5)* Cardiac output is about $5 \text{ L/min}$. Aortic radius is about $1.0 \text{ cm}$. (a) Compute average blood velocity in the aorta. (b) Reynolds number ($\rho_{\text{blood}} = 1{,}060$, $\eta = 4 \times 10^{-3}$). Laminar or turbulent under healthy conditions?
-
-**12.8** *(LO 2)* An airplane wing produces lift in part because of pressure difference between top and bottom surfaces. If the speed of air over the top is $100 \text{ m/s}$ and underneath is $80 \text{ m/s}$ (air density $1.21 \text{ kg/m}^3$), what is the pressure difference?
-
-### Synthesis
-
-**12.9** *(LO 1, 2, 3)* A garden hose has $1.5 \text{ cm}$ inner diameter and water flows through at $5 \text{ L/min}$. The hose is $20 \text{ m}$ long and the supply pressure is $250 \text{ kPa}$ above atmospheric. (a) Speed in hose? (b) Bernoulli pressure drop from speed alone? (c) Poiseuille pressure drop from viscosity? (d) Comment on which dominates.
-
-**12.10** *(LO 3, 5)* An atherosclerotic narrowing reduces an artery's radius by $25\%$ ($r_{\text{new}} = 0.75 r_{\text{old}}$). (a) By what factor does flow rate decrease (at the same pressure)? (b) By what factor must pressure increase to maintain the same flow rate?
-
-**12.11** *(LO 4)* A swim at $1 \text{ m/s}$ involves a body of characteristic length $1.5 \text{ m}$ moving through water. Compute Re. Is flow around the swimmer laminar or turbulent?
-
-### Challenge
-
-**12.12** *(LO 5, beyond chapter)* A patient has an aortic stenosis (narrowing) reducing the aortic valve cross-section to $1/4$ of normal. Cardiac output remains $5 \text{ L/min}$. (a) Velocity through the stenosed valve? (b) Reynolds number? Is flow turbulent? (c) Pressure drop across the stenosis (use Bernoulli, ignoring viscosity)? Express in mmHg.
-
-**12.13** *(beyond chapter)* For a bacterium of radius $1 \text{ μm}$ swimming through water at $30 \text{ μm/s}$, compute the Reynolds number. Comment: the bacterium lives in a regime where viscous forces dominate inertial forces. What does this mean for how it must swim (hint: it can't coast)?
+*Tests: Reynolds number calculation; laminar/turbulent classification.*
 
 ---
 
-## LLM Exercise — Chapter 12: Fluid Dynamics in Your Anchor Phenomenon
+### Application
+
+**5.** A garden hose has an internal diameter of 1.5 cm. Water flows through it at 8 L/min. (a) What is the flow speed? (b) You attach a nozzle that reduces the opening diameter to 0.50 cm. What is the speed at the nozzle exit?
+
+*Tests: continuity in two steps; unit conversion L/min to m³/s.*
+
+**6.** Using Poiseuille's law, compute the volume flow rate through a horizontal artery of radius 1.5 mm and length 8.0 cm, given a pressure drop of 80 Pa across it. Use $\eta = 4 \times 10^{-3}$ Pa·s. Express in mL/s.
+
+*Tests: direct Poiseuille application; extracting flow rate from given parameters.*
+
+**7.** Cardiac output is 5.0 L/min. The aorta has an average radius of 1.0 cm. (a) What is the average blood speed in the aorta? (b) Using the aorta diameter as the length scale, compute Re. Is aortic flow laminar or turbulent under healthy conditions?
+
+*Tests: continuity to find aortic speed; Reynolds number for a biological conduit.*
+
+**8.** An artery supplying a muscle has radius 1.2 mm. During exercise, blood flow demand doubles. (a) By what factor must the pressure drop increase if the artery stays at the same radius? (b) Alternatively, by what factor must the radius increase to deliver twice the flow at the same pressure? (Recall $Q \propto r^4$.)
+
+*Tests: Poiseuille scaling; understanding how the body adjusts to demand.*
+
+---
+
+### Synthesis
+
+**9.** A Venturi meter has a wide section (diameter 5.0 cm) and a narrow section (diameter 2.5 cm). Water flows at 0.80 m/s in the wide section. (a) Find the speed in the narrow section. (b) Using Bernoulli, find the pressure difference between wide and narrow sections. (c) If a manometer (U-tube filled with mercury, $\rho_{\text{Hg}} = 13{,}600$ kg/m³) is connected between the two sections, what height difference would you read?
+
+*Tests: continuity + Bernoulli in combination; connecting pressure difference to a measurable height.*
+
+**10.** An atherosclerotic plaque reduces a coronary artery's radius from 1.5 mm to 1.0 mm over a 3.0 cm length. Blood pressure drop across the affected segment is 120 Pa. (a) What is the flow rate through the narrowed segment? (b) What flow rate would the same pressure drop produce in the healthy (r = 1.5 mm) artery? (c) By what factor has flow been reduced? Is this consistent with the $r^4$ scaling?
+
+*Tests: Poiseuille applied to a clinical scenario; quantifying the cardiovascular impact of moderate narrowing.*
+
+---
+
+### Challenge
+
+**11.** A bacterium of radius $r = 1.0$ μm swims through water at $v = 30$ μm/s. The characteristic length is the bacterium diameter $L = 2.0$ μm. Water viscosity $\eta = 10^{-3}$ Pa·s, density $\rho = 1{,}000$ kg/m³. (a) Compute the Reynolds number. (b) In this regime, viscous forces completely dominate inertia — if the bacterium stops swimming, it stops essentially instantly. Estimate the "coasting distance" using the stopping time $\tau = m/(6\pi\eta r)$ (Stokes drag on a sphere). (c) Comment on what this means for how a bacterium must swim — it cannot use the same strategy as a fish or a human.
+
+*Tests: Reynolds number at biological scales; Stokes drag; physical reasoning about inertia-free locomotion.*
+
+---
+
+## LLM Exercise — Chapter 15: Fluid Dynamics in Your Anchor Phenomenon
 
 **Project:** Physics Reality Check Logbook
 **What you're building this chapter:** A flow-rate, pressure, or Reynolds-number analysis of one moving fluid in your anchor phenomenon.
@@ -331,82 +219,61 @@ The synthesis exercises all three concepts: continuity to find speeds in the var
 ### The Prompt
 
 ```
-I'm continuing my Physics Reality Check Logbook for College Physics with LLMs. My anchor phenomenon is [paste 1-sentence description].
+I'm continuing my Physics Reality Check Logbook for College Physics
+with LLMs. My anchor phenomenon is [paste 1-sentence description].
 
-For Chapter 12, I want to apply fluid dynamics — continuity, Bernoulli, viscosity — to one flowing fluid in my phenomenon. Please:
+For Chapter 15, I want to apply fluid dynamics — continuity,
+Bernoulli, viscosity — to one flowing fluid in my phenomenon.
+Please:
 
 1. Identify ONE moving fluid in my phenomenon. Examples:
-   - Bike commute: air flowing around the body at riding speed (drag); blood flow in the rider during exertion.
-   - Coffee maker: water flowing through coffee grounds during brewing; steam through wand.
+   - Bike commute: air flowing around the body at riding speed
+     (drag); blood flow in the rider during exertion.
+   - Coffee maker: water flowing through coffee grounds during
+     brewing; steam through wand.
    - Basketball: airflow around the spinning ball (Magnus effect).
    - Marathon: airflow around the runner; sweat evaporation.
-   - Espresso: water at 9 bar through the coffee puck during extraction (this is the central flow event).
+   - Espresso: water at 9 bar through the coffee puck during
+     extraction (this is the central flow event).
 
-2. Identify the relevant equation: continuity ($Av = $const), Bernoulli ($P + \tfrac{1}{2}\rho v^2 + \rho g h$), or Poiseuille ($Q = \pi r^4 \Delta P / 8\eta L$).
+2. Identify the relevant equation: continuity (Av = const),
+   Bernoulli (P + ½ρv² + ρgh), or Poiseuille (Q = πr⁴ΔP/8ηL).
 
-3. Compute the relevant quantities. Report with units, sig figs, uncertainty.
+3. Compute the relevant quantities. Report with units, sig figs,
+   uncertainty.
 
-4. Compute the Reynolds number to determine flow regime (laminar, turbulent, transitional).
+4. Compute the Reynolds number to determine flow regime (laminar,
+   turbulent, transitional).
 
 5. Sanity check with one Fermi estimate.
 
-6. Identify which assumption (incompressible, frictionless, steady-state, ignored viscosity) is most likely to bite.
+6. Identify which assumption (incompressible, frictionless,
+   steady-state, ignored viscosity) is most likely to bite.
 
-7. One sentence on how this connects to Chapter 13 (gas laws) — flowing gases involve compressibility that liquids don't.
+7. One sentence on how this connects to Chapter 16 (gas laws) —
+   flowing gases involve compressibility that liquids don't.
 
-Save the output as logbook/chapter-12-fluid-dynamics.md.
+Save the output as logbook/chapter-15-fluid-dynamics.md.
 ```
 
 ### What this produces
 
-A twelfth Logbook entry: a fluid-flow analysis of one moving fluid in your phenomenon, often revealing the regime (laminar vs. turbulent) governs which equations apply.
+A Logbook entry: a fluid-flow analysis of one moving fluid in your phenomenon, often revealing whether the regime (laminar vs. turbulent) governs which equations apply.
 
 ### How to adapt this prompt
 
 - *For phenomena with mostly slow flow* (a coffee drip): use Stokes / low-Re analysis.
-- *For phenomena with high-speed flow* (a basketball through air): apply turbulent drag from Ch. 5.
+- *For phenomena with high-speed flow* (a basketball through air): apply turbulent drag from Chapter 7.
 - *For ChatGPT or Gemini:* identical with substitutions.
 - *For Claude Code:* if you have flow data (water-meter readings, blood-pressure log), paste it.
 
 ### Connection to previous chapters
 
-Builds directly on Chapter 11 (pressure, density, fluid statics). Builds on Chapter 7 (Bernoulli is energy conservation for fluids). Builds on Chapter 5 (drag in fluids — Reynolds number connects).
+Builds directly on Chapter 14 (pressure, density, fluid statics). Builds on Chapter 9 (Bernoulli is energy conservation for fluids). Builds on Chapter 7 (drag in fluids — Reynolds number connects).
 
 ### Preview of next chapter
 
-Chapter 13 introduces temperature and the kinetic theory of gases. Gases differ from liquids in that they are compressible, and their behavior is described by the ideal gas law $PV = nRT$. Many fluid-dynamic phenomena in gases (lift, sound, weather) involve both fluid dynamics and gas-law thermodynamics together.
-
----
-
-## Chapter summary
-
-Three big results. **Continuity** ($A_1 v_1 = A_2 v_2$) is mass conservation: incompressible fluids speed up in narrower channels. **Bernoulli** ($P + \tfrac{1}{2}\rho v^2 + \rho g h = $ const) is energy conservation along a streamline: faster flow has lower pressure. **Viscosity, Poiseuille, Reynolds**: real fluids have internal friction; whether flow is laminar or turbulent depends on the dimensionless Re.
-
-The one idea that matters most: **Bernoulli is just energy conservation per unit volume.** Once you internalize that the three terms are pressure-energy, kinetic-energy, and gravitational-energy densities, the equation isn't surprising — it's the energy ledger for a fluid parcel along its path.
-
-The common mistake to watch for: **applying Bernoulli where viscosity matters.** For long pipes, narrow capillaries, or any high-Re turbulent flow, the frictionless idealization fails. Use Poiseuille for laminar pipe flow; use empirical methods for turbulent flow in pipes; use computational fluid dynamics for complex geometries.
-
-What you should now be able to teach someone else: how to apply continuity to find speed in a pipe of varying cross-section, how to apply Bernoulli to relate pressure and velocity along a streamline, how to compute Reynolds number to predict flow regime, and how Poiseuille's $r^4$ scaling explains the medical significance of arterial narrowing. Four skills, three underlying conservation laws.
-
----
-
-## What would change my mind
-
-The chapter argues that Bernoulli's equation is a clean and sufficient idealization for many fluid-flow situations, with corrections (Poiseuille, Reynolds-based turbulence models) handling viscous and turbulent regimes. The argument would need revision if a class of common fluid-flow problems systematically required corrections beyond viscosity (e.g., for non-Newtonian fluids like blood at very low shear rates, or for compressible flows near the speed of sound). Both are well-handled by extended fluid dynamics, beyond the scope here.
-
-## Still puzzling
-
-The deepest puzzle this chapter raises and does not resolve: **what causes the laminar-to-turbulent transition?** The Reynolds-number criterion is empirical — Re $\sim 2{,}300$ is the rough threshold for pipe flow. The deeper question of why and how flows transition (and what triggers the chaotic instability) is one of the hardest open problems in classical physics. Turbulence is, in some senses, the last great unsolved problem of classical mechanics.
-
----
-
-## Connections forward
-
-Chapter 13 introduces the kinetic theory of gases and the ideal gas law. Gases are compressible and their behavior couples directly to temperature. Chapters 14–15 (heat, thermodynamics) treat the energy and entropy aspects of fluid systems. Chapter 16 (oscillations and waves) treats sound — pressure waves in fluids — using fluid-dynamic principles. The cardiovascular system continues to make appearances: Chapter 21 (electricity) connects to nerve signals controlling the heart. Chapter 31 (medical physics applications) builds on the fluid foundation.
-
----
-
-**Tags:** fluid-dynamics, Bernoulli, continuity, Poiseuille, Reynolds-number
+Chapter 16 introduces temperature and the kinetic theory of gases. Gases differ from liquids in that they are compressible, and their behavior is described by the ideal gas law $PV = nRT$. Many fluid-dynamic phenomena in gases (lift, sound, weather) involve both fluid dynamics and gas-law thermodynamics together.
 
 ---
 
@@ -417,7 +284,10 @@ Chapter 13 introduces the kinetic theory of gases and the ideal gas law. Gases a
 **Run this:**
 
 ```
-Who was Daniel Bernoulli, and how does Bernoulli's equation connect to fluid dynamics we covered in this chapter? Keep it to three paragraphs. End with the single most surprising thing about his career or ideas.
+Who was Daniel Bernoulli, and how does Bernoulli's equation connect
+to fluid dynamics covered in this chapter? Keep it to three
+paragraphs. End with the single most surprising thing about his
+career or ideas.
 ```
 
 → Search **"Daniel Bernoulli"** on Wikipedia.
@@ -428,3 +298,7 @@ Who was Daniel Bernoulli, and how does Bernoulli's equation connect to fluid dyn
 - Ask it about the famous Bernoulli family of mathematicians and the bitter rivalries among them.
 
 What changes? What gets better? What gets worse?
+
+---
+
+*Tags: fluid-dynamics; Bernoulli; continuity; Poiseuille; Reynolds-number; viscosity; laminar; turbulent; cardiovascular*
